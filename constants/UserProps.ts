@@ -1,18 +1,19 @@
 export interface UserProps {
-  githubUsername: string;
   name: string;
-  designation: string;
-  avatarUrl: string;
-  email: string;
-  phone: string;
-  address: string;
-  resumeUrl: string;
+  position?: string;
+  username?: string;
+  avatarUrl?: string;
+  githubUsername?: string;
+  email?: string;
+  phone?: string;
+  location?: string;
+  resumeUrl?: string;
 }
 
 export interface Project {
   title: string;
-  img?: string;
   desc: string;
+  img?: string;
   source?: string;
   url?: string;
   docs?: string;

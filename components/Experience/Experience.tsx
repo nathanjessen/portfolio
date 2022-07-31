@@ -3,12 +3,8 @@ import { ExperienceCard } from "./ExperienceCard";
 
 export const Experience = () => {
   return (
-    <section className="max-w-6xl mx-auto py-20">
-      <h1 className="text-3xl md:text-6xl font-bold text-center md:text-left">
-        Experience
-      </h1>
-
-      <div className="mt-20 max-w-xl mx-auto">
+    <section className="py-12">
+      <div className="mt-12 max-w-xl mx-auto">
         {experience.map((exp, idx) => (
           <>
             <ExperienceCard

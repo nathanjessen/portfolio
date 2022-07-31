@@ -1,12 +1,13 @@
-import React from "react";
-import PageLayout from "../components/Layouts/PageLayout";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
+import PageHeading from "../components/PageHeading";
 import PostList from "../components/PostList";
 
 export default function experience() {
   return (
-    <PageLayout title="Blog | Nathan Jessen">
+    <DefaultLayout title="Blog | Nathan Jessen">
+      <PageHeading>Posts</PageHeading>
       {/* assign post_list = site.posts */}
-      <PostList posts={posts} />
-    </PageLayout>
+      <PostList posts={[]} />
+    </DefaultLayout>
   );
 }

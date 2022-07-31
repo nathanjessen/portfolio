@@ -1,12 +1,11 @@
-import React from "react";
-import PageLayout from "../components/Layouts/PageLayout";
-import TagList from "../components/TagList";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
+import Tags from "../components/Tags";
 
 export default function tags() {
   return (
-    <PageLayout title="Tags | Nathan Jessen">
+    <DefaultLayout title="Tags | Nathan Jessen">
       {/* assign site_tags = site.tags | sort */}
-      <TagList />
-    </PageLayout>
+      <Tags tags={[]} />
+    </DefaultLayout>
   );
 }

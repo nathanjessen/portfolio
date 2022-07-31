@@ -1,13 +1,12 @@
-import React from "react";
-import PageLayout from "../components/Layouts/PageLayout";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
 import CV from "../components/CV";
 
 // assign site_categories = site.categories | sort
 
 export default function idealPosition() {
   return (
-    <PageLayout title="Ideal Position | Nathan Jessen">
+    <DefaultLayout title="Ideal Position | Nathan Jessen">
       <CV />
-    </PageLayout>
+    </DefaultLayout>
   );
 }

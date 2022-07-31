@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-// import Navbar from "../Navbar";
 import Footer from "../Footer";
-import { NavbarCustom } from "../Navbar/NavbarCustom";
+import Navbar from "../Navbar";
 
 export interface MetaProps {
   title?: string;
@@ -66,9 +65,9 @@ const DefaultLayout = ({ children, ...customMeta }: PropsWithChildren<MetaProps>
         <link rel="preconnect" href="//www.google-analytics.com" />
       </Head>
 
-      <NavbarCustom />
+      <Navbar />
 
-      <main className="flex-grow pt-16" aria-label="Content">
+      <main className="flex-grow pt-24" aria-label="Content">
         {children}
       </main>
 

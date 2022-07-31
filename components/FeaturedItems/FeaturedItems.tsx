@@ -13,7 +13,7 @@ export const FeaturedItems = <Item extends unknown>({ title, subtitle, items, re
       <div className="absolute inset-0">
         <div className="bg-base-300 h-1/3 sm:h-2/3"></div>
       </div>
-      <div className="relative max-w-xl lg:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative">
         <h2 className="text-xl md:text-2xl font-medium text-primary">
           {title}
         </h2>

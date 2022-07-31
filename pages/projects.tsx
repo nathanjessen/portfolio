@@ -1,39 +1,34 @@
 import { useMemo } from "react";
-import PageLayout from "../components/Layouts/PageLayout";
-import ProjectList from "../components/ProjectList";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
+import PageHeading from "../components/PageHeading";
+import BasicGrid from "../components/BasicGrid";
+import ProjectCard from "../components/ProjectCard";
+import { ProjectCardBasic } from "../components/ProjectCard/ProjectCardBasic";
 import { projects } from "../constants/projects";
 
 export default function Projects() {
-  const featuredItems = useMemo(() => projects.filter(project => project.featured), []);
-  const archivedItems = useMemo(() => projects.filter(project => project.archived), []);
+  const featuredItems = useMemo(() => projects.filter(project => project.featured && project.published !== false), []);
+  const archivedItems = useMemo(() => projects.filter(project => project.archived && project.published !== false), []);
 
   return (
-    <PageLayout title="Projects | Nathan Jessen">
-      <div className="py-12">
-        <h2 className="text-xl md:text-2xl font-medium text-primary">
-          Projects
-        </h2>
-        <p className="text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2">
-          Recent Work
-        </p>
+    <DefaultLayout title="Projects | Nathan Jessen">
+      <PageHeading>Projects</PageHeading>
 
-        <div className="mt-12">
-          <ProjectList projects={featuredItems} />
-        </div>
-      </div>
+      <BasicGrid
+        title="Projects"
+        subtitle="Recent Work"
+        divider={false}
+        items={featuredItems}
+        render={(item, idx) => <ProjectCard item={item} key={idx} />}
+      />
 
-      <div className="py-12">
-        <h2 className="text-xl md:text-2xl font-medium text-primary">
-          Archive
-        </h2>
-        <p className="text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2">
-          Past Projects
-        </p>
-
-        <div className="mt-12">
-          <ProjectList projects={archivedItems} />
-        </div>
-      </div>
-    </PageLayout>
+      <BasicGrid
+        title="Archive"
+        subtitle="Past Projects"
+        divider={false}
+        items={archivedItems}
+        render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
+      />
+    </DefaultLayout>
   );
 }

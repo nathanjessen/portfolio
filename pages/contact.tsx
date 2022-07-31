@@ -1,11 +1,12 @@
-import React from "react";
-import PageLayout from "../components/Layouts/PageLayout";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
 import Contact from "../components/Contact";
+import PageHeading from "../components/PageHeading";
 
 export default function contact() {
   return (
-    <PageLayout title="Contact Me | Nathan Jessen">
+    <DefaultLayout title="Contact Me | Nathan Jessen">
+      <PageHeading>Contact Me</PageHeading>
       <Contact />
-    </PageLayout>
+    </DefaultLayout>
   );
 }

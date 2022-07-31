@@ -1,22 +1,38 @@
-import Image from "next/image";
 import Link from "next/link";
-import User from "../../constants/User";
+import Image from "next/image";
 
-export const Brand = () => {
+export interface BrandProps {
+  name: string;
+  position?: string;
+  avatarUrl?: string;
+}
+
+export const Brand = ({ name, position, avatarUrl }: BrandProps) => {
   return (
-    <div className="flex items-center">
-      <Link href="/" aria-label="Home" className="btn btn-ghost normal-case text-xl -ml-4">
-        {User.avatarUrl && (
-          <Image
-            className="mr-2 h-8 w-auto rounded-full"
-            src={User.avatarUrl}
-            alt={User.name}
-            width={32}
-            height={32}
-          />
+    <Link href="/" aria-label="Home">
+      <a className="flex items-center">
+        {avatarUrl && (
+          <div className="mr-4 w-10 flex items-center">
+            <Image
+              src={avatarUrl}
+              alt={name}
+              width={40}
+              height={40}
+            />
+          </div>
         )}
-        N10N
-      </Link>
-    </div>
+
+        <div>
+          <p className="font-semibold text-xl text-white">
+            {name}
+          </p>
+          {position && (
+            <p className="text-base font-light">
+              {position}
+            </p>
+          )}
+        </div>
+      </a>
+    </Link>
   );
 };

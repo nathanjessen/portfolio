@@ -1,12 +1,12 @@
 import { Project } from '../../constants/UserProps';
 
-export interface ProjectListItemProps {
+export interface ProjectCardBasicProps {
   item: Project;
 }
 
-export const ProjectListItem = ({ item }: ProjectListItemProps) => {
+export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
   return (
-    <li className="col-span-1 card card-compact bg-base-200 shadow-xl">
+    <div className="card card-compact bg-base-200 shadow-xl w-full">
       <div className="card-body">
         <div>
           <h3 className="text-white text-lg">
@@ -37,6 +37,6 @@ export const ProjectListItem = ({ item }: ProjectListItemProps) => {
           ))}
         </div>
       </div>
-    </li>
+    </div>
   );
 };

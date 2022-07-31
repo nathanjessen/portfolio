@@ -1,13 +1,14 @@
 import { UserProps } from './UserProps';
 
 const User: UserProps = {
-  githubUsername: "nathanjessen",
   name: "Nathan Jessen",
-  designation: "Senior Frontend Developer",
+  position: "Senior Frontend Developer",
+  username: "N10N",
   avatarUrl: "/avatar-person.png",
+  githubUsername: "nathanjessen",
   email: "nathan.jessen@gmail.com",
   phone: "+1 7023017036",
-  address: "Austin, TX",
+  location: "Austin, TX",
   resumeUrl: "/Nathan-Jessen-Resume-Frontend-Developer.pdf",
 };
 

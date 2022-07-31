@@ -1,11 +1,12 @@
-import React from "react";
-import PageLayout from "../components/Layouts/PageLayout";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
 import Categories from "../components/Categories";
+import PageHeading from "../components/PageHeading";
 
 export default function categories() {
   return (
-    <PageLayout title="Categories | Nathan Jessen">
-      <Categories categories={categories} />
-    </PageLayout>
+    <DefaultLayout title="Categories | Nathan Jessen">
+      <PageHeading>Categories</PageHeading>
+      <Categories categories={[]} />
+    </DefaultLayout>
   );
 }

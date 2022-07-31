@@ -7,7 +7,7 @@ export interface ProjectCardProps {
 
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
-    <div className="card bg-base-200 shadow-xl divide-y divide-base-100">
+    <div className="card bg-base-200 shadow-xl divide-y divide-base-100 w-full">
       {item.img && (
         <figure className="flex items-center justify-center bg-gray-100 bg-cover bg-top bg-no-repeat rounded-t-md h-60"
           style={{ backgroundImage: `url(${item.img})` }}>
