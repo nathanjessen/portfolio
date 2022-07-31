@@ -1,0 +1,20 @@
+# TEAM
+
+  Developer: Nathan Jessen
+  GitHub: nathanjessen
+
+# TECHNOLOGY COLOPHON
+
+  Github Pages
+  Jekyll
+  Gulp
+  PostCSS
+  Yarn
+  EditorConfig
+  Tailwindcss
+  Google Fonts
+
+# SITE
+
+  Language: English
+  Doctype: HTML5
