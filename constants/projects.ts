@@ -1,4 +1,4 @@
-import { Project } from "./userData.types";
+import { Project } from "./UserProps";
 
 export const projects: Project[] = [
   {

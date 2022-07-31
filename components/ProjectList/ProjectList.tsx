@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Project } from '../../constants/userData.types';
+import { Project } from '../../constants/UserProps';
 import { ProjectListItem } from './ProjectListItem';
 
 export interface ProjectListProps {

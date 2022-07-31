@@ -1,12 +1,12 @@
 import React from "react";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import PageLayout from "../components/Layouts/PageLayout";
 import PostList from "../components/PostList";
 
 export default function experience() {
   return (
-    <ContainerBlock title="Blog | Nathan Jessen">
+    <PageLayout title="Blog | Nathan Jessen">
       {/* assign post_list = site.posts */}
-      <PostList />
-    </ContainerBlock>
+      <PostList posts={posts} />
+    </PageLayout>
   );
 }

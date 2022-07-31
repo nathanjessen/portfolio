@@ -1,12 +1,12 @@
 import React from "react";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import PageLayout from "../components/Layouts/PageLayout";
 import TagList from "../components/TagList";
 
 export default function tags() {
   return (
-    <ContainerBlock title="Tags | Nathan Jessen">
+    <PageLayout title="Tags | Nathan Jessen">
       {/* assign site_tags = site.tags | sort */}
       <TagList />
-    </ContainerBlock>
+    </PageLayout>
   );
 }

@@ -1,6 +1,6 @@
-import { UserData } from "../constants/userData.types";
+import { UserProps } from "../constants/UserProps";
 
-export const getLatestRepos = async (data: UserData) => {
+export const getLatestRepos = async (data: UserProps) => {
   try {
     const username = data.githubUsername;
     const token = `token ${process.env.GITHUB_AUTH_TOKEN}`;

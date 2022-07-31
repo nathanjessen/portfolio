@@ -1,13 +1,11 @@
 import React from "react";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import PageLayout from "../components/Layouts/PageLayout";
 import Categories from "../components/Categories";
-
-// assign site_categories = site.categories | sort
 
 export default function categories() {
   return (
-    <ContainerBlock title="Categories | Nathan Jessen">
-      <Categories />
-    </ContainerBlock>
+    <PageLayout title="Categories | Nathan Jessen">
+      <Categories categories={categories} />
+    </PageLayout>
   );
 }

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import DefaultLayout from "../components/Layouts/DefaultLayout";
 
 export default function Custom404() {
   return (
-    <ContainerBlock title="404 Not Found | Nathan Jessen">
+    <DefaultLayout title="404 Not Found | Nathan Jessen">
       <div className="mx-auto max-w-7xl w-full flex flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex-shrink-0 my-auto py-16 sm:py-32">
           <p className="text-sm font-semibold text-error-content uppercase tracking-wide">404 error</p>
@@ -16,6 +16,6 @@ export default function Custom404() {
           </div>
         </div>
       </div>
-    </ContainerBlock>
+    </DefaultLayout>
   );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import userData from "../../constants/userData";
+import User from "../../constants/User";
 
 export const Hero = () => {
   return (
@@ -21,7 +21,7 @@ export const Hero = () => {
 
       <div className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
         <div className="w-3/4 ">
-          <Image src={userData.avatarUrl} alt="avatar" className="shadow" width={500} height={500} />
+          <Image src={User.avatarUrl} alt="avatar" className="shadow" width={500} height={500} />
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
               <svg

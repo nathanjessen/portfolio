@@ -1,11 +1,18 @@
+import { PropsWithChildren } from 'react';
+import DefaultLayout, { MetaProps } from './DefaultLayout';
 import BackgroundTexture from '../BackgroundTexture';
 // import { PostContent } from '../../PostList/PostContent';
 
-export const PostLayout = () => {
+const PostLayout = ({ children, ...customMeta }: PropsWithChildren<MetaProps>) => {
   return (
-    <div className="relative py-16 overflow-hidden">
-      <BackgroundTexture />
-      {/* <PostContent /> */}
-    </div>
+    <DefaultLayout {...customMeta}>
+      <div className="relative py-16 overflow-hidden">
+        <BackgroundTexture />
+        {/* <PostContent /> */}
+        {children}
+      </div>
+    </DefaultLayout>
   );
 };
+
+export default PostLayout;

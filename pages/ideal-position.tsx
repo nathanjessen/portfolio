@@ -1,13 +1,13 @@
 import React from "react";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import PageLayout from "../components/Layouts/PageLayout";
 import CV from "../components/CV";
 
 // assign site_categories = site.categories | sort
 
 export default function idealPosition() {
   return (
-    <ContainerBlock title="Ideal Position | Nathan Jessen">
+    <PageLayout title="Ideal Position | Nathan Jessen">
       <CV />
-    </ContainerBlock>
+    </PageLayout>
   );
 }

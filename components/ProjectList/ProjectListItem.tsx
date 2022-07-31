@@ -1,4 +1,4 @@
-import { Project } from '../../constants/userData.types';
+import { Project } from '../../constants/UserProps';
 
 export interface ProjectListItemProps {
   item: Project;

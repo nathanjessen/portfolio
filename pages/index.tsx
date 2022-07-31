@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import type { NextPage } from 'next';
-import userData from "../constants/userData";
+import User from "../constants/User";
 import { projects } from '../constants/projects';
 import { services } from '../constants/services';
 import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from "../lib/getLatestRepos";
-import ContainerBlock from "../components/Layouts/ContainerBlock";
+import HomeLayout from "../components/Layouts/HomeLayout";
 import FeaturedItems from "../components/FeaturedItems";
 import HomeHero from "../components/HomeHero";
 import Testimonials from '../components/Testimonials';
@@ -22,7 +22,7 @@ const Home: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
   {/* assign recent_posts = site.posts */ }
 
   return (
-    <ContainerBlock
+    <HomeLayout
       title="Nathan Jessen - Senior Frontend Developer"
       description="This is my portfolio as a Senior Frontend Developer based in Austin."
     >
@@ -49,14 +49,14 @@ const Home: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
       {/* <RecentPostCards items={posts} /> */}
       <Testimonials testimonials={testimonials} />
       <CallToAction />
-    </ContainerBlock>
+    </HomeLayout>
   );
 };
 
 export default Home;
 
 export const getServerSideProps = async () => {
-  const repositories = await getLatestRepos(userData);
+  const repositories = await getLatestRepos(User);
   // const repositories: Repository[] = [];
 
   return {

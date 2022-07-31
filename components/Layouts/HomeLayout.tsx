@@ -1,11 +1,14 @@
 import { PropsWithChildren } from 'react';
+import DefaultLayout, { MetaProps } from './DefaultLayout';
 import HomeHero from '../HomeHero';
 
-export const HomeLayout = ({ children }: PropsWithChildren) => {
+const HomeLayout = ({ children, ...customMeta }: PropsWithChildren<MetaProps>) => {
   return (
-    <>
+    <DefaultLayout {...customMeta}>
       <HomeHero />
       {children}
-    </>
+    </DefaultLayout>
   );
 };
+
+export default HomeLayout;

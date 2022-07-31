@@ -1,12 +1,13 @@
-import userData from "../../constants/userData";
+import User from "../../constants/User";
+import { socialLinks } from "../../constants/socialLinks";
 
 export const Footer = () => {
   return (
     <footer className="bg-base-300" role="contentinfo">
       <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <nav className="flex justify-center space-x-6 md:order-2">
-          {userData.socialLinks.facebook && (
-            <a href={userData.socialLinks.facebook} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-500">
+          {socialLinks.facebook && (
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-500">
               <span className="sr-only">Facebook</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd"
@@ -15,8 +16,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.github && (
-            <a href={userData.socialLinks.github} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.github && (
+            <a href={socialLinks.github} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">GitHub</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd"
@@ -25,8 +26,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.twitter && (
-            <a href={userData.socialLinks.twitter} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.twitter && (
+            <a href={socialLinks.twitter} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">Twitter</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd"
@@ -34,8 +35,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.linkedin && (
-            <a href={userData.socialLinks.linkedin} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.linkedin && (
+            <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">LinkedIn</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 28 28">
                 <path fillRule="evenodd"
@@ -43,8 +44,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.medium && (
-            <a href={userData.socialLinks.medium} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.medium && (
+            <a href={socialLinks.medium} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">Medium</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 26 26">
                 <path fillRule="evenodd"
@@ -52,8 +53,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.instagram && (
-            <a href={userData.socialLinks.instagram} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.instagram && (
+            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">Instagram</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd"
@@ -62,8 +63,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.dribbble && (
-            <a href={userData.socialLinks.dribbble} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.dribbble && (
+            <a href={socialLinks.dribbble} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">Dribbble</span>
               <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd"
@@ -72,8 +73,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.codepen && (
-            <a href={userData.socialLinks.codepen} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.codepen && (
+            <a href={socialLinks.codepen} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">CodePen</span>
               {/* TODO: replace svg */}
               <svg className="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,8 +83,8 @@ export const Footer = () => {
               </svg>
             </a>
           )}
-          {userData.socialLinks.angellist && (
-            <a href={userData.socialLinks.angellist} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
+          {socialLinks.angellist && (
+            <a href={socialLinks.angellist} target="_blank" rel="noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
               <span className="sr-only">AngelList</span>
               {/* TODO: replace svg */}
               <svg className="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +97,7 @@ export const Footer = () => {
 
         <div className="mt-8 md:mt-0 md:order-1">
           <p className="text-center text-base leading-6">
-            &copy; 2022 {userData.name}
+            &copy; 2022 {User.name}
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import userData from '../../constants/userData';
+import { socialLinks } from '../../constants/socialLinks';
 
 export const CallToAction = () => {
   return (
@@ -9,18 +9,18 @@ export const CallToAction = () => {
           <br />
           <span className="text-primary-content">Reach out to me.</span>
         </h2>
-        {(userData.socialLinks.twitter || userData.socialLinks.linkedin) && (
+        {(socialLinks.twitter || socialLinks.linkedin) && (
           <div className="mt-8 lg:mt-0 flex lg:flex-shrink-0 gap-3">
-            {userData.socialLinks.twitter && (
-              <a href={userData.socialLinks.twitter}
+            {socialLinks.twitter && (
+              <a href={socialLinks.twitter}
                 target="_blank"
                 rel="noreferrer"
                 className="btn bg-[#1da1f2] border-[#1da1f2] text-white">
                 Twitter
               </a>
             )}
-            {userData.socialLinks.linkedin && (
-              <a href={userData.socialLinks.linkedin}
+            {socialLinks.linkedin && (
+              <a href={socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-secondary">

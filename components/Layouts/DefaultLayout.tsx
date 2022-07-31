@@ -2,8 +2,8 @@ import React, { PropsWithChildren } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 // import Navbar from "../Navbar";
-import Footer from "../../Footer";
-import { NavbarCustom } from "../../Navbar/NavbarCustom";
+import Footer from "../Footer";
+import { NavbarCustom } from "../Navbar/NavbarCustom";
 
 export interface MetaProps {
   title?: string;
@@ -14,7 +14,7 @@ export interface MetaProps {
   date?: any;
 };
 
-export const ContainerBlock = ({ children, ...customMeta }: PropsWithChildren<MetaProps>) => {
+const DefaultLayout = ({ children, ...customMeta }: PropsWithChildren<MetaProps>) => {
   const router = useRouter();
 
   const meta: MetaProps = {
@@ -76,3 +76,5 @@ export const ContainerBlock = ({ children, ...customMeta }: PropsWithChildren<Me
     </>
   );
 };
+
+export default DefaultLayout;

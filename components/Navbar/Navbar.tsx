@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
-import userData from "../../constants/userData";
+import User from "../../constants/User";
+import { socialLinks } from "../../constants/socialLinks";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -20,10 +21,10 @@ export const Navbar = () => {
           <Link href="/">
             <a>
               <h1 className="font-semibold text-xl dark:text-gray-100">
-                {userData.name}
+                {User.name}
               </h1>
               <p className="text-base font-light text-gray-500 dark:text-gray-300">
-                {userData.designation}
+                {User.designation}
               </p>
             </a>
           </Link>
@@ -33,8 +34,8 @@ export const Navbar = () => {
           <Link href="/about">
             <a
               className={`text-base  ${router.asPath === "/about"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
+                ? "text-gray-800 font-bold dark:text-gray-400"
+                : "text-gray-600 dark:text-gray-300 font-normal "
                 }`}
             >
               About{" "}
@@ -58,8 +59,8 @@ export const Navbar = () => {
           <Link href="/projects">
             <a
               className={`text-base  ${router.asPath === "/projects"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
+                ? "text-gray-800 font-bold dark:text-gray-400"
+                : "text-gray-600 dark:text-gray-300 font-normal "
                 }`}
             >
               Projects
@@ -83,8 +84,8 @@ export const Navbar = () => {
           <Link href="/experience">
             <a
               className={`text-base  ${router.asPath === "/experience"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
+                ? "text-gray-800 font-bold dark:text-gray-400"
+                : "text-gray-600 dark:text-gray-300 font-normal "
                 }`}
             >
               Experience{" "}
@@ -108,8 +109,8 @@ export const Navbar = () => {
           <Link href="/contact">
             <a
               className={`text-base  ${router.asPath === "/contact"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
+                ? "text-gray-800 font-bold dark:text-gray-400"
+                : "text-gray-600 dark:text-gray-300 font-normal "
                 }`}
             >
               Contact
@@ -134,7 +135,7 @@ export const Navbar = () => {
 
         <div className="space-x-4 flex flex-row items-center">
           <a
-            href={userData.socialLinks.instagram}
+            href={socialLinks.instagram}
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
@@ -149,7 +150,7 @@ export const Navbar = () => {
             </svg>
           </a>
           <a
-            href={userData.socialLinks.twitter}
+            href={socialLinks.twitter}
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
@@ -164,7 +165,7 @@ export const Navbar = () => {
             </svg>
           </a>
           <a
-            href={userData.socialLinks.linkedin}
+            href={socialLinks.linkedin}
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
