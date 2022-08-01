@@ -1,7 +1,30 @@
+import { FormEvent, useState } from "react";
 import User from "../../constants/User";
-import SocialNav from "../SocialNav";
+import ContactForm from "../ContactForm";
 
 export const Contact = () => {
+  const [message, setMessage] = useState<string>('');
+  const [status, setStatus] = useState<string>('');
+
+  const onContactFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData: { [key: string]: string; } = {};
+    Array.from(e.currentTarget.elements).forEach(field => {
+      if (!field.name) return;
+      formData[field.name] = field.value;
+    });
+
+    await fetch('/api/mail', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    })
+      .then(res => res.json())
+      .then(res => {
+        setMessage(res.message);
+        setStatus(res.status);
+      });
+  };
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="space-y-14">
@@ -68,56 +91,21 @@ export const Contact = () => {
         </div>
       </div>
 
-      <form className="form rounded-md bg-base-300 space-y-2">
-        <div className="form-control w-full">
-          <label htmlFor="name" className="label cursor-pointer">
-            <span className="label-text">
-              Your Name
-            </span>
-          </label>
-          <input
-            type="text"
-            className="input input-bordered w-full"
-            name="name"
-            id="name"
-          />
-        </div>
-
-        <div className="form-control w-full">
-          <label htmlFor="email" className="label cursor-pointer">
-            <span className="label-text">
-              Email
-            </span>
-          </label>
-          <input
-            type="text"
-            className="input input-bordered w-full"
-            name="email"
-            id="email"
-          />
-        </div>
-
-        <div className="form-control w-full">
-          <label htmlFor="message" className="label cursor-pointer">
-            <span className="label-text">
-              Message
-            </span>
-          </label>
-          <textarea
-            rows={3}
-            className="textarea textarea-bordered w-full"
-            name="message"
-            id="message"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="btn btn-primary btn-block !mt-4"
-        >
-          Send Message
-        </button>
-      </form>
+      <div>
+        <ContactForm onSubmit={onContactFormSubmit} disabled={message.length > 0} />
+        {message.length > 0 ? (
+          <div className={`alert shadow-lg mt-4 ${status === 'success' ? 'alert-success' : 'alert-error'}`}>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                className="stroke-current flex-shrink-0 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>{message}</span>
+            </div>
+          </div>
+        ) : null}
+      </div>
     </section>
   );
 };
