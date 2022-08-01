@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { NextPage } from "next/types";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
 import PageHeading from "../components/PageHeading";
 import BasicGrid from "../components/BasicGrid";
@@ -6,7 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 import { ProjectCardBasic } from "../components/ProjectCard/ProjectCardBasic";
 import { projects } from "../constants/projects";
 
-export default function Projects() {
+const ProjectsPage: NextPage = () => {
   const featuredItems = useMemo(() => projects.filter(project => project.featured && project.published !== false), []);
   const archivedItems = useMemo(() => projects.filter(project => project.archived && project.published !== false), []);
 
@@ -31,4 +32,6 @@ export default function Projects() {
       />
     </DefaultLayout>
   );
-}
+};
+
+export default ProjectsPage;

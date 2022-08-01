@@ -1,8 +1,9 @@
+import { NextPage } from "next/types";
 import Link from "next/link";
 import Container from "../components/Layouts/Container";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
 
-export default function Custom404() {
+const Custom404: NextPage = () => {
   return (
     <DefaultLayout title="404 Not Found | Nathan Jessen">
       <Container>
@@ -21,4 +22,6 @@ export default function Custom404() {
       </Container>
     </DefaultLayout>
   );
-}
+};
+
+export default Custom404;

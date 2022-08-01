@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
-import type { NextPage } from 'next';
-import User from "../constants/User";
+import { NextPage } from 'next/types';
+import User from '../constants/User';
 import { projects } from '../constants/projects';
 // import { services } from '../constants/services';
 import { testimonials } from '../constants/testimonials';
-import { getLatestRepos } from "../lib/getLatestRepos";
-import DefaultLayout from "../components/Layouts/DefaultLayout";
-import HomeHero from "../components/HomeHero";
+import { getLatestRepos } from '../lib/getLatestRepos';
+import DefaultLayout from '../components/Layouts/DefaultLayout';
+import HomeHero from '../components/HomeHero';
 import Testimonials from '../components/Testimonials';
 import ProjectCard from '../components/ProjectCard';
 // import ServiceItem from '../components/ServiceItem';
@@ -16,7 +16,7 @@ import RepoCard from '../components/RepoCard';
 
 export type Repository = any;
 
-const Home: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
+const HomePage: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
   const featuredItems = useMemo(() => projects.filter(project => project.featured), []);
   {/* assign recent_posts = site.posts */ }
 
@@ -63,7 +63,7 @@ const Home: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
   );
 };
 
-export default Home;
+export default HomePage;
 
 export const getServerSideProps = async () => {
   const repositories = await getLatestRepos(User);
