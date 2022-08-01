@@ -142,7 +142,7 @@ export const AboutMe = () => {
               The user is at the heart of every decision I make. Websites and applications should be accessible to everyone and the interface and user journey should constantly evolve to give the best user experience.
             </p>
             <p className="text-xl">
-              I&apos;m looking for a position that allows me to continue with my work and evolve as a developer, contributor, and leader. An ideal position would involve mentoring Junior developers, coding applications with React and Storybook, and working on a certification in WCAG 2.1 AA compliance.
+              I&apos;m looking for a position that allows me to continue with my work and evolve as a developer, contributor, and leader. An ideal position would involve mentoring Junior developers, coding applications with React and Storybook, and allow me to work toward certifications in things like WCAG 2.1 AA compliance.
             </p>
           </div>
 
