@@ -66,8 +66,9 @@ const HomePage: NextPage<{ repositories: Repository[]; }> = ({ repositories }) =
 export default HomePage;
 
 export const getServerSideProps = async () => {
-  const repositories = await getLatestRepos(User);
-  // const repositories: Repository[] = [];
+  if (!User.githubUsername) return {};
+
+  const repositories = await getLatestRepos(User.githubUsername);
 
   return {
     props: {
