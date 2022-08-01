@@ -5,20 +5,19 @@ import { projects } from '../constants/projects';
 // import { services } from '../constants/services';
 import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from '../lib/getLatestRepos';
-import DefaultLayout from '../components/Layouts/DefaultLayout';
-import HomeHero from '../components/HomeHero';
-import Testimonials from '../components/Testimonials';
-import ProjectCard from '../components/ProjectCard';
-// import ServiceItem from '../components/ServiceItem';
 import BasicGrid from '../components/BasicGrid';
 // import CallToAction from '../components/CallToAction';
+import HomeHero from '../components/HomeHero';
+import DefaultLayout from '../components/Layouts/DefaultLayout';
+import ProjectCard from '../components/ProjectCard';
 import RepoCard from '../components/RepoCard';
+// import ServiceItem from '../components/ServiceItem';
+import Testimonials from '../components/Testimonials';
 
 export type Repository = any;
 
 const HomePage: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
   const featuredItems = useMemo(() => projects.filter(project => project.featured), []);
-  {/* assign recent_posts = site.posts */ }
 
   return (
     <DefaultLayout
@@ -55,8 +54,6 @@ const HomePage: NextPage<{ repositories: Repository[]; }> = ({ repositories }) =
         />
       </div> */}
 
-      {/* <RecentPostItems items={posts} /> */}
-      {/* <RecentPostCards items={posts} /> */}
       <Testimonials testimonials={testimonials} />
       {/* <CallToAction /> */}
     </DefaultLayout>
