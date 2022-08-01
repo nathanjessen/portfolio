@@ -32,7 +32,7 @@ export const PostItem = ({ post }: PostItemProps) => {
             <span className="sr-only">Nathan Jessen</span>
             <Image
               className="h-10 w-10 rounded-full"
-              src="/avatar-person.png"
+              src="/assets/images/avatar-person.png"
               width={40}
               height={40}
               alt="" />

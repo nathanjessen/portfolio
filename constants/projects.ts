@@ -3,7 +3,7 @@ import { Project } from "./UserProps";
 export const projects: Project[] = [
   {
     title: "Storybook Component Library",
-    img: "/storybook-hodo.png",
+    img: "/assets/images/storybook-hodo.png",
     desc: "React components for an NFT marketplace were built in isolation using Storybook.",
     source: "https://github.com/Hodo-Network/hodo-network/tree/main/frontend",
     docs: "https://hodo-network.github.io/storybook-static/",
@@ -16,7 +16,7 @@ export const projects: Project[] = [
   },
   {
     title: "Wordle",
-    img: "/wordl.png",
+    img: "/assets/images/wordle.png",
     desc: "Word game recreated with React.",
     source: "https://github.com/nathanjessen/wordle",
     url: "https://wordle.nathanjessen.com",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   {
     title: "OpenSea Integration",
-    img: "/opensea.png",
+    img: "/assets/images/opensea.png",
     desc: "ReactJS + Web3 integration for viewing and buying NFTs from OpenSea directly in OctoFi app.",
     source: "https://github.com/OctoFi/octofi-app-aquafarm",
     url: "https://app.octo.fi/",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
   },
   {
     title: "Jekyll Theme",
-    img: "/blogtheme.png",
+    img: "/assets/images/blogtheme.png",
     desc: "Clean minimalist theme for Jekyll using TailwindCSS.",
     source: "https://github.com/nathanjessen/blogtheme",
     url: "https://nathanjessen.com/blogtheme/",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   },
   {
     title: "Uniswap Tokenlist",
-    img: "/tokenlist.png",
+    img: "/assets/images/tokenlist.png",
     desc: "Create an ERC20 token list and validate the JSON schema to display tokens in well-known UI's like Uniswap.",
     source: "https://github.com/nathanjessen/tokenlist-template",
     url: "https://github.com/nathanjessen/tokenlist-template",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
   },
   {
     title: "Google I/O Extended Las Vegas",
-    img: "/google-io-extended.png",
+    img: "/assets/images/google-io-extended.png",
     desc: "Landing page for the Google I/O Extended event in Las Vegas.",
     source: "https://github.com/nathanjessen/ioextendedlv",
     url: "https://nathanjessen.com/ioextendedlv/",
@@ -409,7 +409,7 @@ export const projects: Project[] = [
   },
   {
     title: "Knacktive",
-    img: "/knacktive.png",
+    img: "/assets/images/knacktive.png",
     desc: "Developed the inaugural website for our university-led marketing agency and ported into the university CMS.",
     source: "https://github.com/nathanjessen/knacktive",
     url: "https://nathanjessen.com/knacktive/",

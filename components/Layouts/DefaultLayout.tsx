@@ -19,7 +19,7 @@ const DefaultLayout = ({ children, ...customMeta }: PropsWithChildren<MetaProps>
   const meta: MetaProps = {
     title: "Nathan Jessen - Senior Frontend Developer",
     description: "I've been developing websites for 10+ years. Get in touch with me to know more.",
-    image: "/avatar-person.png",
+    image: "/assets/images/avatar-person.png",
     type: "website",
     ...customMeta,
   };
