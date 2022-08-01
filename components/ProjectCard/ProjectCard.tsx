@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Project } from "../../constants/UserProps";
+import { Project } from "../../constants/projects";
 
 export interface ProjectCardProps {
   item: Project;

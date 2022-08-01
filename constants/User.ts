@@ -1,4 +1,15 @@
-import { UserProps } from './UserProps';
+export interface UserProps {
+  name: string;
+  position?: string;
+  username?: string;
+  avatarUrl?: string;
+  githubUsername?: string;
+  email?: string;
+  phone?: string;
+  location?: string;
+  resumeUrl?: string;
+  resumeName?: string;
+}
 
 const User: UserProps = {
   name: "Nathan Jessen",

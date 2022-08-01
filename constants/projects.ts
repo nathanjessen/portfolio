@@ -1,4 +1,19 @@
-import { Project } from "./UserProps";
+export interface Project {
+  title: string;
+  desc: string;
+  img?: string;
+  source?: string;
+  url?: string;
+  docs?: string;
+  tech: string[];
+  company?: string;
+  client?: string;
+  date: string;
+  dateRange?: string[];
+  archived?: boolean;
+  featured?: boolean;
+  published?: boolean;
+}
 
 export const projects: Project[] = [
   {
