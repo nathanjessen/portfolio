@@ -30,7 +30,9 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
       <div className="flex divide-x divide-base-100">
         {item.source != null && (
           <div className="flex-1">
-            <a href="{item.source | absolute_url }" target="_blank"
+            <a href={item.source}
+              target="_blank"
+              rel="noreferrer"
               className="btn btn-ghost text-xs py-4 h-14 btn-block rounded-tr-none rounded-bl-none rounded-tl-none">
               <svg className="w-4 h-4 text-base-content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                 fill="currentColor">
@@ -45,7 +47,9 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
 
         {item.docs != null && (
           <div className="flex-1">
-            <a href="{item.docs | absolute_url }" target="_blank"
+            <a href={item.docs}
+              target="_blank"
+              rel="noreferrer"
               className="btn btn-ghost text-xs py-4 h-14 btn-block rounded-none">
               <svg className="w-4 h-4 text-base-content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                 fill="currentColor">
@@ -61,7 +65,9 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
 
         {item.url != null && (
           <div className="flex-1">
-            <a href="{item.url | absolute_url }" target="_blank"
+            <a href={item.url}
+              target="_blank"
+              rel="noreferrer"
               className="btn btn-ghost text-xs py-4 h-14 btn-block rounded-tl-none rounded-tr-none rounded-br-none">
               <svg className="w-4 h-4 text-base-content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                 fill="currentColor">

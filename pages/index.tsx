@@ -2,19 +2,17 @@ import { useMemo } from 'react';
 import type { NextPage } from 'next';
 import User from "../constants/User";
 import { projects } from '../constants/projects';
-import { services } from '../constants/services';
+// import { services } from '../constants/services';
 import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from "../lib/getLatestRepos";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
-import FeaturedItems from "../components/FeaturedItems";
 import HomeHero from "../components/HomeHero";
 import Testimonials from '../components/Testimonials';
 import ProjectCard from '../components/ProjectCard';
-import ServiceItem from '../components/ServiceItem';
+// import ServiceItem from '../components/ServiceItem';
 import BasicGrid from '../components/BasicGrid';
-import CallToAction from '../components/CallToAction';
+// import CallToAction from '../components/CallToAction';
 import RepoCard from '../components/RepoCard';
-import Container from '../components/Layouts/Container';
 
 export type Repository = any;
 
@@ -48,19 +46,19 @@ const Home: NextPage<{ repositories: Repository[]; }> = ({ repositories }) => {
         />
       </div>
 
-      <div className="pt-4 pb-8 lg:pt-12 lg:pb-16">
+      {/* <div className="pt-4 pb-8 lg:pt-12 lg:pb-16">
         <BasicGrid
           title="Services"
           subtitle="Work Offered"
           items={services}
           render={(item, idx) => <ServiceItem service={item} key={idx} />}
         />
-      </div>
+      </div> */}
 
       {/* <RecentPostItems items={posts} /> */}
       {/* <RecentPostCards items={posts} /> */}
       <Testimonials testimonials={testimonials} />
-      <CallToAction />
+      {/* <CallToAction /> */}
     </DefaultLayout>
   );
 };

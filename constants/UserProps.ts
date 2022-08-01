@@ -8,6 +8,7 @@ export interface UserProps {
   phone?: string;
   location?: string;
   resumeUrl?: string;
+  resumeName?: string;
 }
 
 export interface Project {

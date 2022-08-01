@@ -6,9 +6,8 @@ export const Experience = () => {
     <section className="py-12">
       <div className="mt-12 max-w-xl mx-auto">
         {experience.map((exp, idx) => (
-          <>
+          <div key={idx}>
             <ExperienceCard
-              key={idx}
               title={exp.title}
               desc={exp.desc}
               year={exp.year}
@@ -23,7 +22,7 @@ export const Experience = () => {
                 <div className="w-1 h-24 bg-gray-200 dark:bg-gray-500 rounded-full -mt-2"></div>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </section>

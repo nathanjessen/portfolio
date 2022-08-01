@@ -10,6 +10,7 @@ const User: UserProps = {
   phone: "+1 7023017036",
   location: "Austin, TX",
   resumeUrl: "/Nathan-Jessen-Resume-Frontend-Developer.pdf",
+  resumeName: "Nathan-Jessen-Resume-Frontend-Developer.pdf",
 };
 
 export default User;

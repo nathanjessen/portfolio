@@ -46,7 +46,7 @@ export const projects: Project[] = [
     img: "/blogtheme.png",
     desc: "Clean minimalist theme for Jekyll using TailwindCSS.",
     source: "https://github.com/nathanjessen/blogtheme",
-    url: "https://nathanjessen.com/",
+    url: "https://nathanjessen.com/blogtheme/",
     tech: ["Jekyll", "TailwindCSS"],
     company: "Freelance",
     date: "2022/07/18",
