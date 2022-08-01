@@ -15,15 +15,13 @@ export const Navbar = () => {
 
   return (
     <header className="bg-base-100 fixed top-0 w-full z-50">
-      <nav className="navbar px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto">
-        <div className="navbar-start">
-          <Brand
-            name={User.name}
-            position={User.position}
-          />
-        </div>
+      <nav className="navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto">
+        <Brand
+          name={User.name}
+          position={User.position}
+        />
 
-        <div className="navbar-center hidden sm:block">
+        <div className="hidden sm:block">
           <ul className="menu menu-horizontal">
             <li className={`border-b-4 ${router.asPath === "/about" ? 'border-primary !rounded-none' : 'border-transparent hover:border-primary-focus'}`}>
               <Link href="/about" className="px-8 !rounded-none">
@@ -48,11 +46,11 @@ export const Navbar = () => {
           </ul>
         </div>
 
-        <div className="navbar-end hidden sm:flex justify-end">
+        <div className="hidden md:flex">
           <SocialNav />
         </div>
 
-        <div className="navbar-end flex sm:hidden">
+        <div className="flex sm:hidden">
           <label className="btn btn-ghost btn-circle swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" aria-label="Main menu" onChange={toggleMenu} />
