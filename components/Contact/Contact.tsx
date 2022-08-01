@@ -9,7 +9,9 @@ export const Contact = () => {
   const onContactFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData: { [key: string]: string; } = {};
-    Array.from(e.currentTarget.elements).forEach(field => {
+    const elements = (e.currentTarget.elements as unknown) as Array<HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement>;
+
+    Array.from(elements).forEach(field => {
       if (!field.name) return;
       formData[field.name] = field.value;
     });
