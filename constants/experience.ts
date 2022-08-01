@@ -11,14 +11,14 @@ export const experience: Experience[] = [
     title: "Actively Interviewing",
     company: "Full-time",
     year: "Current",
-    companyLink: "https://nathanjessen.com/contact",
+    companyLink: "https://www.nathanjessen.com/contact",
     desc: "Looking for a full-time position as a Senior Frontend Developer working with React, TypeScript, and Storybook.",
   },
   {
     title: "Frontend Developer",
     company: "Freelance",
     year: "2020",
-    companyLink: "https://nathanjessen.com",
+    companyLink: "https://www.nathanjessen.com",
     desc: "Developed and contributed to crypto apps, NFT marketplaces, and other tools using React, Storybook, and web3 libraries.",
   },
   {
