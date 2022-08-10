@@ -1,2 +1,2 @@
-import { ServiceItem } from "./ServiceItem";
+import { ServiceItem } from './ServiceItem';
 export default ServiceItem;

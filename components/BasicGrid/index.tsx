@@ -1,2 +1,2 @@
-import { BasicGrid } from "./BasicGrid";
+import { BasicGrid } from './BasicGrid';
 export default BasicGrid;

@@ -1,2 +1,2 @@
-import { SocialNav } from "./SocialNav";
+import { SocialNav } from './SocialNav';
 export default SocialNav;

@@ -12,9 +12,9 @@ export interface SocialLinks {
 
 export const socialLinks: SocialLinks = {
   // facebook: "https://facebook.com/",
-  github: "https://github.com/nathanjessen",
+  github: 'https://github.com/nathanjessen',
   // twitter: "https://twitter.com/",
-  linkedin: "https://www.linkedin.com/in/njessen/",
+  linkedin: 'https://www.linkedin.com/in/njessen/',
   // medium: "https://medium.com/@nathanjessen/about",
   // instagram: "https://www.instagram.com/nathanjessen/",
   // dribbble: "https://dribbble.com/",

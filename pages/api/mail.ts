@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import mail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import mail from "@sendgrid/mail";
 import User from '../../constants/User';
 
 mail.setApiKey(process.env.SENDGRID_API_KEY || '');
@@ -26,19 +26,20 @@ export default function handler(
     from: 'hello@nathanjessen.com',
     subject: 'Portfolio Contact Message via Sendgrid',
     text: message,
-    html: message.replace(/\r\n/g, '<br>')
+    html: message.replace(/\r\n/g, '<br>'),
   };
 
-  mail.send(data)
+  mail
+    .send(data)
     .then(() => {
       res.status(200).json({
-        status: "success",
+        status: 'success',
         message: "Your message was sent. I'll be in contact shortly.",
       });
     })
     .catch((error) => {
       res.status(200).json({
-        status: "error",
+        status: 'error',
         message: `Message failed to send with error, ${error}`,
       });
     });
