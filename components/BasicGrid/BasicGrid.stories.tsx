@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { BasicGrid, BasicGridProps } from './BasicGrid';
 
 export default {
-  title: 'BasicGrid',
+  title: 'Components/BasicGrid',
   component: BasicGrid,
   args: {
     title: 'Basic Grid',

@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { AboutMe } from './AboutMe';
 
 export default {
-  title: 'AboutMe',
+  title: 'Components/AboutMe',
   component: AboutMe,
 } as Meta;
 
