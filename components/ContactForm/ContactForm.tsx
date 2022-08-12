@@ -54,7 +54,9 @@ export const ContactForm = ({
 
       <button
         type='submit'
-        className='btn btn-primary btn-block !mt-4'
+        className={`btn btn-block !mt-4 ${
+          disabled ? 'btn-disabled' : 'btn-primary'
+        }`}
         disabled={disabled}>
         Send Message
       </button>
