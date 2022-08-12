@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 export interface BrandProps {
   name: string;
   position?: string;
-  avatarUrl?: string;
+  avatarUrl?: StaticImageData | string;
 }
 
 export const Brand = ({ name, position, avatarUrl }: BrandProps) => {
