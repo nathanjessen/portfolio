@@ -19,9 +19,11 @@ export const BasicGrid = <Item extends unknown>({
   return (
     <Container>
       <h2 className='text-xl md:text-2xl font-medium text-primary'>{title}</h2>
-      <p className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2'>
-        {subtitle}
-      </p>
+      {subtitle && (
+        <p className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2'>
+          {subtitle}
+        </p>
+      )}
       {divider && <div className='divider'></div>}
       <div className='mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
         {items.length > 0 ? (
