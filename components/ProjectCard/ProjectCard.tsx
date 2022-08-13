@@ -9,16 +9,16 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
     <div className='card bg-base-200 shadow-xl divide-y divide-base-100 w-full'>
       {item.img && (
-        <figure
-          className='flex items-center justify-center bg-gray-100 bg-cover bg-top bg-no-repeat rounded-t-md h-60'
-          style={{ backgroundImage: `url(${item.img})` }}>
-          <Image
-            src={item.img}
-            alt='{item.title }'
-            className='h-60 w-full hidden'
-            height={240}
-            width={400}
-          />
+        <figure className='bg-gray-100 rounded-t-md'>
+          <div className='block h-60 w-full overflow-hidden'>
+            <Image
+              src={item.img}
+              alt={item.title}
+              layout='responsive'
+              height={240}
+              width={400}
+            />
+          </div>
         </figure>
       )}
 
