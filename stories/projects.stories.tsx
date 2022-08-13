@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import AboutPage from './about';
+import ProjectsPage from '../pages/projects';
 
 export default {
-  title: 'Pages/AboutPage',
-  component: AboutPage,
+  title: 'Pages/ProjectsPage',
+  component: ProjectsPage,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <AboutPage {...args} />;
+const Template: Story = (args) => <ProjectsPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

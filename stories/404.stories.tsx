@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import ContactPage from './contact';
+import Custom404Page from '../pages/404';
 
 export default {
-  title: 'Pages/ContactPage',
-  component: ContactPage,
+  title: 'Pages/Custom404Page',
+  component: Custom404Page,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <ContactPage {...args} />;
+const Template: Story = (args) => <Custom404Page {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
