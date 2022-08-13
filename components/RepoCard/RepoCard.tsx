@@ -1,16 +1,18 @@
-import { Repository } from '../../pages';
+import { Repository } from '../../constants/repo';
 
 export interface RepoCardProps {
-  repo?: Repository;
+  item?: Repository;
 }
 
-export const RepoCard = ({ repo }: RepoCardProps) => {
+export const RepoCard = ({
+  item: { name, description, clone_url },
+}: RepoCardProps) => {
   return (
     <div className='space-y-4'>
-      <h4 className='font-semibold text-xl'>{repo.name}</h4>
-      <p>{repo.description}</p>
+      <h4 className='font-semibold text-xl'>{name}</h4>
+      <p>{description}</p>
       <a
-        href={repo.clone_url}
+        href={clone_url}
         target='_blank'
         rel='noreferrer'
         className='font-semibold group flex flex-row space-x-2 w-full items-center'>

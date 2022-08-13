@@ -13,12 +13,12 @@ import ProjectCard from '../components/ProjectCard';
 import RepoCard from '../components/RepoCard';
 // import ServiceItem from '../components/ServiceItem';
 import Testimonials from '../components/Testimonials';
+import { Repository } from '../constants/repo';
 
-export type Repository = any;
-
-const HomePage: NextPage<{ repositories: Repository[] }> = ({
-  repositories,
-}) => {
+export interface HomePageProps {
+  repositories: Repository[];
+}
+const HomePage: NextPage<HomePageProps> = ({ repositories }) => {
   const featuredItems = useMemo(
     () => projects.filter((project) => project.featured),
     []
@@ -45,16 +45,16 @@ const HomePage: NextPage<{ repositories: Repository[] }> = ({
           title='GitHub'
           subtitle='Latest Code'
           items={repositories}
-          render={(item, idx) => <RepoCard repo={item} key={idx} />}
+          render={(item, idx) => <RepoCard item={item} key={idx} />}
         />
       </div>
 
-      {/* <div className="pt-4 pb-8 lg:pt-12 lg:pb-16">
+      {/* <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
         <BasicGrid
-          title="Services"
-          subtitle="Work Offered"
+          title='Services'
+          subtitle='Work Offered'
           items={services}
-          render={(item, idx) => <ServiceItem service={item} key={idx} />}
+          render={(item, idx) => <ServiceItem item={item} key={idx} />}
         />
       </div> */}
 
