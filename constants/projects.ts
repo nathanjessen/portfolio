@@ -259,7 +259,6 @@ export const projects: Project[] = [
     dateRange: ['Dec 2013', 'Jan 2014'],
     archived: true,
   },
-
   {
     title: 'Have We Seen Your Cat Lately?',
     desc: 'Created a CSS theme for an AEM website.',
@@ -379,7 +378,6 @@ export const projects: Project[] = [
     dateRange: ['Sept 2012', 'Oct 2012'],
     archived: true,
   },
-
   {
     title: 'Email Templates',
     desc: 'Built email templates for an email marketing campaign.',

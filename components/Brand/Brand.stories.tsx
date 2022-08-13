@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import AvatarPerson from '../../public/assets/images/avatar-person.png';
 import { Brand, BrandProps } from './Brand';
 
 export default {
@@ -22,7 +21,7 @@ Position.args = {
 
 export const Avatar = Template.bind({});
 Avatar.args = {
-  avatarUrl: AvatarPerson,
+  avatarUrl: '/assets/images/avatar-person.png',
 };
 
 export const AvatarAndPosition = Template.bind({});
