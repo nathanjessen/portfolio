@@ -8,7 +8,7 @@ import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from '../lib/getLatestRepos';
 // import CallToAction from '../components/CallToAction';
 import HomeHero from '../components/HomeHero';
-import DefaultLayout from '../components/Layouts/DefaultLayout';
+import { DefaultLayout } from '../components/Layouts/DefaultLayout';
 import ProjectCard from '../components/ProjectCard';
 import RepoCard from '../components/RepoCard';
 // import ServiceItem from '../components/ServiceItem';

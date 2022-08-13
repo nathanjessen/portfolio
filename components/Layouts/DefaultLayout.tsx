@@ -13,7 +13,7 @@ export interface MetaProps {
   date?: any;
 }
 
-const DefaultLayout = ({
+export const DefaultLayout = ({
   children,
   ...customMeta
 }: PropsWithChildren<MetaProps>) => {
@@ -78,5 +78,3 @@ const DefaultLayout = ({
     </>
   );
 };
-
-export default DefaultLayout;

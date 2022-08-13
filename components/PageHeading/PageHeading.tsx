@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Container from '../Layouts/Container';
+import { Container } from '../Layouts/Container';
 
 export const PageHeading = ({ children }: PropsWithChildren) => {
   return (

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Container from '../Layouts/Container';
+import { Container } from '../Layouts/Container';
 
 export interface BasicGridProps<Item> {
   title: string;

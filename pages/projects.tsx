@@ -1,7 +1,7 @@
 import { NextPage } from 'next/types';
 import { useMemo } from 'react';
 import BasicGrid from '../components/BasicGrid';
-import DefaultLayout from '../components/Layouts/DefaultLayout';
+import { DefaultLayout } from '../components/Layouts/DefaultLayout';
 import PageHeading from '../components/PageHeading';
 import ProjectCard from '../components/ProjectCard';
 import { ProjectCardBasic } from '../components/ProjectCard/ProjectCardBasic';

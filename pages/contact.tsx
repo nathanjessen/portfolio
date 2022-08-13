@@ -1,7 +1,7 @@
 import { NextPage } from 'next/types';
 import Contact from '../components/Contact';
-import Container from '../components/Layouts/Container';
-import DefaultLayout from '../components/Layouts/DefaultLayout';
+import { Container } from '../components/Layouts/Container';
+import { DefaultLayout } from '../components/Layouts/DefaultLayout';
 import PageHeading from '../components/PageHeading';
 
 const ContactPage: NextPage = () => {
