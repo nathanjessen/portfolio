@@ -1,11 +1,11 @@
 import { Service } from '../../constants/services';
 
 export interface ServiceItemProps {
-  service: Service;
+  item: Service;
 }
 
 export const ServiceItem = ({
-  service: { title, description },
+  item: { title, description },
 }: ServiceItemProps) => {
   return (
     <div>
