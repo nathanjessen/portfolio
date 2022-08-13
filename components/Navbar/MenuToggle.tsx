@@ -1,8 +1,8 @@
-export interface MobileMenuToggleProps {
-  onToggle: () => void;
+export interface MenuToggleProps {
+  onToggle?: () => void;
 }
 
-export const MobileMenuToggle = ({ onToggle }: MobileMenuToggleProps) => {
+export const MenuToggle = ({ onToggle }: MenuToggleProps) => {
   return (
     <label className='btn btn-ghost btn-circle swap swap-rotate'>
       {/* this hidden checkbox controls the state */}

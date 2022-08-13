@@ -3,8 +3,8 @@ import User from '../../constants/User';
 import Brand from '../Brand';
 import SocialNav from '../SocialNav';
 import { MainMenu } from './MainMenu';
+import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
-import { MobileMenuToggle } from './MobileMenuToggle';
 
 export const Navbar = () => {
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -27,7 +27,7 @@ export const Navbar = () => {
         </div>
 
         <div className='flex sm:hidden'>
-          <MobileMenuToggle onToggle={toggleMenu} />
+          <MenuToggle onToggle={toggleMenu} />
         </div>
       </div>
 
