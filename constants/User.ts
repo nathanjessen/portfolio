@@ -13,7 +13,7 @@ export interface UserProps {
 
 const User: UserProps = {
   name: 'Nathan Jessen',
-  position: 'Senior Frontend Developer',
+  position: 'Senior Software Engineer',
   username: 'N10N',
   avatarUrl: '/assets/images/avatar-person.png',
   githubUsername: 'nathanjessen',
