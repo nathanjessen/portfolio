@@ -16,14 +16,14 @@ export const HomeHero = () => {
           Nathan Jessen
         </h2>
         <p className='text-4xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2 mb-8'>
-          Frontend Developer
+          Software Engineer
           <br />
           Based in Austin
         </p>
         <ul className='text-neutral-content space-y-2 text-xl'>
           <li>React + TypeScript Applications</li>
           <li>Storybook Component Libraries</li>
-          <li>WCAG 2.1 Level AA Compliance</li>
+          <li>WCAG Accessibility Compliance</li>
         </ul>
         <div className='flex items-start gap-8 mt-8'>
           <div className='flex'>
@@ -33,15 +33,6 @@ export const HomeHero = () => {
             </h3>
             <p className='whitespace-nowrap text-4xl font-extrabold order-first pr-3 text-white'>
               10+
-            </p>
-          </div>
-          <div className='flex'>
-            <h3 className='leading-snug'>
-              Hours of <br />
-              Availability
-            </h3>
-            <p className='whitespace-nowrap text-4xl font-extrabold order-first pr-3 text-white'>
-              40
             </p>
           </div>
         </div>
