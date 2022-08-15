@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useId } from 'react';
 
 export interface ContactFormProps {
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
@@ -9,45 +9,49 @@ export const ContactForm = ({
   onSubmit,
   disabled = false,
 }: ContactFormProps) => {
+  const NameId = useId();
+  const EmailId = useId();
+  const MessageId = useId();
+
   return (
     <form className='form space-y-2' onSubmit={onSubmit}>
       <div className='form-control w-full'>
-        <label htmlFor='name' className='label cursor-pointer'>
+        <label htmlFor={NameId} className='label cursor-pointer'>
           <span className='label-text'>Name</span>
         </label>
         <input
           type='text'
           className='input input-bordered w-full'
-          name='name'
-          id='name'
+          name={NameId}
+          id={NameId}
           required
           disabled={disabled}
         />
       </div>
 
       <div className='form-control w-full'>
-        <label htmlFor='email' className='label cursor-pointer'>
+        <label htmlFor={EmailId} className='label cursor-pointer'>
           <span className='label-text'>Email</span>
         </label>
         <input
           type='email'
           className='input input-bordered w-full'
-          name='email'
-          id='email'
+          name={EmailId}
+          id={EmailId}
           required
           disabled={disabled}
         />
       </div>
 
       <div className='form-control w-full'>
-        <label htmlFor='message' className='label cursor-pointer'>
+        <label htmlFor={MessageId} className='label cursor-pointer'>
           <span className='label-text'>Message</span>
         </label>
         <textarea
           rows={3}
           className='textarea textarea-bordered w-full'
-          name='message'
-          id='message'
+          name={MessageId}
+          id={MessageId}
           required
           disabled={disabled}></textarea>
       </div>
