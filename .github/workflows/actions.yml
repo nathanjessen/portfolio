@@ -12,4 +12,4 @@ jobs:
           npm install
       - name: Run ESLint on changed files
         run: |
-          git diff --name-only HEAD^ | grep 'src/.*\.(ts|tsx|js|jsx)$' | xargs npx eslint
+          git diff --name-only HEAD@{1} HEAD | grep 'src/.*\.(ts|tsx|js|jsx)$' | xargs npx eslint
