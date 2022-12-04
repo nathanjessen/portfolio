@@ -7,7 +7,7 @@ import PageHeading from '../components/PageHeading';
 const AboutPage: NextPage = () => {
   return (
     <DefaultLayout title='About Me | Nathan Jessen'>
-      <PageHeading>About Me Test</PageHeading>
+      <PageHeading>About Me</PageHeading>
 
       <Container>
         <AboutMe />
