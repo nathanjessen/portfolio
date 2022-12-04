@@ -5,9 +5,12 @@ import { DefaultLayout } from '../components/Layouts/DefaultLayout';
 import PageHeading from '../components/PageHeading';
 
 const AboutPage: NextPage = () => {
+  const sample = 'filename';
+  sample = 'tester';
   return (
     <DefaultLayout title='About Me | Nathan Jessen'>
-      <PageHeading>About Me</PageHeading>
+      <PageHeading>About Me
+      </PageHeading>
 
       <Container>
         <AboutMe />
