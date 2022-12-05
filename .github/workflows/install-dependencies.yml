@@ -1,0 +1,27 @@
+name: Install dependencies
+on: workflow_dispatch
+jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Check for a cache hit
+        id: check-for-cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.check-for-cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Save dependencies to cache
+        if: steps.check-for-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/package-lock.json') }}
