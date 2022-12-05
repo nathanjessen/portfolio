@@ -17,4 +17,4 @@ jobs:
           echo "${{ steps.changed.outputs.files }}"
       - name: Run ESLint on changed files
         run: |
-          npx eslint --config .eslintrc '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
+          npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
