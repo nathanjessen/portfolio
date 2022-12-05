@@ -14,6 +14,11 @@ jobs:
         id: changed
       - name: Print changed files
         run: echo "${{ steps.changed.outputs.files }}"
+      - name: Install dependencies
+        if: ${{ steps.changed.outputs.files }} | contains('*.{tsx,ts,js,jsx}')
+        uses: ./install-dependencies.yml
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run ESLint on changed files
         run: |
           npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
