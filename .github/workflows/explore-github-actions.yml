@@ -1,0 +1,17 @@
+Explore-GitHub-Actions:
+  name: Explore GitHub
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: Identify changed files
+      run: git diff --name-only --diff-filter=AM --relative HEAD
+      id: changed
+    - name: Print changed files
+      run: echo "${{ steps.changed.outputs.files }}"
+    - name: Install dependencies
+      if: ${{ steps.changed.outputs.files }} | contains('*.{tsx,ts,js,jsx}')
+      run: npm install
+    - name: Run ESLint on changed files
+      run: |
+        npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
