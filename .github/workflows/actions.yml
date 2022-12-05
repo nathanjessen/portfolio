@@ -11,7 +11,7 @@ jobs:
         run: |
           git diff --name-only --diff-filter=AM -- '*.{ts,tsx,js,jsx}' HEAD
         id: changed
-    - name: Print changed files
-      run: |
-        echo "Changed files:"
-        echo "${{ steps.changed.outputs.files }}"
+      - name: Print changed files
+        run: |
+          echo "Changed files:"
+          echo "${{ steps.changed.outputs.files }}"
