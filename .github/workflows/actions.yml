@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Identify changed files
         run: git diff --name-only --diff-filter=AM --relative HEAD
         id: changed
