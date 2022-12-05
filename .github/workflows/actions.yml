@@ -14,7 +14,7 @@ jobs:
         run: echo "${{ steps.changed.outputs.files }}"
       - name: Install dependencies
         if: ${{ steps.changed.outputs.files }} | contains('*.{tsx,ts,js,jsx}')
-        run: npm ci
+        run: npm install
       - name: Run ESLint on changed files
         run: |
           npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
