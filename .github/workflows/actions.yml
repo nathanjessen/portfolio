@@ -12,11 +12,3 @@ jobs:
         id: changed
         outputs:
           changedFiles: ${{ steps.changed.outputs.files }}
-      - name: Print changed files
-        run: echo "${{ steps.changed.outputs.changedFiles }}"
-      - name: Install dependencies
-        if: steps.changed.outputs.changedFiles | contains('*.{tsx,ts,js,jsx}')
-        run: npm ci
-      - name: Run ESLint on changed files
-        run: |
-          npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.changedFiles }}
