@@ -8,16 +8,15 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Identify changed files
-        run: |
-          git diff --name-only --diff-filter=AM HEAD
+        run: git diff --name-only --diff-filter=AM --relative HEAD
         id: changed
+        outputs:
+          changedFiles: ${{ steps.changed.outputs.files }}
       - name: Print changed files
-        run: |
-          echo "Changed files:"
-          echo "${{ steps.changed.outputs.files }}"
+        run: echo "${{ steps.changed.outputs.changedFiles }}"
       - name: Install dependencies
-        if: "steps.changed.outputs.files \| contains('*.{tsx,ts,js,jsx}')"
+        if: steps.changed.outputs.changedFiles | contains('*.{tsx,ts,js,jsx}')
         run: npm ci
       - name: Run ESLint on changed files
         run: |
-          npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
+          npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.changedFiles }}
