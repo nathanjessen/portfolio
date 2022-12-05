@@ -9,7 +9,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Identify changed files
         run: |
-          git ls-files -m --full-name | grep '.*\.(ts|tsx|js|jsx)$' > changed-files.txt
-      - name: Run ESLint on changed files
-        run: |
-          cat changed-files.txt | xargs npx eslint
+          git diff --name-only --diff-filter=AM -- '*.{ts,tsx,js,jsx}' HEAD
+        id: changed
+    - name: Print changed files
+      run: |
+        echo "Changed files:"
+        echo "${{ steps.changed.outputs.files }}"
