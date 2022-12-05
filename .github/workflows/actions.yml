@@ -1,31 +1,24 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
-import:
-  - explore-github-actions.yml
+on: push
 
 jobs:
-  install-dependencies:
-    name: Install dependencies
+  run-my-workflow:
+    name: Run my workflow
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v2
-
-      - name: Check for a cache hit
-        id: check-for-cache
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/package-lock.json') }}
-
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Identify changed files
+        run: git diff --name-only --diff-filter=AM --relative HEAD
+        id: changed
+      - name: Print changed files
+        run: echo "${{ steps.changed.outputs.files }}"
       - name: Install dependencies
-        if: steps.check-for-cache.outputs.cache-hit != 'true'
-        run: npm ci
-
-      - name: Save dependencies to cache
-        if: steps.check-for-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v1
+        if: ${{ steps.changed.outputs.files }} | contains('*.{tsx,ts,js,jsx}')
+        uses: install-dependencies.yml
         with:
-          path: node_modules
-          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/package-lock.json') }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run ESLint on changed files
+        run: |
+          npx eslint '**/*.{tsx,ts,js,jsx}' ${{ steps.changed.outputs.files }}
