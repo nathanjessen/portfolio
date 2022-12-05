@@ -6,7 +6,7 @@ import PageHeading from '../components/PageHeading';
 
 const AboutPage: NextPage = () => {
   const sample = 'filename';
-  sample = 'testers';
+  sample = 'tester';
 
   return (
     <DefaultLayout title='About Me | Nathan Jessen'>
