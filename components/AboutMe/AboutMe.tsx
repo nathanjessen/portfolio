@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { socialLinks } from '../../constants/socialLinks';
 import User from '../../constants/User';
+import { socialLinks } from '../../constants/socialLinks';
 import TechList from '../TechList';
 
 export const AboutMe = () => {
@@ -18,8 +18,8 @@ export const AboutMe = () => {
             <p className='text-lg mt-4'>
               I&apos;d love to hear from you or answer any questions you may
               have. Reach out using the{' '}
-              <Link href='/contact'>
-                <a className='link link-primary font-bold'>Contact</a>
+              <Link href='/contact' className='link link-primary font-bold'>
+                Contact
               </Link>{' '}
               page.
             </p>
