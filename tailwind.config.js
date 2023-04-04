@@ -20,11 +20,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
-    require('daisyui'),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
     prefix: '',
     darkTheme: 'custom',

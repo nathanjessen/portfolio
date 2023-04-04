@@ -5,6 +5,7 @@ export interface ProjectCardProps {
   item: Project;
 }
 
+const css = { width: '100%', height: 'auto' };
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
     <div className='card bg-base-200 shadow-xl divide-y divide-base-100 w-full'>
@@ -14,9 +15,10 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
             <Image
               src={item.img}
               alt={item.title}
-              layout='responsive'
+              sizes='100vw'
               height={240}
               width={400}
+              style={css}
             />
           </div>
         </figure>

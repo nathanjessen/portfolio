@@ -18,10 +18,10 @@ const Custom404Page: NextPage = () => {
             Sorry, we couldn&apos;t find the page you&apos;re looking for.
           </p>
           <div className='mt-6'>
-            <Link href='/'>
-              <a className='link text-base font-medium text-primary hover:text-primary-focus'>
-                Go back home <span aria-hidden='true'>&rarr;</span>
-              </a>
+            <Link
+              href='/'
+              className='link text-base font-medium text-primary hover:text-primary-focus'>
+              Go back home <span aria-hidden='true'>&rarr;</span>
             </Link>
           </div>
         </div>
