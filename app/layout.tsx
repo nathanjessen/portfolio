@@ -25,7 +25,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Nathan Jessen - Senior Frontend Developer',
-    // description: '',
+    description:
+      'This is my portfolio as a Senior Frontend Developer based in Austin.',
     locale: 'en-US',
     url: 'https://nathanjessen.com',
     siteName: 'Nathan Jessen',
