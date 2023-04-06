@@ -1,13 +1,30 @@
-import { Head, Html, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { PropsWithChildren } from 'react';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import '../styles/globals.css';
+import { Providers } from './providers';
 
-export default function Document() {
+export const metadata = {
+  title: 'Nathan Jessen - Senior Frontend Developer',
+  description:
+    'This is my portfolio as a Senior Frontend Developer based in Austin.',
+};
+
+export default function Layout({ children }: PropsWithChildren) {
   return (
-    <Html lang='en-US'>
-      <Head />
+    <html lang='en-US' suppressHydrationWarning>
       <body className='h-screen flex flex-col'>
-        <Main />
-        <NextScript />
+        <Providers>
+          <Navbar />
+
+          <main className='flex-grow pt-24' aria-label='Content'>
+            {children}
+          </main>
+
+          <Footer />
+        </Providers>
+
         <Script
           id='google-analytics'
           strategy='afterInteractive'
@@ -27,6 +44,6 @@ export default function Document() {
           }}
         />
       </body>
-    </Html>
+    </html>
   );
 }

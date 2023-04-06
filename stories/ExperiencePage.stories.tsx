@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import ExperiencePage from '../pages/experience';
+import ExperiencePage from '../app/experience/page';
 
 export default {
   title: 'Pages/ExperiencePage',

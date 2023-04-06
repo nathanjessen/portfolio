@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import AboutPage from '../pages/about';
+import AboutPage from '../app/about/page';
 
 export default {
   title: 'Pages/AboutPage',

@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import Custom404Page from '../pages/404';
+import NotFoundPage from '../app/not-found';
 
 export default {
-  title: 'Pages/Custom404Page',
-  component: Custom404Page,
+  title: 'Pages/NotFoundPage',
+  component: NotFoundPage,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <Custom404Page {...args} />;
+const Template: Story = (args) => <NotFoundPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

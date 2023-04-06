@@ -1,11 +1,14 @@
 import { NextPage } from 'next/types';
 import { useMemo } from 'react';
-import BasicGrid from '../components/BasicGrid';
-import { DefaultLayout } from '../components/Layouts/DefaultLayout';
-import PageHeading from '../components/PageHeading';
-import ProjectCard from '../components/ProjectCard';
-import { ProjectCardBasic } from '../components/ProjectCard/ProjectCardBasic';
-import { projects } from '../constants/projects';
+import BasicGrid from '../../components/BasicGrid';
+import PageHeading from '../../components/PageHeading';
+import ProjectCard from '../../components/ProjectCard';
+import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
+import { projects } from '../../constants/projects';
+
+export const metadata = {
+  title: 'Projects | Nathan Jessen',
+};
 
 const ProjectsPage: NextPage = () => {
   const featuredItems = useMemo(
@@ -24,7 +27,7 @@ const ProjectsPage: NextPage = () => {
   );
 
   return (
-    <DefaultLayout title='Projects | Nathan Jessen'>
+    <>
       <PageHeading>Projects</PageHeading>
 
       <BasicGrid
@@ -42,7 +45,7 @@ const ProjectsPage: NextPage = () => {
         items={archivedItems}
         render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
       />
-    </DefaultLayout>
+    </>
   );
 };
 
