@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export const MainMenu = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <ul className='menu menu-horizontal'>
       <li
         className={`border-b-4 ${
-          router.asPath === '/about'
+          pathname === '/about'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
         }`}>
@@ -18,7 +18,7 @@ export const MainMenu = () => {
       </li>
       <li
         className={`border-b-4 ${
-          router.asPath === '/projects'
+          pathname === '/projects'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
         }`}>
@@ -28,7 +28,7 @@ export const MainMenu = () => {
       </li>
       <li
         className={`border-b-4 ${
-          router.asPath === '/experience'
+          pathname === '/experience'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
         }`}>
@@ -38,7 +38,7 @@ export const MainMenu = () => {
       </li>
       <li
         className={`border-b-4 ${
-          router.asPath === '/contact'
+          pathname === '/contact'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
         }`}>

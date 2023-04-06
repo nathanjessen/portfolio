@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import HomePage, { HomePageProps } from '../pages/index';
+// import HomePage from '../app/page';
 
 export default {
   title: 'Pages/HomePage',
-  component: HomePage,
+  // component: HomePage,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -16,7 +16,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<HomePageProps> = (args) => <HomePage {...args} />;
+// const Template: Story = (args) => <HomePage {...args} />;
+const Template: Story = (args) => <div {...args}>HomePage</div>;
 
 export const Default = Template.bind({});
 Default.args = {};

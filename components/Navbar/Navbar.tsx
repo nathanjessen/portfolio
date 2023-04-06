@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useState } from 'react';
 import User from '../../constants/User';
 import Brand from '../Brand';

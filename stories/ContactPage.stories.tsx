@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import ContactPage from '../pages/contact';
+import ContactPage from '../app/contact/page';
 
 export default {
   title: 'Pages/ContactPage',

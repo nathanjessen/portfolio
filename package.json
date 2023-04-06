@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
+    "encoding": "^0.1.13",
     "next": "13.2.4",
     "next-themes": "^0.2.1",
     "octokit": "^2.0.14",

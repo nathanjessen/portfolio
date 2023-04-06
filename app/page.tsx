@@ -1,33 +1,33 @@
-import { NextPage } from 'next/types';
-import { useMemo } from 'react';
-import { projects } from '../constants/projects';
+import { Metadata } from 'next/types';
 import User from '../constants/User';
+import { projects } from '../constants/projects';
 // import { services } from '../constants/services';
 import BasicGrid from '../components/BasicGrid';
 import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from '../lib/getLatestRepos';
 // import CallToAction from '../components/CallToAction';
 import HomeHero from '../components/HomeHero';
-import { DefaultLayout } from '../components/Layouts/DefaultLayout';
 import ProjectCard from '../components/ProjectCard';
 import RepoCard from '../components/RepoCard';
 // import ServiceItem from '../components/ServiceItem';
 import Testimonials from '../components/Testimonials';
 import { Repository } from '../constants/repo';
 
-export interface HomePageProps {
-  repositories: Repository[];
-}
-const HomePage: NextPage<HomePageProps> = ({ repositories }) => {
-  const featuredItems = useMemo(
-    () => projects.filter((project) => project.featured),
-    []
-  );
+export const metadata: Metadata = {
+  title: 'Nathan Jessen - Senior Frontend Developer',
+  description:
+    "I've been developing websites for 10+ years. Get in touch with me to know more.",
+};
+
+const HomePage = async () => {
+  const featuredItems = projects.filter((project) => project.featured);
+
+  const repositories: Repository[] = User.githubUsername
+    ? await getLatestRepos(User.githubUsername)
+    : [];
 
   return (
-    <DefaultLayout
-      title='Nathan Jessen - Senior Frontend Developer'
-      description='This is my portfolio as a Senior Frontend Developer based in Austin.'>
+    <>
       <HomeHero />
 
       <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
@@ -60,20 +60,8 @@ const HomePage: NextPage<HomePageProps> = ({ repositories }) => {
 
       <Testimonials testimonials={testimonials} />
       {/* <CallToAction /> */}
-    </DefaultLayout>
+    </>
   );
 };
 
 export default HomePage;
-
-export const getServerSideProps = async () => {
-  if (!User.githubUsername) return {};
-
-  const repositories = await getLatestRepos(User.githubUsername);
-
-  return {
-    props: {
-      repositories,
-    },
-  };
-};

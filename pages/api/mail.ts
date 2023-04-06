@@ -1,3 +1,4 @@
+// https://beta.nextjs.org/docs/routing/route-handlers
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import mail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';

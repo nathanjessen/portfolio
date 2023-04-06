@@ -1,3 +1,5 @@
+'use client';
+
 import { FormEvent, useState } from 'react';
 import User from '../../constants/User';
 import ContactForm from '../ContactForm';
