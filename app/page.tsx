@@ -1,3 +1,4 @@
+import { Metadata } from 'next/types';
 import User from '../constants/User';
 import { projects } from '../constants/projects';
 // import { services } from '../constants/services';
@@ -11,6 +12,12 @@ import RepoCard from '../components/RepoCard';
 // import ServiceItem from '../components/ServiceItem';
 import Testimonials from '../components/Testimonials';
 import { Repository } from '../constants/repo';
+
+export const metadata: Metadata = {
+  title: 'Nathan Jessen - Senior Frontend Developer',
+  description:
+    "I've been developing websites for 10+ years. Get in touch with me to know more.",
+};
 
 const HomePage = async () => {
   const featuredItems = projects.filter((project) => project.featured);

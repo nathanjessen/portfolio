@@ -1,9 +1,9 @@
-import { NextPage } from 'next/types';
+import { Metadata, NextPage } from 'next/types';
 import Experience from '../../components/Experience';
 import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Experience',
 };
 

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { NextPage } from 'next/types';
+import { Metadata, NextPage } from 'next/types';
 import { Container } from '../components/Layouts/Container';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '404 Not Found',
 };
 

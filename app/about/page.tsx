@@ -1,9 +1,9 @@
-import { NextPage } from 'next/types';
+import { Metadata, NextPage } from 'next/types';
 import AboutMe from '../../components/AboutMe';
 import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'About Me',
 };
 

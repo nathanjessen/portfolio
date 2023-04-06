@@ -1,4 +1,4 @@
-import { NextPage } from 'next/types';
+import { Metadata, NextPage } from 'next/types';
 import { useMemo } from 'react';
 import BasicGrid from '../../components/BasicGrid';
 import PageHeading from '../../components/PageHeading';
@@ -6,7 +6,7 @@ import ProjectCard from '../../components/ProjectCard';
 import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
 import { projects } from '../../constants/projects';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Projects',
 };
 

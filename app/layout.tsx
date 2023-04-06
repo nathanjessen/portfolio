@@ -1,11 +1,12 @@
 import Script from 'next/script';
+import { Metadata } from 'next/types';
 import { PropsWithChildren } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import '../styles/globals.css';
 import { Providers } from './providers';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'Nathan Jessen - Senior Frontend Developer',
     template: '%s | Nathan Jessen',
