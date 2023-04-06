@@ -7,7 +7,7 @@ import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic'
 import { projects } from '../../constants/projects';
 
 export const metadata = {
-  title: 'Projects | Nathan Jessen',
+  title: 'Projects',
 };
 
 const ProjectsPage: NextPage = () => {

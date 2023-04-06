@@ -4,7 +4,7 @@ import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 
 export const metadata = {
-  title: 'Contact Me | Nathan Jessen',
+  title: 'Contact Me',
 };
 
 const ContactPage: NextPage = () => {

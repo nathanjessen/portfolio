@@ -3,7 +3,7 @@ import { NextPage } from 'next/types';
 import { Container } from '../components/Layouts/Container';
 
 export const metadata = {
-  title: '404 Not Found | Nathan Jessen',
+  title: '404 Not Found',
 };
 
 const NotFound: NextPage = () => {

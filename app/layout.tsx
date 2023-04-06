@@ -6,7 +6,10 @@ import '../styles/globals.css';
 import { Providers } from './providers';
 
 export const metadata = {
-  title: 'Nathan Jessen - Senior Frontend Developer',
+  title: {
+    default: 'Nathan Jessen - Senior Frontend Developer',
+    template: '%s | Nathan Jessen',
+  },
   description:
     'This is my portfolio as a Senior Frontend Developer based in Austin.',
 };
