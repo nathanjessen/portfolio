@@ -13,11 +13,40 @@ export const metadata: Metadata = {
   },
   description:
     'This is my portfolio as a Senior Frontend Developer based in Austin.',
+  robots: 'follow, index',
+  themeColor: '#357edd',
+  icons: [
+    {
+      rel: 'icon',
+      url: '/favicon.ico',
+      type: 'image/x-icon',
+    },
+  ],
+  openGraph: {
+    type: 'website',
+    title: 'Nathan Jessen - Senior Frontend Developer',
+    // description: '',
+    locale: 'en-US',
+    url: 'https://nathanjessen.com',
+    siteName: 'Nathan Jessen',
+    images: [
+      {
+        url: '/assets/images/avatar-person.png',
+        width: 128,
+        height: 128,
+        alt: 'Nathan Jessen',
+      },
+    ],
+  },
 };
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang='en-US' suppressHydrationWarning>
+      <head>
+        <link type='text/plain' rel='author' href='humans.txt' />
+        <link rel='preconnect' href='//www.google-analytics.com' />
+      </head>
       <body className='h-screen flex flex-col'>
         <Providers>
           <Navbar />
