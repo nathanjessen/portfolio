@@ -20,7 +20,7 @@ export const Contact = () => {
       formData[field.name] = field.value;
     });
 
-    await fetch('/api/mail', {
+    await fetch('/contact/send', {
       method: 'POST',
       body: JSON.stringify(formData),
     })
