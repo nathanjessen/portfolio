@@ -1,16 +1,16 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { ExperienceCard, ExperienceCardProps } from './ExperienceCard';
 
 export default {
   title: 'Components/ExperienceCard',
   component: ExperienceCard,
-  decorators: [(Story) => <div className='m-10 max-w-xl'>{Story()}</div>],
+  decorators: [(StoryFn) => <div className='m-10 max-w-xl'>{StoryFn()}</div>],
   args: {
     title: 'Experience Card',
   },
 } as Meta;
 
-const Template: Story<ExperienceCardProps> = (args) => (
+const Template: StoryFn<ExperienceCardProps> = (args) => (
   <ExperienceCard {...args} />
 );
 

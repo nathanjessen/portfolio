@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { MenuToggle } from './MenuToggle';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: MenuToggle,
 } as Meta;
 
-const Template: Story = (args) => <MenuToggle {...args} />;
+const Template: StoryFn = (args) => <MenuToggle {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

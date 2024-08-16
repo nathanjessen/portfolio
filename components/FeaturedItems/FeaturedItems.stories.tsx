@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { FeaturedItems, FeaturedItemsProps } from './FeaturedItems';
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<FeaturedItemsProps<string>> = (args) => (
+const Template: StoryFn<FeaturedItemsProps<string>> = (args) => (
   <FeaturedItems {...args} />
 );
 

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Brand, BrandProps } from './Brand';
 
 export default {
@@ -9,7 +9,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BrandProps> = (args) => <Brand {...args} />;
+const Template: StoryFn<BrandProps> = (args) => <Brand {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

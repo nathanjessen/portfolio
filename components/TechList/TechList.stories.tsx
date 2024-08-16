@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { TechList } from './TechList';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: TechList,
 } as Meta;
 
-const Template: Story = (args) => <TechList {...args} />;
+const Template: StoryFn = (args) => <TechList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

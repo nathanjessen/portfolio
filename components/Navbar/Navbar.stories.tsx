@@ -1,19 +1,19 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Navbar } from './Navbar';
 
 export default {
   title: 'Components/Navbar',
   component: Navbar,
   decorators: [
-    (Story) => (
+    (StoryFn) => (
       <div className='translate-x-0 h-32'>
-        <Story />
+        <StoryFn />
       </div>
     ),
   ],
 } as Meta;
 
-const Template: Story = (args) => <Navbar {...args} />;
+const Template: StoryFn = (args) => <Navbar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

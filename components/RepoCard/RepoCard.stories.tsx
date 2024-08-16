@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { repo } from '../../constants/repo';
 import { RepoCard, RepoCardProps } from './RepoCard';
 
@@ -10,7 +10,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<RepoCardProps> = (args) => <RepoCard {...args} />;
+const Template: StoryFn<RepoCardProps> = (args) => <RepoCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

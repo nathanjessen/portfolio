@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { projects } from '../../constants/projects';
 import { ProjectCardBasic, ProjectCardBasicProps } from './ProjectCardBasic';
 
@@ -10,7 +10,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ProjectCardBasicProps> = (args) => (
+const Template: StoryFn<ProjectCardBasicProps> = (args) => (
   <ProjectCardBasic {...args} />
 );
 
