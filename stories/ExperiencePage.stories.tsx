@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import ExperiencePage from '../app/experience/page';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <ExperiencePage {...args} />;
+const Template: StoryFn = (args) => <ExperiencePage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { services } from '../../constants/services';
 import { ServiceItem, ServiceItemProps } from './ServiceItem';
 
@@ -10,7 +10,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ServiceItemProps> = (args) => <ServiceItem {...args} />;
+const Template: StoryFn<ServiceItemProps> = (args) => <ServiceItem {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

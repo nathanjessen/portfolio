@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Contact } from './Contact';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: Contact,
 } as Meta;
 
-const Template: Story = (args) => <Contact {...args} />;
+const Template: StoryFn = (args) => <Contact {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

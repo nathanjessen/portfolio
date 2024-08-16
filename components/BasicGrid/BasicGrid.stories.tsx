@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import ProjectCard from '../ProjectCard';
 import * as ProjectCardStories from '../ProjectCard/ProjectCard.stories';
 import { ProjectCardBasic } from '../ProjectCard/ProjectCardBasic';
@@ -19,7 +19,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<BasicGridProps<any>> = (args) => <BasicGrid {...args} />;
+const Template: StoryFn<BasicGridProps<any>> = (args) => (
+  <BasicGrid {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

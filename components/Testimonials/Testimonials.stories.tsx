@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { testimonials } from '../../constants/testimonials';
 import { Testimonials, TestimonialsProps } from './Testimonials';
 
@@ -10,7 +10,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<TestimonialsProps> = (args) => <Testimonials {...args} />;
+const Template: StoryFn<TestimonialsProps> = (args) => (
+  <Testimonials {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

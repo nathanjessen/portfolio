@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import ContactPage from '../app/contact/page';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <ContactPage {...args} />;
+const Template: StoryFn = (args) => <ContactPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

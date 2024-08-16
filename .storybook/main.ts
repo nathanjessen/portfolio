@@ -2,7 +2,6 @@ module.exports = {
   stories: [
     '../components/**/*.stories.@(js|jsx|ts|tsx)',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../components/**/*.stories.mdx',
   ],
   addons: [
     '@storybook/addon-links',
@@ -15,7 +14,9 @@ module.exports = {
   },
   staticDirs: ['../public'],
   docs: {
-    autodocs: true,
     defaultName: 'Docs',
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 };

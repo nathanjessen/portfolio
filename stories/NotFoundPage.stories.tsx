@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import NotFoundPage from '../app/not-found';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <NotFoundPage {...args} />;
+const Template: StoryFn = (args) => <NotFoundPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

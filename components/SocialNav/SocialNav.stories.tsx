@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { SocialNav } from './SocialNav';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   component: SocialNav,
 } as Meta;
 
-const Template: Story = (args) => <SocialNav {...args} />;
+const Template: StoryFn = (args) => <SocialNav {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
