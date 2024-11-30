@@ -1,8 +1,14 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+'use client';
 
-export const MobileMenu = () => {
-  const router = useRouter();
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+interface MobileMenuProps {
+  onClose: () => void;
+}
+
+export const MobileMenu = ({ onClose }: MobileMenuProps) => {
+  const pathname = usePathname();
 
   return (
     <nav>
@@ -10,7 +16,8 @@ export const MobileMenu = () => {
         <li>
           <Link
             href='/about'
-            className={router.asPath === '/about' ? 'active' : ''}
+            className={pathname === '/about' ? 'active' : ''}
+            onClick={onClose}
           >
             About
           </Link>
@@ -18,7 +25,8 @@ export const MobileMenu = () => {
         <li>
           <Link
             href='/projects'
-            className={router.asPath === '/projects' ? 'active' : ''}
+            className={pathname === '/projects' ? 'active' : ''}
+            onClick={onClose}
           >
             Projects
           </Link>
@@ -26,7 +34,8 @@ export const MobileMenu = () => {
         <li>
           <Link
             href='/experience'
-            className={router.asPath === '/experience' ? 'active' : ''}
+            className={pathname === '/experience' ? 'active' : ''}
+            onClick={onClose}
           >
             Experience
           </Link>
@@ -34,7 +43,8 @@ export const MobileMenu = () => {
         <li>
           <Link
             href='/contact'
-            className={router.asPath === '/contact' ? 'active' : ''}
+            className={pathname === '/contact' ? 'active' : ''}
+            onClick={onClose}
           >
             Contact
           </Link>
