@@ -33,7 +33,7 @@ export const RepoCard = ({
       <div className='relative space-y-4'>
         <div className='flex items-start justify-between'>
           <motion.h4
-            className='font-bold text-xl text-base-content group-hover:text-primary transition-colors duration-300'
+            className='font-semibold text-lg text-base-content group-hover:text-primary transition-colors duration-300'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 + index * 0.1 }}
@@ -49,41 +49,18 @@ export const RepoCard = ({
           >
             {language && (
               <span className='flex items-center space-x-1 text-sm'>
-                <span className='w-2 h-2 rounded-full bg-primary'></span>
+                <span className='relative flex h-2 w-2'>
+                  <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75'></span>
+                  <span className='relative inline-flex rounded-full h-2 w-2 bg-primary'></span>
+                </span>
                 <span>{language}</span>
-              </span>
-            )}
-
-            {stargazers_count > 0 && (
-              <span className='flex items-center space-x-1 text-sm'>
-                <svg
-                  className='w-4 h-4'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z'></path>
-                </svg>
-                <span>{stargazers_count}</span>
-              </span>
-            )}
-
-            {forks_count > 0 && (
-              <span className='flex items-center space-x-1 text-sm'>
-                <svg
-                  className='w-4 h-4'
-                  fill='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path d='M8.75 19.25a3.25 3.25 0 116.5 0 3.25 3.25 0 01-6.5 0zM12 2.75a3.25 3.25 0 110 6.5 3.25 3.25 0 010-6.5zM8.75 4.75a3.25 3.25 0 110 6.5 3.25 3.25 0 010-6.5z'></path>
-                </svg>
-                <span>{forks_count}</span>
               </span>
             )}
           </motion.div>
         </div>
 
         <motion.p
-          className='text-base-content/80'
+          className='text-base text-base-content/80 leading-relaxed line-clamp-2'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 + index * 0.1 }}
@@ -91,31 +68,72 @@ export const RepoCard = ({
           {description}
         </motion.p>
 
-        <motion.a
-          href={clone_url}
-          target='_blank'
-          rel='noreferrer'
-          className='inline-flex items-center space-x-2 text-primary font-semibold hover:text-primary-focus transition-colors duration-300'
+        <motion.div
+          className='flex items-center space-x-4 text-sm text-base-content/60'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 + index * 0.1 }}
-          whileHover={{ x: 10 }}
         >
-          <span>View Repository</span>
-          <svg
-            className='w-5 h-5'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
+          <a
+            href={clone_url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center space-x-1 hover:text-primary transition-colors duration-300'
           >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M13 7l5 5m0 0l-5 5m5-5H6'
-            />
-          </svg>
-        </motion.a>
+            <svg
+              className='h-4 w-4'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+              />
+            </svg>
+            <span>View Repository</span>
+          </a>
+
+          <div className='flex items-center space-x-2'>
+            <span className='flex items-center space-x-1'>
+              <svg
+                className='h-4 w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'
+                />
+              </svg>
+              <span>{stargazers_count}</span>
+            </span>
+            <span className='flex items-center space-x-1'>
+              <svg
+                className='h-4 w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z'
+                />
+              </svg>
+              <span>{forks_count}</span>
+            </span>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );

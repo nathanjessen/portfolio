@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Project } from '../../constants/projects';
 
 export interface ProjectCardProps {
   item: Project;
@@ -28,7 +29,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
 
       <div className='flex flex-col gap-4 p-6 flex-grow'>
         <div>
-          <h3 className='text-xl font-semibold text-base-content group-hover:text-primary transition-colors duration-300'>
+          <h3 className='text-lg font-semibold text-base-content group-hover:text-primary transition-colors duration-300'>
             {item.title}
           </h3>
           {item.client && (
@@ -38,13 +39,15 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
           )}
         </div>
 
-        <p className='text-base-content/80 line-clamp-2'>{item.desc}</p>
+        <p className='text-base text-base-content/80 leading-relaxed line-clamp-2'>
+          {item.desc}
+        </p>
 
         <div className='flex gap-2 flex-wrap mt-auto'>
           {item.tech.map((tech, idx) => (
             <span
               key={idx}
-              className='inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors duration-300'
+              className='inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary/90 transition-colors duration-300'
               title={`Built with ${tech}`}
             >
               {tech}

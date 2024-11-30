@@ -34,16 +34,16 @@ export const ServiceItem = ({
         transition={{ delay: index * 0.1 + 0.2 }}
         className='flex flex-col flex-grow'
       >
-        <motion.p
-          className='text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'
+        <motion.h3
+          className='text-xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'
           whileHover={{ x: 4 }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
           {title}
-        </motion.p>
+        </motion.h3>
 
         <motion.p
-          className='mt-4 text-lg text-base-content/80 leading-relaxed flex-grow'
+          className='mt-4 text-base text-base-content/80 leading-relaxed flex-grow'
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

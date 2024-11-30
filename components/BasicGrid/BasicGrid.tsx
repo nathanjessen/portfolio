@@ -7,7 +7,7 @@ import { Project } from '../../constants/projects';
 
 export interface BasicGridProps<Item> {
   title: string;
-  subtitle?: string;
+  subtitle: string;
   divider?: boolean;
   items: Item[];
   render: (item: Item, index: number) => ReactNode;
@@ -74,20 +74,34 @@ export const BasicGrid = <Item extends unknown>({
     <Container>
       <div className='flex flex-col md:flex-row md:items-end justify-between gap-8'>
         <div className='space-y-4'>
-          <div className='space-y-2'>
-            <h2 className='text-xl md:text-2xl font-medium text-primary'>
+          <motion.div
+            className='text-center mb-12'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className='text-lg font-medium text-primary/90 mb-2'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               {title}
-            </h2>
-            {subtitle && (
-              <p className='text-3xl md:text-4xl font-bold gradient-text'>
-                {subtitle}
-              </p>
+            </motion.h2>
+            <motion.h3
+              className='text-3xl md:text-4xl font-bold tracking-tight'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              {subtitle}
+            </motion.h3>
+            {divider && (
+              <div className='w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full' />
             )}
-          </div>
-
-          {divider && (
-            <div className='h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent' />
-          )}
+          </motion.div>
         </div>
 
         {showFilters && filteredTech.length > 0 && (

@@ -15,7 +15,7 @@ export const HomeHero = () => {
       <div className='container-custom relative flex flex-col md:flex-row items-center justify-between gap-12 pt-32 pb-20'>
         {/* Text content */}
         <motion.div
-          className='flex-1 space-y-6'
+          className='flex-1 space-y-8'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -25,20 +25,20 @@ export const HomeHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className='text-xl md:text-2xl font-medium text-primary'>
+            <h2 className='text-lg md:text-xl font-medium text-primary/90'>
               {User.name}
             </h2>
-            <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-4'>
+            <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold mt-3 mb-4 tracking-tight'>
               <span className='gradient-text'>Software Engineer</span>
               <br />
-              <span className='text-base-content'>
+              <span className='text-base-content/90'>
                 Based in {User.location}
               </span>
             </h1>
           </motion.div>
 
           <motion.ul
-            className='space-y-3 text-lg md:text-xl text-base-content/80'
+            className='space-y-4 text-base md:text-lg text-base-content/80'
             aria-label='Areas of expertise'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

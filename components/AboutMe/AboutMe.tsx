@@ -173,10 +173,9 @@ export const AboutMe = () => {
               transition={{ delay: 0.4 }}
             >
               <motion.p
-                className='text-xl leading-relaxed text-base-content/80'
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
                 With over a decade of frontend development experience, I
@@ -187,24 +186,22 @@ export const AboutMe = () => {
                 prioritize both user experience and developer efficiency.
               </motion.p>
               <motion.p
-                className='text-xl leading-relaxed text-base-content/80'
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                I&apos;m passionate about creating intuitive interfaces that
-                work for everyone. My approach combines technical excellence
-                with a deep commitment to accessibility and performance. I
-                leverage tools like Storybook for component documentation and
-                testing, ensuring that every piece of UI is thoroughly
-                documented and tested.
+                I&apos;m passionate about creating intuitive user interfaces and
+                believe in the power of well-structured code to drive business
+                success. My approach combines technical expertise with a deep
+                understanding of user needs, ensuring that every project
+                delivers both functional excellence and an exceptional user
+                experience.
               </motion.p>
               <motion.p
-                className='text-xl leading-relaxed text-base-content/80'
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
                 Currently, I&apos;m seeking a role where I can drive frontend
