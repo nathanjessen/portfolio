@@ -9,6 +9,8 @@ const categories = {
   styling: 'Styling & Design',
   tools: 'Development Tools',
   testing: 'Testing & Quality',
+  build: 'Build Tools',
+  performance: 'Performance & Optimization'
 };
 
 const proficiencyColor = {
@@ -16,6 +18,8 @@ const proficiencyColor = {
   advanced: 'from-secondary to-secondary/80',
   intermediate: 'from-accent to-accent/80',
 };
+
+const categoryOrder = ['frontend', 'styling', 'tools', 'testing', 'build', 'performance'];
 
 export const TechList = () => {
   const groupedTech = techlist.reduce((acc, tech) => {
@@ -27,21 +31,21 @@ export const TechList = () => {
   }, {} as Record<string, typeof techlist>);
 
   return (
-    <div className='space-y-8'>
-      {Object.entries(groupedTech).map(([category, items]) => (
+    <div className='space-y-12'>
+      {categoryOrder.map((category, categoryIndex) => (
         <motion.div
           key={category}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className='space-y-4'
+          transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+          className='space-y-6'
         >
-          <h3 className='text-xl font-semibold text-base-content/90'>
+          <h3 className='text-2xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
             {categories[category as keyof typeof categories]}
           </h3>
           <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
-            {items.map((tech, index) => (
+            {groupedTech[category]?.map((tech, index) => (
               <motion.div
                 key={tech.name}
                 initial={{ opacity: 0, scale: 0.8 }}
