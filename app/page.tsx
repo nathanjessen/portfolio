@@ -46,11 +46,7 @@ const HomePage = async () => {
       </div>
 
       <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
-        <BasicGrid
-          title='GitHub'
-          subtitle='Latest Code'
-          items={repositories}
-        >
+        <BasicGrid title='GitHub' subtitle='Latest Code' items={repositories}>
           {repositories.map((item, idx) => (
             <RepoCard key={idx} item={item} index={idx} />
           ))}
@@ -58,11 +54,7 @@ const HomePage = async () => {
       </div>
 
       <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
-        <BasicGrid
-          title='Services'
-          subtitle='Work Offered'
-          items={services}
-        >
+        <BasicGrid title='Services' subtitle='Work Offered' items={services}>
           {services.map((item, idx) => (
             <ServiceItem key={idx} item={item} index={idx} />
           ))}

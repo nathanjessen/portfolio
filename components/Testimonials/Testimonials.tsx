@@ -18,15 +18,17 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   return (
     <section className='relative py-12 md:py-16 lg:py-20 overflow-hidden'>
       {/* Background gradient */}
       <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 -z-10' />
-      
-      <motion.div 
+
+      <motion.div
         className='relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8'
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -48,7 +50,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
             "
           </div>
 
-          <motion.div 
+          <motion.div
             className='max-w-4xl mx-auto text-center'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +62,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
             </p>
           </motion.div>
 
-          <motion.footer 
+          <motion.footer
             className='mt-10'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -107,7 +109,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                     />
                   </motion.div>
                 )}
-                
+
                 <div className='text-center flex flex-col sm:flex-row items-center'>
                   <motion.div
                     initial={{ opacity: 0 }}

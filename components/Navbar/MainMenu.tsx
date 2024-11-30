@@ -8,7 +8,11 @@ export const MainMenu = () => {
   const pathname = usePathname();
 
   return (
-    <nav className='hidden sm:block' role='navigation' aria-label='Main navigation'>
+    <nav
+      className='hidden sm:block'
+      role='navigation'
+      aria-label='Main navigation'
+    >
       <ul className='flex items-center space-x-8' role='menubar'>
         {[
           { href: '/about', label: 'About' },

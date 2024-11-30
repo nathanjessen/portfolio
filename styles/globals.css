@@ -6,7 +6,7 @@
   html {
     @apply scroll-smooth antialiased;
   }
-  
+
   body {
     @apply min-h-screen bg-base-100 text-base-content transition-colors duration-300;
   }
@@ -65,7 +65,7 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .gradient-bg {
     @apply bg-gradient-to-br from-base-100 via-base-200 to-base-300;
   }

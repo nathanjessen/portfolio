@@ -9,7 +9,7 @@ export const Experience = () => {
     <section className='mt-12 max-w-xl mx-auto relative'>
       {/* Background gradient effect */}
       <div className='absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent rounded-lg -z-10' />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

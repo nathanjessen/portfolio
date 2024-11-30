@@ -10,7 +10,7 @@ const categories = {
   tools: 'Development Tools',
   testing: 'Testing & Quality',
   build: 'Build Tools',
-  performance: 'Performance & Optimization'
+  performance: 'Performance & Optimization',
 };
 
 const proficiencyColor = {
@@ -19,16 +19,26 @@ const proficiencyColor = {
   intermediate: 'from-accent to-accent/80',
 };
 
-const categoryOrder = ['frontend', 'styling', 'tools', 'testing', 'build', 'performance'];
+const categoryOrder = [
+  'frontend',
+  'styling',
+  'tools',
+  'testing',
+  'build',
+  'performance',
+];
 
 export const TechList = () => {
-  const groupedTech = techlist.reduce((acc, tech) => {
-    if (!acc[tech.category]) {
-      acc[tech.category] = [];
-    }
-    acc[tech.category].push(tech);
-    return acc;
-  }, {} as Record<string, typeof techlist>);
+  const groupedTech = techlist.reduce(
+    (acc, tech) => {
+      if (!acc[tech.category]) {
+        acc[tech.category] = [];
+      }
+      acc[tech.category].push(tech);
+      return acc;
+    },
+    {} as Record<string, typeof techlist>
+  );
 
   return (
     <div className='space-y-12'>
@@ -63,7 +73,9 @@ export const TechList = () => {
                     width={48}
                     height={48}
                   />
-                  <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-br ${proficiencyColor[tech.proficiency]}`} />
+                  <div
+                    className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-br ${proficiencyColor[tech.proficiency]}`}
+                  />
                 </div>
                 <p className='mt-3 text-sm font-medium text-center text-base-content/80 group-hover:text-base-content'>
                   {tech.name}

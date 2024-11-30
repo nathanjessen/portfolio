@@ -23,33 +23,33 @@ module.exports = {
         'gradient-y': {
           '0%, 100%': {
             'background-size': '400% 400%',
-            'background-position': 'center top'
+            'background-position': 'center top',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'center center'
-          }
+            'background-position': 'center center',
+          },
         },
         'gradient-x': {
           '0%, 100%': {
             'background-size': '200% 200%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
+            'background-position': 'right center',
+          },
         },
         'gradient-xy': {
           '0%, 100%': {
             'background-size': '400% 400%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        }
+            'background-position': 'right center',
+          },
+        },
       },
     },
   },
@@ -110,8 +110,8 @@ module.exports = {
           neutral: colors.slate[200],
           'neutral-focus': colors.slate[300],
           'neutral-content': colors.slate[900],
-        }
-      }
+        },
+      },
     ],
   },
-}
+};

@@ -19,17 +19,17 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Update visibility based on scroll direction
       if (currentScrollY > 100) {
         setVisible(prevScrollY > currentScrollY);
       } else {
         setVisible(true);
       }
-      
+
       // Update scrolled state for glass effect
       setScrolled(currentScrollY > 20);
-      
+
       setPrevScrollY(currentScrollY);
     };
 
@@ -48,20 +48,22 @@ export const Navbar = () => {
   return (
     <>
       <SkipLink />
-      <motion.header 
+      <motion.header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled ? 'glass-effect' : 'bg-transparent'
         }`}
         initial={{ y: 0 }}
-        animate={{ 
+        animate={{
           y: visible ? 0 : -100,
-          boxShadow: scrolled ? '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' : 'none'
+          boxShadow: scrolled
+            ? '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+            : 'none',
         }}
         transition={{ duration: 0.3 }}
         role='banner'
       >
         {/* Animated border line */}
-        <motion.div 
+        <motion.div
           className='absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent'
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: scrolled ? 1 : 0, opacity: scrolled ? 1 : 0 }}
@@ -102,7 +104,7 @@ export const Navbar = () => {
             <SocialNav />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className='flex sm:hidden'
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

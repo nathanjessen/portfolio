@@ -46,12 +46,12 @@ export const ExperienceCard = ({
         </a>
       )}
       {company && !companyLink && (
-        <span className='inline-block mt-2 text-base-content/80'>{company}</span>
+        <span className='inline-block mt-2 text-base-content/80'>
+          {company}
+        </span>
       )}
       {desc && (
-        <p className='mt-4 text-base-content/80 leading-relaxed'>
-          {desc}
-        </p>
+        <p className='mt-4 text-base-content/80 leading-relaxed'>{desc}</p>
       )}
     </motion.div>
   );
