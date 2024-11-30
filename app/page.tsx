@@ -38,8 +38,11 @@ const HomePage = async () => {
           subtitle='Featured Projects'
           divider={false}
           items={featuredItems.slice(0, 3)}
-          render={(item, idx) => <ProjectCard item={item} key={idx} />}
-        />
+        >
+          {featuredItems.slice(0, 3).map((item, idx) => (
+            <ProjectCard key={idx} item={item} />
+          ))}
+        </BasicGrid>
       </div>
 
       <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
@@ -47,8 +50,11 @@ const HomePage = async () => {
           title='GitHub'
           subtitle='Latest Code'
           items={repositories}
-          render={(item, idx) => <RepoCard item={item} key={idx} />}
-        />
+        >
+          {repositories.map((item, idx) => (
+            <RepoCard key={idx} item={item} />
+          ))}
+        </BasicGrid>
       </div>
 
       {/* <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>

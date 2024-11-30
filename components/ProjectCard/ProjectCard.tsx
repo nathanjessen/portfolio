@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Project } from '../../constants/projects';
 
 export interface ProjectCardProps {
@@ -6,124 +9,120 @@ export interface ProjectCardProps {
 }
 
 const css = { width: '100%', height: 'auto' };
+
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
-    <div className='card bg-base-200 shadow-xl divide-y divide-base-100 w-full'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className='group relative overflow-hidden rounded-xl bg-base-200 card-hover'
+    >
       {item.img && (
-        <figure className='bg-base-300 rounded-t-md'>
-          <div className='block h-60 w-full overflow-hidden'>
-            <Image
-              src={item.img}
-              alt={`Screenshot of ${item.title} project`}
-              sizes='100vw'
-              height={240}
-              width={400}
-              style={css}
-              className='object-cover transition-transform hover:scale-105'
-            />
-          </div>
-        </figure>
+        <div className='relative aspect-video overflow-hidden bg-base-300'>
+          <Image
+            src={item.img}
+            alt={`Screenshot of ${item.title} project`}
+            sizes='(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+            height={240}
+            width={400}
+            style={css}
+            className='object-cover transition-all duration-500 group-hover:scale-110'
+          />
+          <div className='absolute inset-0 bg-gradient-to-t from-base-200/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
+        </div>
       )}
 
-      <div className='card-body'>
-        <h5 className='card-title text-base-content'>{item.title}</h5>
-        <p className='text-base-content/80'>{item.desc}</p>
+      <div className='flex flex-col gap-4 p-6'>
+        <div>
+          <h3 className='text-xl font-semibold text-base-content group-hover:text-primary transition-colors duration-300'>
+            {item.title}
+          </h3>
+          {item.client && (
+            <p className='text-base-content/60 text-sm mt-1'>
+              Client: {item.client}
+            </p>
+          )}
+        </div>
 
-        <div className='flex gap-2 mt-2 flex-wrap'>
+        <p className='text-base-content/80 line-clamp-2'>{item.desc}</p>
+
+        <div className='flex gap-2 flex-wrap mt-auto'>
           {item.tech.map((tech, idx) => (
             <span
-              className='badge badge-primary text-base-100'
               key={idx}
+              className='inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors duration-300'
               title={`Built with ${tech}`}
             >
               {tech}
             </span>
           ))}
         </div>
-      </div>
-      <div className='flex divide-x divide-base-100'>
-        {item.source != null && (
-          <div className='flex-1'>
+
+        <div className='flex gap-2 pt-4 mt-auto border-t border-base-content/10'>
+          {item.source && (
             <a
               href={item.source}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-tr-none rounded-bl-none rounded-tl-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
-              aria-label={`View source code for ${item.title}`}
+              className='flex-1'
             >
-              <svg
-                className='w-4 h-4 text-white'
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-                aria-hidden='true'
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className='btn btn-sm btn-primary btn-outline w-full gap-2'
               >
-                <path
-                  fillRule='evenodd'
-                  d='M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              <span className='ml-3'>Code</span>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  className='w-4 h-4'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .26.18.57.69.48C19.13 20.17 22 16.42 22 12c0-5.52-4.48-10-10-10z'
+                  />
+                </svg>
+                Source
+              </motion.button>
             </a>
-          </div>
-        )}
-
-        {item.docs != null && (
-          <div className='flex-1'>
-            <a
-              href={item.docs}
-              target='_blank'
-              rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
-              aria-label={`View documentation for ${item.title}`}
-            >
-              <svg
-                className='w-4 h-4 text-white'
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-                aria-hidden='true'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z'
-                  clipRule='evenodd'
-                />
-                <path d='M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z' />
-              </svg>
-              <span className='ml-3'>Docs</span>
-            </a>
-          </div>
-        )}
-
-        {item.url != null && (
-          <div className='flex-1'>
+          )}
+          {item.url && (
             <a
               href={item.url}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-bl-none rounded-br-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
-              aria-label={`Visit website for ${item.title}`}
+              className='flex-1'
             >
-              <svg
-                className='w-4 h-4 text-white'
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-                aria-hidden='true'
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className='btn btn-sm btn-primary w-full gap-2'
               >
-                <path
-                  fillRule='evenodd'
-                  d='M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              <span className='ml-3'>Website</span>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  className='w-4 h-4'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+                  />
+                </svg>
+                Live Demo
+              </motion.button>
             </a>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
