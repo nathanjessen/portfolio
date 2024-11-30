@@ -72,7 +72,14 @@ export default function Layout({ children }: PropsWithChildren) {
       <body className='h-screen flex flex-col'>
         <Providers>
           <Navbar />
-          <main className='flex-1 pt-24'>{children}</main>
+          <main
+            id='main-content'
+            className='flex-1 pt-24'
+            role='main'
+            tabIndex={-1}
+          >
+            {children}
+          </main>
           <Footer />
         </Providers>
         <Script

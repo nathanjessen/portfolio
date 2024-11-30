@@ -15,23 +15,26 @@ export const HomeHero = () => {
         <h2 className='text-xl md:text-2xl font-medium text-primary'>
           Nathan Jessen
         </h2>
-        <p className='text-4xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2 mb-8'>
+        <p className='text-4xl leading-tight tracking-wider uppercase text-base-content font-extrabold mt-2 mb-8'>
           Software Engineer
           <br />
           Based in Austin
         </p>
-        <ul className='text-neutral-content space-y-2 text-xl'>
+        <ul
+          className='text-base-content/80 space-y-2 text-xl'
+          aria-label='Areas of expertise'
+        >
           <li>React + TypeScript Applications</li>
           <li>Storybook Component Libraries</li>
           <li>WCAG Accessibility Compliance</li>
         </ul>
         <div className='flex items-start gap-8 mt-8'>
           <div className='flex'>
-            <h3 className='leading-snug'>
+            <h3 className='leading-snug text-base-content/80'>
               Years of <br />
               Experience
             </h3>
-            <p className='whitespace-nowrap text-4xl font-extrabold order-first pr-3 text-white'>
+            <p className='whitespace-nowrap text-4xl font-extrabold order-first pr-3 text-base-content'>
               10+
             </p>
           </div>
@@ -40,13 +43,15 @@ export const HomeHero = () => {
           <a
             href={User.resumeUrl}
             download={User.resumeName}
-            className='btn btn-outline btn-primary btn-wide gap-1'
+            className='btn btn-outline btn-primary btn-wide gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100'
+            aria-label='Download my resume'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-5 w-5'
               viewBox='0 0 20 20'
               fill='currentColor'
+              aria-hidden='true'
             >
               <path
                 fillRule='evenodd'

@@ -10,27 +10,32 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
     <div className='card bg-base-200 shadow-xl divide-y divide-base-100 w-full'>
       {item.img && (
-        <figure className='bg-gray-100 rounded-t-md'>
+        <figure className='bg-base-300 rounded-t-md'>
           <div className='block h-60 w-full overflow-hidden'>
             <Image
               src={item.img}
-              alt={item.title}
+              alt={`Screenshot of ${item.title} project`}
               sizes='100vw'
               height={240}
               width={400}
               style={css}
+              className='object-cover transition-transform hover:scale-105'
             />
           </div>
         </figure>
       )}
 
       <div className='card-body'>
-        <h5 className='card-title text-white'>{item.title}</h5>
-        <p>{item.desc}</p>
+        <h5 className='card-title text-base-content'>{item.title}</h5>
+        <p className='text-base-content/80'>{item.desc}</p>
 
         <div className='flex gap-2 mt-2 flex-wrap'>
           {item.tech.map((tech, idx) => (
-            <span className='badge badge-primary' key={idx}>
+            <span
+              className='badge badge-primary text-base-100'
+              key={idx}
+              title={`Built with ${tech}`}
+            >
               {tech}
             </span>
           ))}
@@ -43,13 +48,15 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.source}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-tr-none rounded-bl-none rounded-tl-none'
+              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-tr-none rounded-bl-none rounded-tl-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              aria-label={`View source code for ${item.title}`}
             >
               <svg
-                className='w-4 h-4 text-base-content'
+                className='w-4 h-4 text-white'
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
+                aria-hidden='true'
               >
                 <path
                   fillRule='evenodd'
@@ -68,13 +75,15 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.docs}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-none'
+              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              aria-label={`View documentation for ${item.title}`}
             >
               <svg
-                className='w-4 h-4 text-base-content'
+                className='w-4 h-4 text-white'
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
+                aria-hidden='true'
               >
                 <path
                   fillRule='evenodd'
@@ -94,13 +103,15 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.url}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-tl-none rounded-tr-none rounded-br-none'
+              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-bl-none rounded-br-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              aria-label={`Visit website for ${item.title}`}
             >
               <svg
-                className='w-4 h-4 text-base-content'
+                className='w-4 h-4 text-white'
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
                 fill='currentColor'
+                aria-hidden='true'
               >
                 <path
                   fillRule='evenodd'
