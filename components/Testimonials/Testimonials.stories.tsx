@@ -13,7 +13,7 @@ const meta = {
     ),
   ],
   args: {
-    items: testimonials,
+    testimonials: testimonials,
   },
 } satisfies Meta<typeof Testimonials>;
 
@@ -22,4 +22,10 @@ type Story = StoryObj<typeof Testimonials>;
 
 export const Default: Story = {
   args: {},
+};
+
+export const SingleTestimonial: Story = {
+  args: {
+    testimonials: [testimonials[0]],
+  },
 };

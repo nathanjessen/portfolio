@@ -12,7 +12,7 @@ const meta = {
     ),
   ],
   args: {
-    title: 'Page Title',
+    children: 'Page Title',
   },
 } satisfies Meta<typeof PageHeading>;
 
@@ -20,11 +20,14 @@ export default meta;
 type Story = StoryObj<typeof PageHeading>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    children: 'Page Title',
+  },
 };
 
-export const WithSubtitle: Story = {
+export const WithLongText: Story = {
   args: {
-    subtitle: 'This is a subtitle',
+    children:
+      'This is a very long page title that might wrap to multiple lines',
   },
 };
