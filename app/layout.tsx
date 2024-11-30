@@ -69,7 +69,7 @@ export default function Layout({ children }: PropsWithChildren) {
         <link type='text/plain' rel='author' href='humans.txt' />
         <link rel='preconnect' href='//www.google-analytics.com' />
       </head>
-      <body className='h-screen flex flex-col'>
+      <body className='min-h-screen flex flex-col bg-base-100'>
         <Providers>
           <Navbar />
           <main
