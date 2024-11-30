@@ -17,7 +17,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className='group relative overflow-hidden rounded-xl bg-base-200 card-hover'
+      className='group relative overflow-hidden rounded-xl bg-base-200 card-hover h-full flex flex-col'
     >
       {item.img && (
         <div className='relative aspect-video overflow-hidden bg-base-300'>
@@ -34,7 +34,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
         </div>
       )}
 
-      <div className='flex flex-col gap-4 p-6'>
+      <div className='flex flex-col gap-4 p-6 flex-grow'>
         <div>
           <h3 className='text-xl font-semibold text-base-content group-hover:text-primary transition-colors duration-300'>
             {item.title}

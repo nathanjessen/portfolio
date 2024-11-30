@@ -34,6 +34,7 @@ const ProjectsPage = () => {
         divider={false}
         items={featuredItems}
         render={(item, idx) => <ProjectCard item={item} key={idx} />}
+        showFilters={false}
       />
 
       <BasicGrid
@@ -42,6 +43,7 @@ const ProjectsPage = () => {
         divider={false}
         items={archivedItems}
         render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
+        showFilters={true}
       />
     </>
   );
