@@ -7,69 +7,41 @@ export const MainMenu = () => {
   const pathname = usePathname();
 
   return (
-    <ul className='menu menu-horizontal' role='menubar'>
-      <li
-        role='none'
-        className={`border-b-4 ${
-          pathname === '/about'
-            ? 'border-primary !rounded-none'
-            : 'border-transparent hover:border-primary-focus'
-        }`}
-      >
+    <ul className='flex items-center space-x-8' role='menubar'>
+      <li role='none'>
         <Link
           href='/about'
-          className='px-8 !rounded-none'
+          className={`nav-link ${pathname === '/about' ? 'text-primary' : ''}`}
           role='menuitem'
           aria-current={pathname === '/about' ? 'page' : undefined}
         >
           About
         </Link>
       </li>
-      <li
-        role='none'
-        className={`border-b-4 ${
-          pathname === '/projects'
-            ? 'border-primary !rounded-none'
-            : 'border-transparent hover:border-primary-focus'
-        }`}
-      >
+      <li role='none'>
         <Link
           href='/projects'
-          className='px-8 !rounded-none'
+          className={`nav-link ${pathname === '/projects' ? 'text-primary' : ''}`}
           role='menuitem'
           aria-current={pathname === '/projects' ? 'page' : undefined}
         >
           Projects
         </Link>
       </li>
-      <li
-        role='none'
-        className={`border-b-4 ${
-          pathname === '/experience'
-            ? 'border-primary !rounded-none'
-            : 'border-transparent hover:border-primary-focus'
-        }`}
-      >
+      <li role='none'>
         <Link
           href='/experience'
-          className='px-8 !rounded-none'
+          className={`nav-link ${pathname === '/experience' ? 'text-primary' : ''}`}
           role='menuitem'
           aria-current={pathname === '/experience' ? 'page' : undefined}
         >
           Experience
         </Link>
       </li>
-      <li
-        role='none'
-        className={`border-b-4 ${
-          pathname === '/contact'
-            ? 'border-primary !rounded-none'
-            : 'border-transparent hover:border-primary-focus'
-        }`}
-      >
+      <li role='none'>
         <Link
           href='/contact'
-          className='px-8 !rounded-none'
+          className={`nav-link ${pathname === '/contact' ? 'text-primary' : ''}`}
           role='menuitem'
           aria-current={pathname === '/contact' ? 'page' : undefined}
         >

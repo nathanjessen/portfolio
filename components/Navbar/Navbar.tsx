@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import User from '../../constants/User';
 import Brand from '../Brand';
 import SocialNav from '../SocialNav';
@@ -11,6 +11,16 @@ import { SkipLink } from '../common/SkipLink';
 
 export const Navbar = () => {
   const [expanded, setExpanded] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = useCallback(() => {
     setExpanded((prevExpanded) => !prevExpanded);
@@ -23,8 +33,13 @@ export const Navbar = () => {
   return (
     <>
       <SkipLink />
-      <header className='bg-base-100 fixed top-0 w-full z-50' role='banner'>
-        <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
+      <header 
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
+        }`} 
+        role='banner'
+      >
+        <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-4 max-w-7xl mx-auto'>
           <Brand name={User.name} position={User.position} />
 
           <nav
@@ -36,7 +51,7 @@ export const Navbar = () => {
           </nav>
 
           <div
-            className='hidden md:flex'
+            className='hidden md:flex items-center space-x-4'
             role='navigation'
             aria-label='Social links'
           >
@@ -52,9 +67,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {expanded && (
-          <MobileMenu onClose={closeMenu} aria-label='Mobile navigation' />
-        )}
+        <MobileMenu expanded={expanded} onClose={closeMenu} />
       </header>
     </>
   );
