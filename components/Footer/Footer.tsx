@@ -8,13 +8,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='relative bg-base-300 overflow-hidden mt-24' role='contentinfo'>
-      {/* Gradient overlay */}
-      <div className='absolute inset-0 bg-gradient-to-b from-transparent to-base-300' />
-
-      {/* Decorative grid */}
-      <div className='absolute inset-0 bg-[linear-gradient(to_right,theme(colors.base-content/5)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.base-content/5)_1px,transparent_1px)] bg-[size:4rem_4rem]' />
-
+    <footer className='relative mt-24 border-t border-base-content/10' role='contentinfo'>
       <motion.div 
         className='relative max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:px-8'
         initial={{ opacity: 0, y: 20 }}
@@ -112,7 +106,7 @@ export const Footer = () => {
         </div>
 
         <motion.div 
-          className='mt-16 pt-8 border-t border-base-content/10'
+          className='mt-16 pt-8'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
