@@ -5,18 +5,33 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    title: 'Responsive Web Development',
+    title: 'Modern Frontend Architecture',
     description:
-      'Using a strong understanding of HTML, CSS, browser compatibility, and accessibility, I develop websites using a mobile first strategy to ensure they look beautiful and perform flawlessly for everyone on all devices.',
+      'Design and implement scalable frontend architectures using React, Next.js, and TypeScript. Expertise in micro-frontends, component composition, and modular design patterns to build maintainable and performant applications.',
   },
   {
-    title: 'Performance Optimization',
+    title: 'Performance & Core Web Vitals',
     description:
-      'Analyzing network utilization and page performance allows me to pinpoint bottlenecks in page load, performance, and jankiness. The findings of an analysis can be used as a roadmap to reduce bounce rates and drop-offs, improve user experience, and increase conversion rates.',
+      'Optimize web applications for peak performance using advanced techniques like code splitting, lazy loading, and modern build tools. Achieve excellent Core Web Vitals scores through strategic optimizations of LCP, FID, and CLS metrics.',
   },
   {
-    title: 'Speaking',
+    title: 'Design System Development',
     description:
-      'Attending and speaking at developer groups and conferences allows us all to share our knowledge and master our craft. Given my passion for CSS, I attempt to use every opportunity to share my love for the language.',
+      'Create and maintain comprehensive design systems and component libraries using modern tools like Storybook, styled-components, or Tailwind CSS. Focus on accessibility, reusability, and consistent user experiences across products.',
+  },
+  {
+    title: 'Frontend Consulting & Audits',
+    description:
+      'Provide technical leadership and consultation on frontend architecture, best practices, and technology choices. Conduct thorough codebase audits to identify opportunities for improvement in performance, maintainability, and developer experience.',
+  },
+  {
+    title: 'Application Modernization',
+    description:
+      'Transform legacy applications into modern, responsive web apps using the latest frontend technologies. Implement progressive enhancement strategies and modern UI/UX patterns while maintaining business functionality.',
+  },
+  {
+    title: 'Technical Mentorship',
+    description:
+      'Guide development teams in frontend best practices, code reviews, and architectural decisions. Share expertise in React, TypeScript, testing strategies, and modern development workflows to elevate team capabilities.',
   },
 ];
