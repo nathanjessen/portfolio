@@ -6,22 +6,20 @@ import { ExperienceCard } from './ExperienceCard';
 
 export const Experience = () => {
   return (
-    <section className='mt-12 max-w-xl mx-auto relative'>
-      {/* Background gradient effect */}
+    <section className='mt-12 max-w-2xl mx-auto relative'>
+      {/* Background effects */}
       <div className='absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent rounded-lg -z-10' />
+      <div className='absolute inset-0 bg-grid-primary/[0.02] bg-[size:20px_20px] rounded-lg -z-10' />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className='relative'>
         {experience.map((exp, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.2 }}
+            transition={{ duration: 0.4 }}
+            className='relative'
           >
             <ExperienceCard
               title={exp.title}
@@ -32,21 +30,18 @@ export const Experience = () => {
             />
             {idx === experience.length - 1 ? null : (
               <div className='divider-container flex flex-col items-center -mt-2'>
-                <div className='w-4 h-4 bg-primary rounded-full relative z-10'>
-                  <div className='w-4 h-4 bg-primary rounded-full relative z-10 animate-ping' />
+                <div className='relative'>
+                  <div className='w-3 h-3 bg-base-100 border-2 border-primary rounded-full relative z-10' />
+                  <div className='absolute inset-0 bg-primary/20 rounded-full blur-sm' />
                 </div>
-                <motion.div
-                  className='w-1 h-24 bg-base-300 rounded-full -mt-2'
-                  initial={{ height: 0 }}
-                  whileInView={{ height: 96 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.2 + 0.3, duration: 0.5 }}
-                />
+                <div className='w-[2px] h-16 bg-gradient-to-b from-primary/40 to-transparent' />
               </div>
             )}
           </motion.div>
         ))}
-      </motion.div>
+        {/* Timeline line */}
+        <div className='absolute left-1/2 top-0 bottom-0 w-[1px] bg-base-300/20 -translate-x-1/2 -z-[1]' />
+      </div>
     </section>
   );
 };
