@@ -1,12 +1,8 @@
-import { Metadata, NextPage } from 'next/types';
-import { useMemo } from 'react';
-import BasicGrid from '../../components/BasicGrid';
-import PageHeading from '../../components/PageHeading';
-import ProjectCard from '../../components/ProjectCard';
-import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
-import { projects } from '../../constants/projects';
+import { Metadata } from 'next';
 import { Container } from '../../components/Layouts/Container';
-import { User } from '../../constants/User';
+import PageHeading from '../../components/PageHeading';
+import Projects from '../../components/Projects';
+import User from '../../constants/User';
 
 export const metadata: Metadata = {
   title: 'Projects',
@@ -17,41 +13,13 @@ export const metadata: Metadata = {
   },
 };
 
-const ProjectsPage: NextPage = () => {
-  const featuredItems = useMemo(
-    () =>
-      projects.filter(
-        (project) => project.featured && project.published !== false
-      ),
-    []
-  );
-  const archivedItems = useMemo(
-    () =>
-      projects.filter(
-        (project) => project.archived && project.published !== false
-      ),
-    []
-  );
-
+const ProjectsPage = () => {
   return (
     <>
       <PageHeading>Projects</PageHeading>
-
-      <BasicGrid
-        title='Projects'
-        subtitle='Recent Work'
-        divider={false}
-        items={featuredItems}
-        render={(item, idx) => <ProjectCard item={item} key={idx} />}
-      />
-
-      <BasicGrid
-        title='Archive'
-        subtitle='Past Projects'
-        divider={false}
-        items={archivedItems}
-        render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
-      />
+      <Container>
+        <Projects />
+      </Container>
     </>
   );
 };
