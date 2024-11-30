@@ -29,17 +29,17 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
 
       <div className='flex flex-col gap-4 p-6 flex-grow'>
         <div>
-          <h3 className='text-lg font-semibold text-base-content group-hover:text-primary transition-colors duration-300'>
+          <h3 className='text-lg font-medium text-base-content group-hover:text-primary transition-colors duration-300'>
             {item.title}
           </h3>
           {item.client && (
-            <p className='text-base-content/60 text-sm mt-1'>
+            <p className='text-sm text-base-content/60 mt-1'>
               Client: {item.client}
             </p>
           )}
         </div>
 
-        <p className='text-base text-base-content/80 leading-relaxed line-clamp-2'>
+        <p className='text-base text-base-content/80 leading-relaxed line-clamp-3'>
           {item.desc}
         </p>
 
@@ -104,7 +104,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
                     d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
                   />
                 </svg>
-                Live Demo
+                Visit
               </button>
             </a>
           )}

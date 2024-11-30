@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import BasicGrid from '../../components/BasicGrid';
 import { Container } from '../../components/Layouts/Container';
@@ -28,23 +29,57 @@ const ProjectsPage = () => {
     <>
       <PageHeading>Projects</PageHeading>
 
-      <BasicGrid
-        title='Projects'
-        subtitle='Recent Work'
-        divider={false}
-        items={featuredItems}
-        render={(item, idx) => <ProjectCard item={item} key={idx} />}
-        showFilters={false}
-      />
+      <Container>
+        <div className='space-y-16 py-8'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BasicGrid
+              title='Featured Work'
+              subtitle='A collection of my recent projects and experiments'
+              divider={false}
+              items={featuredItems}
+              render={(item, idx) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <ProjectCard item={item} key={idx} />
+                </motion.div>
+              )}
+              showFilters={false}
+            />
+          </motion.div>
 
-      <BasicGrid
-        title='Archive'
-        subtitle='Past Projects'
-        divider={false}
-        items={archivedItems}
-        render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
-        showFilters={true}
-      />
+          {archivedItems.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <BasicGrid
+                title='Archive'
+                subtitle='Past projects and experiments'
+                divider={false}
+                items={archivedItems}
+                render={(item, idx) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <ProjectCardBasic item={item} key={idx} />
+                  </motion.div>
+                )}
+                showFilters={true}
+              />
+            </motion.div>
+          )}
+        </div>
+      </Container>
     </>
   );
 };
