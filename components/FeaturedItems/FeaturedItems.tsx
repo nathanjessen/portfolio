@@ -22,7 +22,7 @@ export const FeaturedItems = <Item extends unknown>({
         <h2 className='text-xl md:text-2xl font-medium text-primary'>
           {title}
         </h2>
-        <p className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2'>
+        <p className='text-3xl leading-tight tracking-wider uppercase text-base-content font-extrabold mt-2'>
           {subtitle}
         </p>
         <ul className='mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>

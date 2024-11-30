@@ -7,6 +7,7 @@ import SocialNav from '../SocialNav';
 import { MainMenu } from './MainMenu';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
+import { SkipLink } from '../common/SkipLink';
 
 export const Navbar = () => {
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -20,24 +21,41 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className='bg-base-100 fixed top-0 w-full z-50'>
-      <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
-        <Brand name={User.name} position={User.position} />
+    <>
+      <SkipLink />
+      <header className='bg-base-100 fixed top-0 w-full z-50' role='banner'>
+        <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
+          <Brand name={User.name} position={User.position} />
 
-        <div className='hidden sm:block'>
-          <MainMenu />
+          <nav
+            className='hidden sm:block'
+            role='navigation'
+            aria-label='Main navigation'
+          >
+            <MainMenu />
+          </nav>
+
+          <div
+            className='hidden md:flex'
+            role='navigation'
+            aria-label='Social links'
+          >
+            <SocialNav />
+          </div>
+
+          <div className='flex sm:hidden'>
+            <MenuToggle
+              onToggle={toggleMenu}
+              aria-controls='mobile-menu'
+              aria-expanded={expanded}
+            />
+          </div>
         </div>
 
-        <div className='hidden md:flex'>
-          <SocialNav />
-        </div>
-
-        <div className='flex sm:hidden'>
-          <MenuToggle onToggle={toggleMenu} />
-        </div>
-      </div>
-
-      {expanded && <MobileMenu onClose={closeMenu} />}
-    </header>
+        {expanded && (
+          <MobileMenu onClose={closeMenu} aria-label='Mobile navigation' />
+        )}
+      </header>
+    </>
   );
 };

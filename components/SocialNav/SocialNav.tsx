@@ -2,19 +2,23 @@ import { socialLinks } from '../../constants/socialLinks';
 
 export const SocialNav = () => {
   return (
-    <ul className='inline-flex items-center space-x-4 md:order-2'>
+    <ul
+      className='inline-flex items-center space-x-4 md:order-2'
+      role='list'
+      aria-label='Social media links'
+    >
       {socialLinks.facebook && (
         <li>
-          {/* className="h-12 w-12 rounded-full hover:bg-secondary flex items-center justify-center cursor-pointer" */}
           <a
             href={socialLinks.facebook}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my Facebook profile'
           >
             <span className='sr-only'>Facebook</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 24 24'
@@ -34,11 +38,12 @@ export const SocialNav = () => {
             href={socialLinks.github}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my GitHub profile'
           >
             <span className='sr-only'>GitHub</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 24 24'
@@ -58,11 +63,12 @@ export const SocialNav = () => {
             href={socialLinks.twitter}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my Twitter profile'
           >
             <span className='sr-only'>Twitter</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 24 24'
@@ -81,11 +87,12 @@ export const SocialNav = () => {
             href={socialLinks.linkedin}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my LinkedIn profile'
           >
             <span className='sr-only'>LinkedIn</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 28 28'
@@ -104,11 +111,12 @@ export const SocialNav = () => {
             href={socialLinks.medium}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Read my articles on Medium'
           >
             <span className='sr-only'>Medium</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 26 26'
@@ -127,11 +135,12 @@ export const SocialNav = () => {
             href={socialLinks.instagram}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my Instagram profile'
           >
             <span className='sr-only'>Instagram</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 24 24'
@@ -151,11 +160,12 @@ export const SocialNav = () => {
             href={socialLinks.dribbble}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='Visit my Dribbble profile'
           >
             <span className='sr-only'>Dribbble</span>
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 24 24'
@@ -175,12 +185,12 @@ export const SocialNav = () => {
             href={socialLinks.codepen}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='View my CodePen profile'
           >
             <span className='sr-only'>CodePen</span>
-            {/* TODO: replace svg */}
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='none'
               viewBox='0 0 24 24'
@@ -202,12 +212,12 @@ export const SocialNav = () => {
             href={socialLinks.angellist}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'
+            className='text-base-content/70 hover:text-base-content focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-2 inline-flex items-center justify-center transition-colors'
+            aria-label='View my AngelList profile'
           >
             <span className='sr-only'>AngelList</span>
-            {/* TODO: replace svg */}
             <svg
-              className='h-6 w-6'
+              className='h-5 w-5'
               aria-hidden='true'
               fill='none'
               viewBox='0 0 24 24'
