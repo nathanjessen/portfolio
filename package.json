@@ -40,19 +40,19 @@
     "@storybook/nextjs": "^8.4.6",
     "@storybook/react": "^8.4.6",
     "@storybook/test": "^8.4.6",
-    "@tailwindcss/typography": "^0.5.14",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
-    "daisyui": "^2.52.0",
+    "daisyui": "^4.12.14",
     "eslint": "8.57.0",
     "eslint-config-next": "13",
     "eslint-plugin-storybook": "^0.11.1",
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.49",
     "storybook": "^8.4.6",
-    "tailwindcss": "^3.4.10",
+    "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
   }
 }
