@@ -1,63 +1,87 @@
 export interface TechItem {
   name: string;
   img: string;
+  category: 'frontend' | 'styling' | 'tools' | 'testing';
+  proficiency: 'expert' | 'advanced' | 'intermediate';
 }
 
 export const techlist: TechItem[] = [
   {
     name: 'React',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png',
+    img: '/images/tech/react.png',
+    category: 'frontend',
+    proficiency: 'expert'
   },
   {
     name: 'TypeScript',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
+    img: '/images/tech/typescript.png',
+    category: 'frontend',
+    proficiency: 'expert'
   },
   {
     name: 'Storybook',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/storybook/storybook.png',
+    img: '/images/tech/storybook.png',
+    category: 'tools',
+    proficiency: 'expert'
   },
   {
     name: 'Tailwind',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tailwind/tailwind.png',
+    img: '/images/tech/tailwind.png',
+    category: 'styling',
+    proficiency: 'expert'
   },
   {
     name: 'Styled Components',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/styled-components/styled-components.png',
+    img: '/images/tech/styled-components.png',
+    category: 'styling',
+    proficiency: 'advanced'
   },
   {
     name: 'Sass',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png',
+    img: '/images/tech/sass.png',
+    category: 'styling',
+    proficiency: 'expert'
   },
   {
     name: 'JavaScript',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png',
+    img: '/images/tech/javascript.png',
+    category: 'frontend',
+    proficiency: 'expert'
   },
   {
     name: 'HTML',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png',
+    img: '/images/tech/html.png',
+    category: 'frontend',
+    proficiency: 'expert'
   },
   {
     name: 'CSS',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png',
+    img: '/images/tech/css.png',
+    category: 'styling',
+    proficiency: 'expert'
   },
   {
     name: 'Git',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png',
+    img: '/images/tech/git.png',
+    category: 'tools',
+    proficiency: 'expert'
   },
   {
     name: 'VS Code',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png',
+    img: '/images/tech/vscode.png',
+    category: 'tools',
+    proficiency: 'expert'
   },
   {
-    name: 'Webpack',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/webpack/webpack.png',
+    name: 'Jest',
+    img: '/images/tech/jest.png',
+    category: 'testing',
+    proficiency: 'advanced'
   },
   {
-    name: 'Eslint',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/eslint/eslint.png',
-  },
-  {
-    name: 'MySQL',
-    img: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png',
-  },
+    name: 'Testing Library',
+    img: '/images/tech/testing-library.png',
+    category: 'testing',
+    proficiency: 'advanced'
+  }
 ];
