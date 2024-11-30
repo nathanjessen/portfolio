@@ -4,6 +4,7 @@ export interface UserProps {
   username?: string;
   avatarUrl?: string;
   githubUsername?: string;
+  github?: string;
   email?: string;
   phone?: string;
   location?: string;
@@ -17,6 +18,7 @@ const User: UserProps = {
   username: 'N10N',
   avatarUrl: '/assets/images/avatar-person.png',
   githubUsername: 'nathanjessen',
+  github: 'https://github.com/nathanjessen',
   email: 'nathan.jessen@gmail.com',
   phone: '+1 7023017036',
   location: 'Austin, TX',

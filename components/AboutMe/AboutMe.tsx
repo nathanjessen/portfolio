@@ -1,166 +1,218 @@
+'use client';
+
+import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import User from '../../constants/User';
 import { socialLinks } from '../../constants/socialLinks';
-import TechList from '../TechList';
+import TechList from '../TechList/TechList';
+
+const socialPlatforms = [
+  { name: 'Facebook', url: socialLinks.facebook },
+  { name: 'Twitter', url: socialLinks.twitter },
+  { name: 'GitHub', url: socialLinks.github },
+  { name: 'LinkedIn', url: socialLinks.linkedin },
+  { name: 'Instagram', url: socialLinks.instagram },
+].filter((platform) => platform.url);
 
 export const AboutMe = () => {
   return (
-    <section>
-      <p className='text-2xl md:text-4xl font-semibold px-8'>
-        I&apos;m a frontend developer who loves to build and document UI
-        components using tools like React and Storybook.
-      </p>
+    <section className='py-8'>
+      <div className='container-custom'>
+        <motion.h2
+          className='text-2xl md:text-3xl font-semibold mb-12 text-base-content/90 text-center md:text-left leading-relaxed'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          I craft modern, performant web experiences with a focus on design
+          systems and component-driven development.
+        </motion.h2>
 
-      <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
-        <div>
-          <div>
-            <h2 className='text-xl font-semibold'>Contact</h2>
-            <p className='text-lg mt-4'>
-              I&apos;d love to hear from you or answer any questions you may
-              have. Reach out using the{' '}
-              <Link href='/contact' className='link link-primary font-bold'>
-                Contact
-              </Link>{' '}
-              page.
-            </p>
-          </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16'>
+          {/* Left Column - Profile and Contact */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className='space-y-8'
+          >
+            {/* Profile Image */}
+            <motion.div
+              className='relative w-48 h-48 mx-auto md:mx-0'
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Image
+                src='/images/profile.svg'
+                alt='Profile'
+                width={192}
+                height={192}
+                className='relative rounded-full object-cover border-4 border-base-100 shadow-xl'
+                priority
+              />
+            </motion.div>
 
-          <div className='mt-8'>
-            <h2 className='text-xl font-semibold'>Job Opportunities</h2>
-            <p className='text-lg mt-4'>
-              I&apos;m actively interviewing for a new role. If I might be a
-              good fit,{' '}
-              {User.resumeUrl && (
-                <>
-                  check out my{' '}
+            {/* Contact Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className='space-y-4'
+            >
+              <h3 className='text-lg font-medium text-primary/90'>Contact</h3>
+              <p className='text-base text-base-content/80 leading-relaxed'>
+                I&apos;d love to hear from you or answer any questions you may
+                have. Reach out using the{' '}
+                <Link
+                  href='/contact'
+                  className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
+                >
+                  Contact
+                </Link>{' '}
+                page.
+              </p>
+            </motion.div>
+
+            {/* Job Opportunities Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className='space-y-4'
+            >
+              <h3 className='text-lg font-medium text-primary/90'>
+                Job Opportunities
+              </h3>
+              <p className='text-base text-base-content/80 leading-relaxed'>
+                I&apos;m actively interviewing for a new role. If I might be a
+                good fit,{' '}
+                {User.resumeUrl && (
+                  <>
+                    check out my{' '}
+                    <a
+                      href={User.resumeUrl}
+                      download={User.resumeName}
+                      className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
+                    >
+                      resume
+                    </a>{' '}
+                    or{' '}
+                  </>
+                )}
+                <Link
+                  href='/contact'
+                  className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
+                >
+                  get in touch
+                </Link>
+                .
+              </p>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className='space-y-4'
+            >
+              <h3 className='text-lg font-medium text-primary/90'>Connect</h3>
+              <div className='flex flex-wrap gap-3'>
+                {socialPlatforms.map(({ name, url }) => (
                   <a
-                    href={User.resumeUrl}
-                    download={User.resumeName}
+                    key={name}
+                    href={url}
                     target='_blank'
-                    rel='noreferrer'
-                    className='link link-primary font-bold'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary/90 hover:bg-primary/20 transition-colors duration-200'
                   >
-                    Resume
-                  </a>{' '}
-                  and{' '}
-                </>
-              )}
-              get in contact.
-            </p>
-          </div>
-
-          <div className='mt-8'>
-            <h2 className='text-xl font-semibold'>Social Links</h2>
-            <div className='mt-4 ml-4'>
-              {socialLinks.facebook && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.facebook}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      Facebook
-                    </p>
+                    {name}
                   </a>
-                </div>
-              )}
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
 
-              {socialLinks.twitter && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.twitter}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      Twitter
-                    </p>
-                  </a>
-                </div>
-              )}
+          {/* Right Column - Main Content */}
+          <motion.div
+            className='md:col-span-2 space-y-12'
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.div
+              className='space-y-6'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <motion.p
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                With over a decade of frontend development experience, I
+                specialize in building scalable design systems and component
+                libraries that empower teams to create consistent, accessible
+                web applications. My expertise in React, TypeScript, and modern
+                frontend tools enables me to deliver high-quality solutions that
+                prioritize both user experience and developer efficiency.
+              </motion.p>
+              <motion.p
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                I&apos;m passionate about creating intuitive user interfaces and
+                believe in the power of well-structured code to drive business
+                success. My approach combines technical expertise with a deep
+                understanding of user needs, ensuring that every project
+                delivers both functional excellence and an exceptional user
+                experience.
+              </motion.p>
+              <motion.p
+                className='text-lg leading-relaxed text-base-content/80'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+              >
+                Currently, I&apos;m seeking a role where I can drive frontend
+                excellence, mentor other developers, and continue to evolve the
+                craft of web development. I&apos;m particularly interested in
+                opportunities that emphasize modern frontend architecture,
+                design systems, and web accessibility standards.
+              </motion.p>
+            </motion.div>
 
-              {socialLinks.github && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.github}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      GitHub
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.linkedin && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.linkedin}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      LinkedIn
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.instagram && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.instagram}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-28 group-hover:translate-x-0 transition duration-300'></span>
-                      Instagram
-                    </p>
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className='col-span-1 md:col-span-2'>
-          <div className='space-y-4'>
-            <p className='text-xl'>
-              I&apos;ve been developing frontend applications professionally for
-              over 10 years. My workflow has evolved over the years to include
-              more unit testing and automation to find issues earlier and give
-              myself more time to develop new features.
-            </p>
-            <p className='text-xl'>
-              The user is at the heart of every decision I make. Websites and
-              applications should be accessible to everyone and the interface
-              and user journey should constantly evolve to give the best user
-              experience.
-            </p>
-            <p className='text-xl'>
-              I&apos;m looking for a position that allows me to continue with my
-              work and evolve as a developer, contributor, and leader. An ideal
-              position would involve mentoring Junior developers, coding
-              applications with React and Storybook, and allow me to work toward
-              certifications in things like WCAG 2.1 AA compliance.
-            </p>
-          </div>
-
-          <div className='mt-6'>
-            <h2 className='bg-primary text-3xl rounded-md px-3 inline-block font-medium mb-6'>
-              Tech Stack
-            </h2>
-            <TechList />
-          </div>
+            {/* Technologies */}
+            <motion.div
+              className='space-y-6'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+            >
+              <h3 className='text-lg font-medium text-primary/90'>
+                Technologies & Tools
+              </h3>
+              <TechList />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
+
+export default AboutMe;

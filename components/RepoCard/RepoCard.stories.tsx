@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { repo } from '../../constants/repo';
 import { RepoCard } from './RepoCard';
 
 const meta = {
@@ -13,7 +12,16 @@ const meta = {
     ),
   ],
   args: {
-    item: repo,
+    item: {
+      name: 'portfolio',
+      description:
+        'My personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.',
+      clone_url: 'https://github.com/yourusername/portfolio',
+      language: 'TypeScript',
+      stargazers_count: 42,
+      forks_count: 12,
+    },
+    index: 0,
   },
 } satisfies Meta<typeof RepoCard>;
 

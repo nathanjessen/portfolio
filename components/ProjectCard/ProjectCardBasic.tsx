@@ -6,21 +6,21 @@ export interface ProjectCardBasicProps {
 
 export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
   return (
-    <div className='card card-compact bg-base-200 shadow-xl w-full'>
-      <div className='card-body'>
+    <div className='group relative overflow-hidden rounded-xl bg-base-200 card-hover h-full'>
+      <div className='p-6 space-y-4'>
         <div>
-          <h3 className='text-base-content text-lg'>
+          <h3 className='text-lg font-medium text-base-content group-hover:text-primary transition-colors duration-300'>
             {item.url ? (
               <a
                 href={item.url}
                 target='_blank'
                 rel='noreferrer'
-                className='link link-hover flex items-center justify-between'
+                className='flex items-center justify-between'
               >
                 {item.title}
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  className='h-5 w-5 text-white'
+                  className='h-4 w-4 text-primary/90'
                   viewBox='0 0 20 20'
                   fill='currentColor'
                   aria-hidden='true'
@@ -30,15 +30,24 @@ export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
                 </svg>
               </a>
             ) : (
-              <>{item.title}</>
+              item.title
             )}
           </h3>
-          {item.client && <p className='text-base-content/80'>{item.client}</p>}
+          {item.client && (
+            <p className='text-sm text-base-content/60 mt-1'>
+              Client: {item.client}
+            </p>
+          )}
         </div>
-        <p className='mt-2 text-base-content/80'>{item.desc}</p>
-        <div className='flex gap-2 mt-2 flex-wrap'>
+        <p className='text-base text-base-content/80 leading-relaxed'>
+          {item.desc}
+        </p>
+        <div className='flex gap-2 flex-wrap'>
           {item.tech.map((tech, idx) => (
-            <span className='badge badge-primary' key={idx}>
+            <span
+              key={idx}
+              className='inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary/90 transition-colors duration-300'
+            >
               {tech}
             </span>
           ))}

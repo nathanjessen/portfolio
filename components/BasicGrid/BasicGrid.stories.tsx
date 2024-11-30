@@ -111,7 +111,7 @@ export const RenderRepoCard: RepoStory = {
       { ...RepoCardStories.default.args?.item },
       { ...RepoCardStories.default.args?.item },
     ],
-    render: (repo, idx) => <RepoCard item={repo} key={idx} />,
+    render: (repo, idx) => <RepoCard item={repo} key={idx} index={idx} />,
   },
 };
 

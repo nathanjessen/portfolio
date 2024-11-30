@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
-import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 export interface MetaProps {
@@ -73,8 +72,6 @@ export const DefaultLayout = ({
       <main className='flex-grow pt-24' aria-label='Content'>
         {children}
       </main>
-
-      <Footer />
     </>
   );
 };

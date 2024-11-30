@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export interface ExperienceCardProps {
   title: string;
   desc?: string;
@@ -14,27 +18,46 @@ export const ExperienceCard = ({
   companyLink,
 }: ExperienceCardProps) => {
   return (
-    <div className='relative experience-card border p-4 rounded-md shadow-xl bg-base-200 z-10'>
-      <h3 className='font-semibold text-xl text-base-content'>{title}</h3>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className='group relative experience-card p-6 rounded-xl bg-base-200 card-hover z-10'
+    >
       {year && (
-        <p className='absolute -top-10 md:-left-10 text-4xl text-base-content/50 font-bold'>
-          {year}
-        </p>
+        <div className='absolute -left-4 top-6'>
+          <div className='relative inline-flex items-center rounded-full bg-base-100 px-3 py-1 border'>
+            <span className='text-sm font-semibold text-base-content'>
+              {year}
+            </span>
+          </div>
+        </div>
       )}
-      {company && companyLink && (
-        <a
-          href={companyLink}
-          target='_blank'
-          rel='noreferrer'
-          className='link link-hover text-base-content/80'
-        >
-          {company}
-        </a>
-      )}
-      {company && !companyLink && (
-        <span className='text-base-content/80'>{company}</span>
-      )}
-      {desc && <p className='my-2 text-base-content/80'>{desc}</p>}
-    </div>
+      <div className='ml-8 space-y-4'>
+        <div>
+          <h3 className='text-lg font-medium text-base-content group-hover:text-primary transition-colors duration-300'>
+            {title}
+          </h3>
+          {company && companyLink && (
+            <a
+              href={companyLink}
+              target='_blank'
+              rel='noreferrer'
+              className='inline-block mt-1 text-sm text-base-content/60 hover:text-primary transition-colors duration-200'
+            >
+              {company}
+            </a>
+          )}
+          {company && !companyLink && (
+            <span className='inline-block mt-1 text-sm text-base-content/60'>
+              {company}
+            </span>
+          )}
+        </div>
+        {desc && (
+          <p className='text-base text-base-content/80 leading-relaxed'>
+            {desc}
+          </p>
+        )}
+      </div>
+    </motion.div>
   );
 };
