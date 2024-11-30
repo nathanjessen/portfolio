@@ -26,8 +26,7 @@ export const AboutMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        I&apos;m a frontend developer who loves to build and document UI
-        components using tools like React and Storybook.
+        I craft modern, performant web experiences with a focus on design systems and component-driven development.
       </motion.p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
@@ -143,10 +142,10 @@ export const AboutMe = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              I&apos;ve been developing frontend applications professionally for
-              over 10 years. My workflow has evolved over the years to include
-              more unit testing and automation to find issues earlier and give
-              myself more time to develop new features.
+              With over a decade of frontend development experience, I specialize in building scalable design systems
+              and component libraries that empower teams to create consistent, accessible web applications. My expertise
+              in React, TypeScript, and modern frontend tools enables me to deliver high-quality solutions that prioritize
+              both user experience and developer efficiency.
             </motion.p>
             <motion.p 
               className='text-xl leading-relaxed text-base-content/80'
@@ -155,10 +154,10 @@ export const AboutMe = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              The user is at the heart of every decision I make. Websites and
-              applications should be accessible to everyone and the interface
-              and user journey should constantly evolve to give the best user
-              experience.
+              I'm passionate about creating intuitive interfaces that work for everyone. My approach combines
+              technical excellence with a deep commitment to accessibility and performance. I leverage tools like
+              Storybook for component documentation and testing, ensuring that every piece of UI is thoroughly
+              documented and tested.
             </motion.p>
             <motion.p 
               className='text-xl leading-relaxed text-base-content/80'
@@ -167,11 +166,9 @@ export const AboutMe = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
             >
-              I&apos;m looking for a position that allows me to continue with my
-              work and evolve as a developer, contributor, and leader. An ideal
-              position would involve mentoring Junior developers, coding
-              applications with React and Storybook, and allow me to work toward
-              certifications in things like WCAG 2.1 AA compliance.
+              Currently, I'm seeking a role where I can drive frontend excellence, mentor other developers,
+              and continue to evolve the craft of web development. I'm particularly interested in opportunities
+              that emphasize modern frontend architecture, design systems, and web accessibility standards.
             </motion.p>
           </motion.div>
 
