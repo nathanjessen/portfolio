@@ -1,4 +1,5 @@
 import { Octokit } from 'octokit';
+import type { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-methods';
 
 export const getLatestRepos = async (username: string) => {
   try {
@@ -11,7 +12,7 @@ export const getLatestRepos = async (username: string) => {
         direction: 'desc',
         per_page: 6,
       })
-      .then((res) => res.data);
+      .then((res: RestEndpointMethodTypes['repos']['listForUser']['response']) => res.data);
   } catch (err) {
     console.log(err);
   }
