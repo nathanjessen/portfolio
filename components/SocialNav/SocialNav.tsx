@@ -132,10 +132,14 @@ const socialIcons = {
   ),
 };
 
-export const SocialNav = () => {
+export interface SocialNavProps {
+  className?: string;
+}
+
+export const SocialNav = ({ className = '' }: SocialNavProps) => {
   return (
     <motion.ul
-      className='inline-flex items-center space-x-2'
+      className={`flex items-center space-x-2 ${className}`}
       role='list'
       aria-label='Social media links'
       initial={{ opacity: 0 }}

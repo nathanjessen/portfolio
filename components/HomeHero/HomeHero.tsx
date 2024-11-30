@@ -1,16 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import User from '../../constants/User';
 
 export const HomeHero = () => {
   return (
-    <div className='relative min-h-[90vh] flex items-center'>
-      {/* Background gradient */}
+    <div className='relative min-h-screen flex items-center'>
+      {/* Background effects */}
+      <div className='absolute inset-0 bg-base-100'></div>
       <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 animate-gradient-xy'></div>
 
       {/* Content container */}
-      <div className='container-custom relative flex flex-col md:flex-row items-center justify-between gap-12 py-20'>
+      <div className='container-custom relative flex flex-col md:flex-row items-center justify-between gap-12 pt-32 pb-20'>
         {/* Text content */}
         <motion.div
           className='flex-1 space-y-6'
@@ -119,25 +121,60 @@ export const HomeHero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className='relative h-48 w-28 md:h-96 md:w-60'>
+          <div className='relative h-48 w-28 md:h-[32rem] md:w-[24rem]'>
+            {/* Background cards */}
             <motion.div
-              className='absolute inset-0 -translate-x-10 md:-translate-x-24 bg-accent rounded-lg -rotate-12 hover:scale-105 transition-transform duration-300'
+              className='absolute inset-0 -translate-x-10 md:-translate-x-24 bg-accent/20 backdrop-blur-sm rounded-lg -rotate-12 hover:scale-105 transition-transform duration-300'
               initial={{ rotate: 0 }}
               animate={{ rotate: -12 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-            ></motion.div>
+            >
+              <div className='p-6 text-accent-content'>
+                <h3 className='text-lg font-semibold'>React</h3>
+                <p className='text-sm opacity-80'>Modern Web Apps</p>
+              </div>
+            </motion.div>
             <motion.div
-              className='absolute inset-0 bg-secondary rounded-lg hover:scale-105 transition-transform duration-300'
+              className='absolute inset-0 bg-secondary/20 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300'
               initial={{ rotate: 0 }}
               animate={{ rotate: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-            ></motion.div>
+            >
+              <div className='p-6 text-secondary-content'>
+                <h3 className='text-lg font-semibold'>TypeScript</h3>
+                <p className='text-sm opacity-80'>Type-Safe Code</p>
+              </div>
+            </motion.div>
             <motion.div
-              className='absolute inset-0 translate-x-10 md:translate-x-24 bg-primary rounded-lg rotate-12 hover:scale-105 transition-transform duration-300'
+              className='absolute inset-0 translate-x-10 md:translate-x-24 bg-primary/20 backdrop-blur-sm rounded-lg rotate-12 hover:scale-105 transition-transform duration-300'
               initial={{ rotate: 0 }}
               animate={{ rotate: 12 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-            ></motion.div>
+            >
+              <div className='p-6 text-primary-content'>
+                <h3 className='text-lg font-semibold'>UI/UX</h3>
+                <p className='text-sm opacity-80'>Beautiful Interfaces</p>
+              </div>
+            </motion.div>
+
+            {/* Central image */}
+            <motion.div
+              className='absolute inset-0 flex items-center justify-center'
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <div className='relative w-24 h-24 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-base-content/10 shadow-lg'>
+                <Image
+                  src='/assets/images/avatar-person.png'
+                  alt='Nathan Jessen'
+                  fill
+                  className='object-cover'
+                  sizes='(max-width: 768px) 6rem, 12rem'
+                  priority
+                />
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

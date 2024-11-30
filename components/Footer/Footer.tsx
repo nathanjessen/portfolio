@@ -48,16 +48,15 @@ export const Footer = () => {
                 hello! I'm always open to discussing new projects or
                 opportunities.
               </motion.p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                <SocialNav className='justify-start gap-4' />
+              </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-            >
-              <SocialNav />
-            </motion.div>
           </motion.div>
 
           <motion.div

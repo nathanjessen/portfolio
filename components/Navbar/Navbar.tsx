@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import User from '../../constants/User';
 import Brand from '../Brand';
-import SocialNav from '../SocialNav';
 import { MainMenu } from './MainMenu';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
@@ -49,16 +48,13 @@ export const Navbar = () => {
     <>
       <SkipLink />
       <motion.header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'glass-effect' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background,shadow,backdrop-filter] duration-200 ${
+          scrolled
+            ? 'bg-base-100/80 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-base-100/60'
+            : 'bg-transparent supports-[backdrop-filter]:bg-base-100/5 backdrop-blur-none'
         }`}
-        initial={{ y: 0 }}
-        animate={{
-          y: visible ? 0 : -100,
-          boxShadow: scrolled
-            ? '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
-            : 'none',
-        }}
+        initial={{ y: -100 }}
+        animate={{ y: visible ? 0 : -100 }}
         transition={{ duration: 0.3 }}
         role='banner'
       >
@@ -92,17 +88,6 @@ export const Navbar = () => {
               <MainMenu />
             </motion.div>
           </nav>
-
-          <motion.div
-            className='hidden md:flex items-center space-x-4'
-            role='navigation'
-            aria-label='Social links'
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <SocialNav />
-          </motion.div>
 
           <motion.div
             className='flex sm:hidden'
