@@ -15,7 +15,8 @@ export const RepoCard = ({
         href={clone_url}
         target='_blank'
         rel='noreferrer'
-        className='font-semibold group flex flex-row space-x-2 w-full items-center'>
+        className='font-semibold group flex flex-row space-x-2 w-full items-center'
+      >
         View Repository
         <span className='transform group-hover:translate-x-2 transition duration-300'>
           &rarr;

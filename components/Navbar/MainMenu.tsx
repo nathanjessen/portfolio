@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,7 +13,8 @@ export const MainMenu = () => {
           pathname === '/about'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
-        }`}>
+        }`}
+      >
         <Link href='/about' className='px-8 !rounded-none'>
           About
         </Link>
@@ -21,7 +24,8 @@ export const MainMenu = () => {
           pathname === '/projects'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
-        }`}>
+        }`}
+      >
         <Link href='/projects' className='px-8 !rounded-none'>
           Projects
         </Link>
@@ -31,7 +35,8 @@ export const MainMenu = () => {
           pathname === '/experience'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
-        }`}>
+        }`}
+      >
         <Link href='/experience' className='px-8 !rounded-none'>
           Experience
         </Link>
@@ -41,7 +46,8 @@ export const MainMenu = () => {
           pathname === '/contact'
             ? 'border-primary !rounded-none'
             : 'border-transparent hover:border-primary-focus'
-        }`}>
+        }`}
+      >
         <Link href='/contact' className='px-8 !rounded-none'>
           Contact
         </Link>

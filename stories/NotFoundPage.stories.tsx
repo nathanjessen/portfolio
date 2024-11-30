@@ -1,8 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import NotFoundPage from '../app/not-found';
 
-export default {
-  title: 'Pages/NotFoundPage',
+const meta = {
+  title: 'Pages/NotFound',
   component: NotFoundPage,
   parameters: {
     layout: 'fullscreen',
@@ -11,9 +11,11 @@ export default {
       iframeHeight: 600,
     },
   },
-} as Meta;
+} satisfies Meta<typeof NotFoundPage>;
 
-const Template: StoryFn = (args) => <NotFoundPage {...args} />;
+export default meta;
+type Story = StoryObj<typeof NotFoundPage>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

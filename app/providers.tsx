@@ -5,7 +5,16 @@ import { PropsWithChildren } from 'react';
 
 export function Providers({ children }: PropsWithChildren) {
   return (
-    <ThemeProvider defaultTheme='light' attribute='class'>
+    <ThemeProvider
+      attribute='class'
+      defaultTheme='system'
+      enableSystem={true}
+      disableTransitionOnChange
+      enableColorScheme={true}
+      storageKey='theme'
+      // Prevent theme flash on load
+      themes={['light', 'dark']}
+    >
       {children}
     </ThemeProvider>
   );

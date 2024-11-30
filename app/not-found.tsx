@@ -1,34 +1,29 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
-import { Metadata, NextPage } from 'next/types';
 import { Container } from '../components/Layouts/Container';
 
 export const metadata: Metadata = {
-  title: '404 Not Found',
+  title: '404 - Page Not Found',
+  description: 'Sorry, the page you are looking for does not exist.',
+  robots: 'noindex, nofollow',
 };
 
-const NotFound: NextPage = () => {
+export default function NotFound() {
   return (
     <Container>
-      <div className='flex-shrink-0 my-auto py-16 sm:py-32'>
-        <p className='text-sm font-semibold text-error uppercase tracking-wide'>
-          404 error
+      <div className='flex flex-col items-center justify-center min-h-[50vh] text-center'>
+        <h1 className='text-6xl font-bold'>404</h1>
+        <p className='text-xl mt-4'>Page Not Found</p>
+        <p className='mt-2'>
+          Sorry, the page you are looking for does not exist.
         </p>
-        <h1 className='mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl'>
-          Page not found
-        </h1>
-        <p className='mt-6 text-base'>
-          Sorry, we couldn&apos;t find the page you&apos;re looking for.
-        </p>
-        <div className='mt-6'>
-          <Link
-            href='/'
-            className='link text-base font-medium text-primary hover:text-primary-focus'>
-            Go back home <span aria-hidden='true'>&rarr;</span>
-          </Link>
-        </div>
+        <Link
+          href='/'
+          className='mt-6 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition-colors'
+        >
+          Return Home
+        </Link>
       </div>
     </Container>
   );
-};
-
-export default NotFound;
+}

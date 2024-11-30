@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Contact } from './Contact';
 
-export default {
+const meta = {
   title: 'Components/Contact',
   component: Contact,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof Contact>;
 
-const Template: StoryFn = (args) => <Contact {...args} />;
+export default meta;
+type Story = StoryObj<typeof Contact>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

@@ -26,7 +26,8 @@ export const ExperienceCard = ({
           href={companyLink}
           target='_blank'
           rel='noreferrer'
-          className='link link-hover'>
+          className='link link-hover'
+        >
           {company}
         </a>
       )}

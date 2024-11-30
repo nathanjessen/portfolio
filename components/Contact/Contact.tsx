@@ -1,34 +1,12 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
-import User from '../../constants/User';
+import { FormEvent } from 'react';
 import ContactForm from '../ContactForm';
 
 export const Contact = () => {
-  const [message, setMessage] = useState<string>('');
-  const [status, setStatus] = useState<string>('');
-
-  const onContactFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData: { [key: string]: string } = {};
-    const elements = e.currentTarget.elements as unknown as Array<
-      HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement
-    >;
-
-    Array.from(elements).forEach((field) => {
-      if (!field.name) return;
-      formData[field.name] = field.value;
-    });
-
-    await fetch('/contact/send', {
-      method: 'POST',
-      body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setMessage(res.message);
-        setStatus(res.status);
-      });
+  const onContactFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    // Optional: Add any client-side form validation or tracking here
+    console.log('Form submitted');
   };
 
   return (
@@ -49,15 +27,18 @@ export const Contact = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='16'
               height='16'
-              fill='currentColor'
-              className='h-4 w-4 text-secondary'
-              viewBox='0 0 16 16'>
-              <path
-                fillRule='evenodd'
-                d='M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z'
-              />
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='feather feather-mail'
+            >
+              <path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'></path>
+              <polyline points='22,6 12,13 2,6'></polyline>
             </svg>
-            <p className='text-sm'>{User.phone}</p>
+            <a href='mailto:nathan.jessen@gmail.com'>nathan.jessen@gmail.com</a>
           </div>
 
           <div className='flex flex-row items-center space-x-4'>
@@ -65,12 +46,23 @@ export const Contact = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='16'
               height='16'
-              fill='currentColor'
-              className='h-4 w-4 text-secondary'
-              viewBox='0 0 16 16'>
-              <path d='M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z' />
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='feather feather-github'
+            >
+              <path d='M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22'></path>
             </svg>
-            <p className='text-sm'>{User.email}</p>
+            <a
+              href='https://github.com/nathanjessen'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              github.com/nathanjessen
+            </a>
           </div>
 
           <div className='flex flex-row items-center space-x-4'>
@@ -78,43 +70,31 @@ export const Contact = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='16'
               height='16'
-              fill='currentColor'
-              className='h-4 w-4 text-secondary'
-              viewBox='0 0 16 16'>
-              <path d='M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354z' />
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='feather feather-linkedin'
+            >
+              <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z'></path>
+              <rect x='2' y='9' width='4' height='12'></rect>
+              <circle cx='4' cy='4' r='2'></circle>
             </svg>
-            <p className='text-sm'>{User.location}</p>
+            <a
+              href='https://www.linkedin.com/in/njessen'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              linkedin.com/in/njessen
+            </a>
           </div>
         </div>
       </div>
 
       <div>
-        <ContactForm
-          onSubmit={onContactFormSubmit}
-          disabled={message.length > 0}
-        />
-        {message.length > 0 ? (
-          <div
-            className={`alert shadow-lg mt-4 ${
-              status === 'success' ? 'alert-success' : 'alert-error'
-            }`}>
-            <div>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='stroke-current flex-shrink-0 h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-                />
-              </svg>
-              <span>{message}</span>
-            </div>
-          </div>
-        ) : null}
+        <ContactForm onSubmit={onContactFormSubmit} />
       </div>
     </section>
   );

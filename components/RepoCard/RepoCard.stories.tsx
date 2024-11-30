@@ -1,16 +1,25 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { repo } from '../../constants/repo';
-import { RepoCard, RepoCardProps } from './RepoCard';
+import { RepoCard } from './RepoCard';
 
-export default {
+const meta = {
   title: 'Components/RepoCard',
   component: RepoCard,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     item: repo,
   },
-} as Meta;
+} satisfies Meta<typeof RepoCard>;
 
-const Template: StoryFn<RepoCardProps> = (args) => <RepoCard {...args} />;
+export default meta;
+type Story = StoryObj<typeof RepoCard>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

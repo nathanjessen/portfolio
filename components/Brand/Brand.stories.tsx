@@ -1,31 +1,43 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Brand, BrandProps } from './Brand';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Brand } from './Brand';
 
-export default {
+const meta = {
   title: 'Components/Brand',
   component: Brand,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     name: 'Brand Name',
   },
-} as Meta;
+} satisfies Meta<typeof Brand>;
 
-const Template: StoryFn<BrandProps> = (args) => <Brand {...args} />;
+export default meta;
+type Story = StoryObj<typeof Brand>;
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Position = Template.bind({});
-Position.args = {
-  position: 'Software Developer',
+export const Default: Story = {
+  args: {},
 };
 
-export const Avatar = Template.bind({});
-Avatar.args = {
-  avatarUrl: '/assets/images/avatar-person.png',
+export const Position: Story = {
+  args: {
+    position: 'Software Developer',
+  },
 };
 
-export const AvatarAndPosition = Template.bind({});
-AvatarAndPosition.args = {
-  ...Avatar.args,
-  ...Position.args,
+export const Avatar: Story = {
+  args: {
+    avatarUrl: '/assets/images/avatar-person.png',
+  },
+};
+
+export const AvatarAndPosition: Story = {
+  args: {
+    avatarUrl: '/assets/images/avatar-person.png',
+    position: 'Software Developer',
+  },
 };

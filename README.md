@@ -1,67 +1,191 @@
-# Portfolio
+# Nathan Jessen's Portfolio
 
-My personal website built with Next.js.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC)](https://tailwindcss.com)
+[![DaisyUI](https://img.shields.io/badge/DaisyUI-4-5A0EF8)](https://daisyui.com/)
+[![Storybook](https://img.shields.io/badge/Storybook-8-FF4785)](https://storybook.js.org/)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+My professional portfolio website showcasing my work, experience, and skills. Built with modern web technologies and best practices.
 
-## Directories
+🔗 [View Live Site](https://www.nathanjessen.com/)
 
-Some directories are created using GitHub pages in other repositories.
+## ✨ Features
 
-- [/tokenlist/](https://github.com/nathanjessen/tokenlist)
-- [/slides/](https://github.com/nathanjessen/slides)
-- [/ioextendedlv/](https://github.com/nathanjessen/ioextendedlv)
-- [/knowledge/](https://github.com/nathanjessen/knowledge/)
-- [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/)
+- 🎨 Modern, responsive design using TailwindCSS and DaisyUI
+- 📱 Mobile-first approach with a clean, minimalist UI
+- ⚡ Fast page loads with Next.js 14 App Router
+- 🧩 Component-driven development with Storybook
+- 🔍 SEO optimized
+- 📧 Simple contact form
+- 🔄 GitHub integration for displaying repositories
+- 📊 TypeScript for type safety
+- 🚀 Deployed on Vercel with automatic CI/CD
 
-## Technologies
+## 🌐 Related Projects
 
-The website is built in my favourite Tech Stack and deployed on [Vercel](https://vercel.com)
+The following directories are hosted on GitHub Pages in separate repositories:
 
-- [Next.js](https://nextjs.org) for building React Components.
-- [TailwindCSS](https://tailwindcss.com) for styling
-- [Vercel](https://vercel.com) for deployments and CI/CD.
-- [Github Pages](http://pages.github.com/) for deployment of docs.
-- [PostCSS](http://postcss.org/)
-- [Yarn](https://yarnpkg.com/)
-- [WebSlides](https://webslides.tv/)
-- [Google Fonts](https://fonts.google.com/)
-- [Node.js](https://nodejs.org/en/)
-- [npm](https://www.npmjs.com/)
+- [/tokenlist/](https://github.com/nathanjessen/tokenlist) - Token list for blockchain projects
+- [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
+- [/ioextendedlv/](https://github.com/nathanjessen/ioextendedlv) - Google I/O Extended Las Vegas
+- [/knowledge/](https://github.com/nathanjessen/knowledge/) - Personal knowledge base
+- [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/) - Ethereum allowance checker
 
-## Issues
+## 🛠️ Tech Stack
 
-If you discover a bug, [report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or even better, edit and send a pull-request with the fix.
+### Core
 
-## Getting Started
+- [Next.js](https://nextjs.org) ^14.2.18 - React framework for production
+- [React](https://reactjs.org) ^18.3.1 - UI component library
+- [TypeScript](https://www.typescriptlang.org/) - Static type checking
+- [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
-First, run the development server:
+### Styling
+
+- [TailwindCSS](https://tailwindcss.com) - Utility-first CSS
+- [DaisyUI](https://daisyui.com/) - Tailwind components
+- [PostCSS](https://postcss.org/) - CSS processing
+
+### Development
+
+- [ESLint](https://eslint.org/) - Linting
+- [Prettier](https://prettier.io/) - Code formatting
+- [Storybook](https://storybook.js.org/) - Component development
+- [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) - Bundle analysis
+
+### APIs & Services
+
+- [Octokit](https://github.com/octokit/octokit.js) - GitHub API
+- [Vercel](https://vercel.com) - Hosting & CI/CD
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20.9.0 or later
+- npm 10 or later
+- GitHub account (for API integration)
+
+### Development
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/nathanjessen/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Set up environment variables:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+cp .env.example .env.local
+# Edit .env.local with your API keys
+```
 
-## Learn More
+4. Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev        # Standard mode
+npm run dev:turbo  # Turbo mode (faster builds)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Available Scripts
 
-## Deploy on Vercel
+#### Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start development server
+- `npm run dev:turbo` - Start with Turbo mode
+- `npm run storybook` - Start Storybook
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Building
+
+- `npm run build` - Create production build
+- `npm run start` - Start production server
+- `npm run clean` - Remove build artifacts
+- `npm run build-storybook` - Build Storybook
+
+#### Quality
+
+- `npm run typecheck` - TypeScript check
+- `npm run lint` - ESLint check
+- `npm run lint:fix` - ESLint autofix
+- `npm run format` - Prettier format
+- `npm run format:check` - Prettier check
+- `npm run check` - All checks
+
+#### Analysis
+
+- `npm run analyze` - Bundle analysis
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── app/                 # Next.js app directory
+│   ├── api/            # API routes
+│   ├── (routes)/       # Page routes
+│   └── layout.tsx      # Root layout
+├── components/         # React components
+│   ├── ui/            # UI components
+│   └── features/      # Feature components
+├── constants/         # Constants and config
+├── lib/              # Utility functions
+├── public/           # Static assets
+├── stories/          # Storybook stories
+└── types/           # TypeScript types
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Required environment variables:
+
+- `GITHUB_AUTH_TOKEN` - GitHub personal access token
+
+### Code Style
+
+ESLint and Prettier configuration:
+
+- `.eslintrc.json` - ESLint rules
+- `.prettierrc` - Prettier config
+- `.prettierignore` - Formatting exclusions
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 🐛 Issues
+
+Found a bug? [Report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or submit a PR with the fix.
+
+## 📦 Deployment
+
+Deployed on Vercel with:
+
+- Production Branch: `main`
+- Framework Preset: Next.js
+- Build Command: `npm run build`
+- Output Directory: `.next`
+
+[Deployment Documentation](https://nextjs.org/docs/deployment)
+
+## 📚 Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://reactjs.org/docs)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)

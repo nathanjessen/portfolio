@@ -1,8 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ProjectsPage from '../app/projects/page';
 
-export default {
-  title: 'Pages/ProjectsPage',
+const meta = {
+  title: 'Pages/Projects',
   component: ProjectsPage,
   parameters: {
     layout: 'fullscreen',
@@ -11,9 +11,11 @@ export default {
       iframeHeight: 600,
     },
   },
-} as Meta;
+} satisfies Meta<typeof ProjectsPage>;
 
-const Template: StoryFn = (args) => <ProjectsPage {...args} />;
+export default meta;
+type Story = StoryObj<typeof ProjectsPage>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

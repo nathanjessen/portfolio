@@ -1,18 +1,31 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { testimonials } from '../../constants/testimonials';
-import { Testimonials, TestimonialsProps } from './Testimonials';
+import { Testimonials } from './Testimonials';
 
-export default {
+const meta = {
   title: 'Components/Testimonials',
   component: Testimonials,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     testimonials: testimonials,
   },
-} as Meta;
+} satisfies Meta<typeof Testimonials>;
 
-const Template: StoryFn<TestimonialsProps> = (args) => (
-  <Testimonials {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof Testimonials>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};
+
+export const SingleTestimonial: Story = {
+  args: {
+    testimonials: [testimonials[0]],
+  },
+};

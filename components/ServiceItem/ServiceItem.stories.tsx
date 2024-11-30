@@ -1,16 +1,25 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { services } from '../../constants/services';
-import { ServiceItem, ServiceItemProps } from './ServiceItem';
+import { ServiceItem } from './ServiceItem';
 
-export default {
+const meta = {
   title: 'Components/ServiceItem',
   component: ServiceItem,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     item: services[0],
   },
-} as Meta;
+} satisfies Meta<typeof ServiceItem>;
 
-const Template: StoryFn<ServiceItemProps> = (args) => <ServiceItem {...args} />;
+export default meta;
+type Story = StoryObj<typeof ServiceItem>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

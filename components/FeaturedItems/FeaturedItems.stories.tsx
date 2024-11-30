@@ -1,26 +1,25 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { FeaturedItems, FeaturedItemsProps } from './FeaturedItems';
+import type { Meta, StoryObj } from '@storybook/react';
+import { projects } from '../../constants/projects';
+import { FeaturedItems } from './FeaturedItems';
 
-export default {
+const meta = {
   title: 'Components/FeaturedItems',
   component: FeaturedItems,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
-    title: 'Featured Items',
-    subtitle: 'Subtitle',
-    items: [
-      'Featured 1',
-      'Featured 2',
-      'Featured 3',
-      'Featured 4',
-      'Featured 5',
-    ],
-    render: (item: string) => <div>{item}</div>,
+    items: projects,
   },
-} as Meta;
+} satisfies Meta<typeof FeaturedItems>;
 
-const Template: StoryFn<FeaturedItemsProps<string>> = (args) => (
-  <FeaturedItems {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof FeaturedItems>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

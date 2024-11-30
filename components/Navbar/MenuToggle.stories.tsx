@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MenuToggle } from './MenuToggle';
 
-export default {
+const meta = {
   title: 'Components/MenuToggle',
   component: MenuToggle,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof MenuToggle>;
 
-const Template: StoryFn = (args) => <MenuToggle {...args} />;
+export default meta;
+type Story = StoryObj<typeof MenuToggle>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

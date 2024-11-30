@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { TechList } from './TechList';
 
-export default {
+const meta = {
   title: 'Components/TechList',
   component: TechList,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof TechList>;
 
-const Template: StoryFn = (args) => <TechList {...args} />;
+export default meta;
+type Story = StoryObj<typeof TechList>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

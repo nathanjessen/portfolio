@@ -15,6 +15,10 @@ export const Navbar = () => {
     setExpanded((prevExpanded) => !prevExpanded);
   }, []);
 
+  const closeMenu = useCallback(() => {
+    setExpanded(false);
+  }, []);
+
   return (
     <header className='bg-base-100 fixed top-0 w-full z-50'>
       <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
@@ -33,7 +37,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {expanded && <MobileMenu />}
+      {expanded && <MobileMenu onClose={closeMenu} />}
     </header>
   );
 };
