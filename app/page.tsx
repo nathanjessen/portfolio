@@ -52,7 +52,7 @@ const HomePage = async () => {
           items={repositories}
         >
           {repositories.map((item, idx) => (
-            <RepoCard key={idx} item={item} />
+            <RepoCard key={idx} item={item} index={idx} />
           ))}
         </BasicGrid>
       </div>
