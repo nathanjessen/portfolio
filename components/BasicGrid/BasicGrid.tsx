@@ -73,59 +73,27 @@ export const BasicGrid = <Item extends unknown>({
   return (
     <Container>
       <div className='flex flex-col md:flex-row md:items-end justify-between gap-8'>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className='space-y-4'
-        >
-          <motion.div className='space-y-2'>
-            <motion.h2
-              className='text-xl md:text-2xl font-medium text-primary'
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+        <div className='space-y-4'>
+          <div className='space-y-2'>
+            <h2 className='text-xl md:text-2xl font-medium text-primary'>
               {title}
-            </motion.h2>
+            </h2>
             {subtitle && (
-              <motion.p
-                className='text-3xl md:text-4xl font-bold gradient-text'
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
+              <p className='text-3xl md:text-4xl font-bold gradient-text'>
                 {subtitle}
-              </motion.p>
+              </p>
             )}
-          </motion.div>
+          </div>
 
           {divider && (
-            <motion.div
-              className='h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent'
-              initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: 80, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            />
+            <div className='h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent' />
           )}
-        </motion.div>
+        </div>
 
         {showFilters && filteredTech.length > 0 && (
-          <motion.div
-            className='flex flex-wrap gap-2'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onHoverStart={() => setHoveredFilter('all')}
-              onHoverEnd={() => setHoveredFilter(null)}
-              className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+          <div className='flex flex-wrap gap-2'>
+            <button
+              className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
                 filter === 'all'
                   ? 'bg-primary text-primary-content shadow-lg shadow-primary/25'
                   : 'bg-base-200 text-base-content hover:bg-primary/10'
@@ -133,22 +101,11 @@ export const BasicGrid = <Item extends unknown>({
               onClick={() => setFilter('all')}
             >
               <span className='relative z-10'>All</span>
-              {hoveredFilter === 'all' && (
-                <motion.div
-                  layoutId='filter-hover'
-                  className='absolute inset-0 bg-primary/10 rounded-full'
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-            </motion.button>
+            </button>
             {filteredTech.map((tech) => (
-              <motion.button
+              <button
                 key={tech}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onHoverStart={() => setHoveredFilter(tech)}
-                onHoverEnd={() => setHoveredFilter(null)}
-                className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-300 ${
                   filter === tech
                     ? 'bg-primary text-primary-content shadow-lg shadow-primary/25'
                     : 'bg-base-200 text-base-content hover:bg-primary/10'
@@ -156,80 +113,32 @@ export const BasicGrid = <Item extends unknown>({
                 onClick={() => setFilter(tech)}
               >
                 <span className='relative z-10'>{tech}</span>
-                {hoveredFilter === tech && (
-                  <motion.div
-                    layoutId='filter-hover'
-                    className='absolute inset-0 bg-primary/10 rounded-full'
-                    transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-              </motion.button>
+              </button>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
 
       {divider && (
-        <motion.div
-          className='h-px bg-gradient-to-r from-transparent via-base-content/10 to-transparent my-12'
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-        />
+        <div className='h-px bg-gradient-to-r from-transparent via-base-content/10 to-transparent my-12' />
       )}
 
-      <motion.div layout className='mt-12'>
-        <AnimatePresence mode='wait'>
-          {filteredItems?.length > 0 ? (
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-              {filteredItems.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className='h-full'
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.2, delay: idx * 0.1 }}
-                >
-                  {render(item, idx)}
-                </motion.div>
-              ))}
-            </div>
-          ) : (
+      <div className='mt-12'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {filteredItems?.map((item, idx) => (
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className='col-span-full flex flex-col items-center justify-center py-16 space-y-4'
+              key={idx}
+              className='h-full'
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
             >
-              <svg
-                className='w-16 h-16 text-base-content/20'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 20a8 8 0 100-16 8 8 0 000 16z'
-                />
-              </svg>
-              <p className='text-lg font-medium text-base-content/60 text-center'>
-                No items were found matching this filter.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className='btn btn-sm btn-primary mt-4'
-                onClick={() => setFilter('all')}
-              >
-                Show All Items
-              </motion.button>
+              {render(item, idx)}
             </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+          ))}
+        </div>
+      </div>
     </Container>
   );
 };

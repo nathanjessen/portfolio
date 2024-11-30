@@ -1,8 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Project } from '../../constants/projects';
 
 export interface ProjectCardProps {
   item: Project;
@@ -12,13 +10,7 @@ const css = { width: '100%', height: 'auto' };
 
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className='group relative overflow-hidden rounded-xl bg-base-200 card-hover h-full flex flex-col'
-    >
+    <div className='group relative overflow-hidden rounded-xl bg-base-200 card-hover h-full flex flex-col'>
       {item.img && (
         <div className='relative aspect-video overflow-hidden bg-base-300'>
           <Image
@@ -28,7 +20,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
             height={240}
             width={400}
             style={css}
-            className='object-cover transition-all duration-500 group-hover:scale-110'
+            className='object-cover transition-all duration-500 group-hover:scale-105'
           />
           <div className='absolute inset-0 bg-gradient-to-t from-base-200/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100'></div>
         </div>
@@ -68,11 +60,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               rel='noreferrer'
               className='flex-1'
             >
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className='btn btn-sm btn-primary btn-outline w-full gap-2'
-              >
+              <button className='btn btn-sm btn-primary btn-outline w-full gap-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 24 24'
@@ -88,7 +76,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
                   />
                 </svg>
                 Source
-              </motion.button>
+              </button>
             </a>
           )}
           {item.url && (
@@ -98,11 +86,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               rel='noreferrer'
               className='flex-1'
             >
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className='btn btn-sm btn-primary w-full gap-2'
-              >
+              <button className='btn btn-sm btn-primary w-full gap-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 24 24'
@@ -118,11 +102,11 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
                   />
                 </svg>
                 Live Demo
-              </motion.button>
+              </button>
             </a>
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
