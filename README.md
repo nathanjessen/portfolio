@@ -19,22 +19,27 @@ Some directories are created using GitHub pages in other repositories.
 The website is built with modern technologies and deployed on [Vercel](https://vercel.com)
 
 ### Core
+
 - [Next.js 14](https://nextjs.org) for building React Components
 - [React 18](https://reactjs.org) for the UI library
 - [TypeScript](https://www.typescriptlang.org/) for type safety
 - [Node.js](https://nodejs.org/) for the runtime environment
 
 ### Styling
+
 - [TailwindCSS](https://tailwindcss.com) for styling
 - [DaisyUI](https://daisyui.com/) for Tailwind components
 - [PostCSS](https://postcss.org/) for CSS processing
 
 ### Development Tools
+
 - [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io/) for code formatting
 - [Storybook](https://storybook.js.org/) for component development
 - [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) for bundle analysis
 
 ### APIs and Services
+
 - [SendGrid](https://sendgrid.com/) for email services
 - [Octokit](https://github.com/octokit/octokit.js) for GitHub API integration
 - [Vercel](https://vercel.com) for deployments and CI/CD
@@ -42,17 +47,20 @@ The website is built with modern technologies and deployed on [Vercel](https://v
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 20.9.0 or later
 - npm 10 or later
 
 ### Development
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 # Standard development server
 npm run dev
@@ -66,23 +74,29 @@ npm run dev:turbo
 ### Available Scripts
 
 #### Development
+
 - `npm run dev` - Start development server
 - `npm run dev:turbo` - Start development server with Turbo mode
 - `npm run storybook` - Start Storybook development environment
 
 #### Building
+
 - `npm run build` - Create production build
 - `npm run start` - Start production server
 - `npm run clean` - Remove build artifacts
 - `npm run build-storybook` - Build Storybook static site
 
 #### Quality Checks
+
 - `npm run typecheck` - Run TypeScript type checking
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Run ESLint with auto-fix
-- `npm run check` - Run both lint and type checks
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run check` - Run all checks (lint, type, format)
 
 #### Analysis
+
 - `npm run analyze` - Analyze bundle size
 
 ## Project Structure
@@ -95,6 +109,17 @@ portfolio/
 ├── public/         # Static assets
 └── stories/        # Storybook stories
 ```
+
+## Code Style
+
+This project uses ESLint and Prettier for code formatting and linting:
+
+- ESLint enforces code quality rules
+- Prettier ensures consistent code formatting
+- Configuration files:
+  - `.eslintrc.json` - ESLint configuration
+  - `.prettierrc` - Prettier configuration
+  - `.prettierignore` - Files to exclude from formatting
 
 ## Environment Variables
 

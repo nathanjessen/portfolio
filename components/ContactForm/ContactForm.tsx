@@ -49,7 +49,8 @@ export const ContactForm = ({
           name='message'
           id='message'
           required
-          disabled={disabled}></textarea>
+          disabled={disabled}
+        ></textarea>
       </div>
 
       <button
@@ -57,7 +58,8 @@ export const ContactForm = ({
         className={`btn btn-block !mt-4 ${
           disabled ? 'btn-disabled' : 'btn-primary'
         }`}
-        disabled={disabled}>
+        disabled={disabled}
+      >
         Send Message
       </button>
     </form>

@@ -21,17 +21,23 @@ export async function POST(request: Request) {
 
     // Input validation
     if (!body.name || !body.email || !body.message) {
-      return NextResponse.json({
-        status: 'error',
-        message: 'All fields are required',
-      } as ResponseData, { status: 400 });
+      return NextResponse.json(
+        {
+          status: 'error',
+          message: 'All fields are required',
+        } as ResponseData,
+        { status: 400 }
+      );
     }
 
     if (!body.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      return NextResponse.json({
-        status: 'error',
-        message: 'Invalid email address',
-      } as ResponseData, { status: 400 });
+      return NextResponse.json(
+        {
+          status: 'error',
+          message: 'Invalid email address',
+        } as ResponseData,
+        { status: 400 }
+      );
     }
 
     const message = `
@@ -44,7 +50,7 @@ export async function POST(request: Request) {
       to: User.email,
       from: {
         email: 'hello@nathanjessen.com',
-        name: 'Portfolio Contact Form'
+        name: 'Portfolio Contact Form',
       },
       subject: 'Portfolio Contact Message via Sendgrid',
       text: message,
@@ -57,12 +63,14 @@ export async function POST(request: Request) {
       status: 'success',
       message: "Your message was sent. I'll be in contact shortly.",
     } as ResponseData);
-
   } catch (error) {
     console.error('SendGrid Error:', error);
-    return NextResponse.json({
-      status: 'error',
-      message: 'Failed to send message. Please try again later.',
-    } as ResponseData, { status: 500 });
+    return NextResponse.json(
+      {
+        status: 'error',
+        message: 'Failed to send message. Please try again later.',
+      } as ResponseData,
+      { status: 500 }
+    );
   }
 }

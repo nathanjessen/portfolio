@@ -16,7 +16,8 @@ export const CallToAction = () => {
                 href={socialLinks.twitter}
                 target='_blank'
                 rel='noreferrer'
-                className='btn bg-[#1da1f2] border-[#1da1f2] text-white'>
+                className='btn bg-[#1da1f2] border-[#1da1f2] text-white'
+              >
                 Twitter
               </a>
             )}
@@ -25,7 +26,8 @@ export const CallToAction = () => {
                 href={socialLinks.linkedin}
                 target='_blank'
                 rel='noreferrer'
-                className='btn btn-secondary'>
+                className='btn btn-secondary'
+              >
                 LinkedIn
               </a>
             )}

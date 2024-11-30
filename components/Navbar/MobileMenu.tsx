@@ -10,28 +10,32 @@ export const MobileMenu = () => {
         <li>
           <Link
             href='/about'
-            className={router.asPath === '/about' ? 'active' : ''}>
+            className={router.asPath === '/about' ? 'active' : ''}
+          >
             About
           </Link>
         </li>
         <li>
           <Link
             href='/projects'
-            className={router.asPath === '/projects' ? 'active' : ''}>
+            className={router.asPath === '/projects' ? 'active' : ''}
+          >
             Projects
           </Link>
         </li>
         <li>
           <Link
             href='/experience'
-            className={router.asPath === '/experience' ? 'active' : ''}>
+            className={router.asPath === '/experience' ? 'active' : ''}
+          >
             Experience
           </Link>
         </li>
         <li>
           <Link
             href='/contact'
-            className={router.asPath === '/contact' ? 'active' : ''}>
+            className={router.asPath === '/contact' ? 'active' : ''}
+          >
             Contact
           </Link>
         </li>

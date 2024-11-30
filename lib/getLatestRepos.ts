@@ -1,21 +1,28 @@
 import { Octokit } from 'octokit';
 import type { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-methods';
 
-type GitHubRepo = RestEndpointMethodTypes['repos']['listForUser']['response']['data'][0];
+type GitHubRepo =
+  RestEndpointMethodTypes['repos']['listForUser']['response']['data'][0];
 
 // Cache the results for 5 minutes
 const CACHE_DURATION = 5 * 60 * 1000;
 let cachedRepos: GitHubRepo[] | null = null;
 let lastFetchTime: number | null = null;
 
-export const getLatestRepos = async (username: string): Promise<GitHubRepo[]> => {
+export const getLatestRepos = async (
+  username: string
+): Promise<GitHubRepo[]> => {
   try {
     // Return cached data if available and not expired
-    if (cachedRepos && lastFetchTime && Date.now() - lastFetchTime < CACHE_DURATION) {
+    if (
+      cachedRepos &&
+      lastFetchTime &&
+      Date.now() - lastFetchTime < CACHE_DURATION
+    ) {
       return cachedRepos;
     }
 
-    const octokit = new Octokit({ 
+    const octokit = new Octokit({
       auth: process.env.GITHUB_AUTH_TOKEN,
       userAgent: 'nathanjessen-portfolio',
       timeZone: 'America/Chicago',

@@ -5,10 +5,12 @@ import PageHeading from '../../components/PageHeading';
 
 export const metadata: Metadata = {
   title: 'About Me',
-  description: 'Learn more about Nathan Jessen, a Senior Frontend Developer with expertise in React, TypeScript, and modern web technologies.',
+  description:
+    'Learn more about Nathan Jessen, a Senior Frontend Developer with expertise in React, TypeScript, and modern web technologies.',
   openGraph: {
     title: 'About Me | Nathan Jessen',
-    description: 'Learn more about Nathan Jessen, a Senior Frontend Developer with expertise in React, TypeScript, and modern web technologies.',
+    description:
+      'Learn more about Nathan Jessen, a Senior Frontend Developer with expertise in React, TypeScript, and modern web technologies.',
   },
 };
 

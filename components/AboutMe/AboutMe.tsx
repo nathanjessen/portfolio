@@ -38,7 +38,8 @@ export const AboutMe = () => {
                     download={User.resumeName}
                     target='_blank'
                     rel='noreferrer'
-                    className='link link-primary font-bold'>
+                    className='link link-primary font-bold'
+                  >
                     Resume
                   </a>{' '}
                   and{' '}
@@ -55,7 +56,8 @@ export const AboutMe = () => {
                 <div className='flex flex-row justify-start items-center'>
                   <a
                     href={socialLinks.facebook}
-                    className='flex flex-row items-center space-x-4 group py-2'>
+                    className='flex flex-row items-center space-x-4 group py-2'
+                  >
                     <span>&rarr;</span>
                     <p className='text-lg relative overflow-hidden'>
                       <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
@@ -69,7 +71,8 @@ export const AboutMe = () => {
                 <div className='flex flex-row justify-start items-center'>
                   <a
                     href={socialLinks.twitter}
-                    className='flex flex-row items-center space-x-4 group py-2'>
+                    className='flex flex-row items-center space-x-4 group py-2'
+                  >
                     <span>&rarr;</span>
                     <p className='text-lg relative overflow-hidden'>
                       <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
@@ -83,7 +86,8 @@ export const AboutMe = () => {
                 <div className='flex flex-row justify-start items-center'>
                   <a
                     href={socialLinks.github}
-                    className='flex flex-row items-center space-x-4 group py-2'>
+                    className='flex flex-row items-center space-x-4 group py-2'
+                  >
                     <span>&rarr;</span>
                     <p className='text-lg relative overflow-hidden'>
                       <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
@@ -97,7 +101,8 @@ export const AboutMe = () => {
                 <div className='flex flex-row justify-start items-center'>
                   <a
                     href={socialLinks.linkedin}
-                    className='flex flex-row items-center space-x-4 group py-2'>
+                    className='flex flex-row items-center space-x-4 group py-2'
+                  >
                     <span>&rarr;</span>
                     <p className='text-lg relative overflow-hidden'>
                       <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
@@ -111,7 +116,8 @@ export const AboutMe = () => {
                 <div className='flex flex-row justify-start items-center'>
                   <a
                     href={socialLinks.instagram}
-                    className='flex flex-row items-center space-x-4 group py-2'>
+                    className='flex flex-row items-center space-x-4 group py-2'
+                  >
                     <span>&rarr;</span>
                     <p className='text-lg relative overflow-hidden'>
                       <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-28 group-hover:translate-x-0 transition duration-300'></span>

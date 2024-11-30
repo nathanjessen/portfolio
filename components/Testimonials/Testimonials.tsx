@@ -38,7 +38,8 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                     <svg
                       className='hidden md:block mx-1 h-5 w-5 text-primary'
                       fill='currentColor'
-                      viewBox='0 0 20 20'>
+                      viewBox='0 0 20 20'
+                    >
                       <path d='M11 0h3L9 20H6l5-20z' />
                     </svg>
 

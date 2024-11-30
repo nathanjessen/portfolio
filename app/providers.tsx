@@ -6,12 +6,12 @@ import { PropsWithChildren } from 'react';
 export function Providers({ children }: PropsWithChildren) {
   return (
     <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
+      attribute='class'
+      defaultTheme='system'
       enableSystem={true}
       disableTransitionOnChange
       enableColorScheme={true}
-      storageKey="theme"
+      storageKey='theme'
       // Prevent theme flash on load
       themes={['light', 'dark']}
     >
