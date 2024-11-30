@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Experience } from './Experience';
 
-export default {
+const meta = {
   title: 'Components/Experience',
   component: Experience,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof Experience>;
 
-const Template: StoryFn = (args) => <Experience {...args} />;
+export default meta;
+type Story = StoryObj<typeof Experience>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

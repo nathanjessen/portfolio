@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ProjectCard from '../ProjectCard';
 import * as ProjectCardStories from '../ProjectCard/ProjectCard.stories';
 import { ProjectCardBasic } from '../ProjectCard/ProjectCardBasic';
@@ -7,75 +7,104 @@ import RepoCard from '../RepoCard';
 import * as RepoCardStories from '../RepoCard/RepoCard.stories';
 import ServiceItem from '../ServiceItem';
 import * as ServiceItemStories from '../ServiceItem/ServiceItem.stories';
-import { BasicGrid, BasicGridProps } from './BasicGrid';
+import { BasicGrid } from './BasicGrid';
 
-export default {
+const meta = {
   title: 'Components/BasicGrid',
   component: BasicGrid,
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     title: 'Basic Grid',
-    items: ['Item 1', 'Item 2', 'Item 3'],
-    render: (item: string) => <div key={item}>{item}</div>,
+    items: [
+      {
+        id: '1',
+        title: 'Item 1',
+        description: 'Description 1',
+      },
+      {
+        id: '2',
+        title: 'Item 2',
+        description: 'Description 2',
+      },
+      {
+        id: '3',
+        title: 'Item 3',
+        description: 'Description 3',
+      },
+    ],
+    render: (item: any) => <div key={item.id}>{item.title}</div>,
   },
-} as Meta;
+} satisfies Meta<typeof BasicGrid>;
 
-const Template: StoryFn<BasicGridProps<any>> = (args) => (
-  <BasicGrid {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof BasicGrid>;
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Subtitle = Template.bind({});
-Subtitle.args = {
-  subtitle: 'Subtitle',
+export const Default: Story = {
+  args: {},
 };
 
-export const NoDivider = Template.bind({});
-NoDivider.args = {
-  divider: false,
+export const Subtitle: Story = {
+  args: {
+    subtitle: 'Subtitle',
+  },
 };
 
-export const RenderProjectCard = Template.bind({});
-RenderProjectCard.args = {
-  subtitle: 'Project Card',
-  items: [
-    { ...ProjectCardStories.default.args?.item },
-    { ...ProjectCardStories.default.args?.item },
-    { ...ProjectCardStories.default.args?.item },
-  ],
-  render: (project, idx) => <ProjectCard item={project} key={idx} />,
+export const NoDivider: Story = {
+  args: {
+    divider: false,
+  },
 };
 
-export const RenderProjectCardBasic = Template.bind({});
-RenderProjectCardBasic.args = {
-  subtitle: 'Project Card Basic',
-  items: [
-    { ...ProjectCardBasicStories.default.args?.item },
-    { ...ProjectCardBasicStories.default.args?.item },
-    { ...ProjectCardBasicStories.default.args?.item },
-  ],
-  render: (project, idx) => <ProjectCardBasic item={project} key={idx} />,
+export const RenderProjectCard: Story = {
+  args: {
+    subtitle: 'Project Card',
+    items: [
+      { ...ProjectCardStories.default.args?.item },
+      { ...ProjectCardStories.default.args?.item },
+      { ...ProjectCardStories.default.args?.item },
+    ],
+    render: (project, idx) => <ProjectCard item={project} key={idx} />,
+  },
 };
 
-export const RenderRepoCard = Template.bind({});
-RenderRepoCard.args = {
-  subtitle: 'Repo Card',
-  items: [
-    { ...RepoCardStories.default.args?.item },
-    { ...RepoCardStories.default.args?.item },
-    { ...RepoCardStories.default.args?.item },
-  ],
-  render: (repo, idx) => <RepoCard item={repo} key={idx} />,
+export const RenderProjectCardBasic: Story = {
+  args: {
+    subtitle: 'Project Card Basic',
+    items: [
+      { ...ProjectCardBasicStories.default.args?.item },
+      { ...ProjectCardBasicStories.default.args?.item },
+      { ...ProjectCardBasicStories.default.args?.item },
+    ],
+    render: (project, idx) => <ProjectCardBasic item={project} key={idx} />,
+  },
 };
 
-export const RenderServiceItem = Template.bind({});
-RenderServiceItem.args = {
-  subtitle: 'Service Item',
-  items: [
-    { ...ServiceItemStories.default.args?.item },
-    { ...ServiceItemStories.default.args?.item },
-    { ...ServiceItemStories.default.args?.item },
-  ],
-  render: (service, idx) => <ServiceItem item={service} key={idx} />,
+export const RenderRepoCard: Story = {
+  args: {
+    subtitle: 'Repo Card',
+    items: [
+      { ...RepoCardStories.default.args?.item },
+      { ...RepoCardStories.default.args?.item },
+      { ...RepoCardStories.default.args?.item },
+    ],
+    render: (repo, idx) => <RepoCard item={repo} key={idx} />,
+  },
+};
+
+export const RenderServiceItem: Story = {
+  args: {
+    subtitle: 'Service Item',
+    items: [
+      { ...ServiceItemStories.default.args?.item },
+      { ...ServiceItemStories.default.args?.item },
+      { ...ServiceItemStories.default.args?.item },
+    ],
+    render: (service, idx) => <ServiceItem item={service} key={idx} />,
+  },
 };

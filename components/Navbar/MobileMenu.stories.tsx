@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MobileMenu } from './MobileMenu';
 
-export default {
+const meta = {
   title: 'Components/MobileMenu',
   component: MobileMenu,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof MobileMenu>;
 
-const Template: StoryFn = (args) => <MobileMenu {...args} />;
+export default meta;
+type Story = StoryObj<typeof MobileMenu>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

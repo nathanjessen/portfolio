@@ -1,8 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ExperiencePage from '../app/experience/page';
 
-export default {
-  title: 'Pages/ExperiencePage',
+const meta = {
+  title: 'Pages/Experience',
   component: ExperiencePage,
   parameters: {
     layout: 'fullscreen',
@@ -11,9 +11,11 @@ export default {
       iframeHeight: 600,
     },
   },
-} as Meta;
+} satisfies Meta<typeof ExperiencePage>;
 
-const Template: StoryFn = (args) => <ExperiencePage {...args} />;
+export default meta;
+type Story = StoryObj<typeof ExperiencePage>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

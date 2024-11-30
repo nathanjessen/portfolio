@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { SocialNav } from './SocialNav';
 
-export default {
+const meta = {
   title: 'Components/SocialNav',
   component: SocialNav,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof SocialNav>;
 
-const Template: StoryFn = (args) => <SocialNav {...args} />;
+export default meta;
+type Story = StoryObj<typeof SocialNav>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MainMenu } from './MainMenu';
 
-export default {
+const meta = {
   title: 'Components/MainMenu',
   component: MainMenu,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof MainMenu>;
 
-const Template: StoryFn = (args) => <MainMenu {...args} />;
+export default meta;
+type Story = StoryObj<typeof MainMenu>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

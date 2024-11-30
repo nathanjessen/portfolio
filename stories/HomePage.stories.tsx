@@ -1,9 +1,9 @@
-import { Meta, StoryFn } from '@storybook/react';
-// import HomePage from '../app/page';
+import type { Meta, StoryObj } from '@storybook/react';
+import HomePage from '../app/page';
 
-export default {
-  title: 'Pages/HomePage',
-  // component: HomePage,
+const meta = {
+  title: 'Pages/Home',
+  component: HomePage,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -11,13 +11,13 @@ export default {
       iframeHeight: 600,
     },
   },
+} satisfies Meta<typeof HomePage>;
+
+export default meta;
+type Story = StoryObj<typeof HomePage>;
+
+export const Default: Story = {
   args: {
     repositories: [],
   },
-} as Meta;
-
-// const Template: StoryFn = (args) => <HomePage {...args} />;
-const Template: StoryFn = (args) => <div {...args}>HomePage</div>;
-
-export const Default = Template.bind({});
-Default.args = {};
+};

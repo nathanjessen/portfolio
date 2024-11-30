@@ -1,12 +1,21 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { CallToAction } from './CallToAction';
 
-export default {
+const meta = {
   title: 'Components/CallToAction',
   component: CallToAction,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof CallToAction>;
 
-const Template: StoryFn = (args) => <CallToAction {...args} />;
+export default meta;
+type Story = StoryObj<typeof CallToAction>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

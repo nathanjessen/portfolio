@@ -1,19 +1,17 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from './Navbar';
 
-export default {
+const meta = {
   title: 'Components/Navbar',
   component: Navbar,
-  decorators: [
-    (StoryFn) => (
-      <div className='translate-x-0 h-32'>
-        <StoryFn />
-      </div>
-    ),
-  ],
-} as Meta;
+  parameters: {
+    layout: 'fullscreen',
+  },
+} satisfies Meta<typeof Navbar>;
 
-const Template: StoryFn = (args) => <Navbar {...args} />;
+export default meta;
+type Story = StoryObj<typeof Navbar>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};

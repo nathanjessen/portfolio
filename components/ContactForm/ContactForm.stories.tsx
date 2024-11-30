@@ -1,17 +1,27 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ContactForm } from './ContactForm';
 
-export default {
+const meta = {
   title: 'Components/ContactForm',
   component: ContactForm,
-} as Meta;
+  decorators: [
+    (Story) => (
+      <div className='max-w-4xl'>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof ContactForm>;
 
-const Template: StoryFn = (args) => <ContactForm {...args} />;
+export default meta;
+type Story = StoryObj<typeof ContactForm>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
 };

@@ -1,17 +1,25 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { projects } from '../../constants/projects';
-import { ProjectCard, ProjectCardProps } from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 
-export default {
+const meta = {
   title: 'Components/ProjectCard',
   component: ProjectCard,
-  decorators: [(StoryFn) => <div className='max-w-lg'>{StoryFn()}</div>],
+  decorators: [
+    (Story) => (
+      <div className='max-w-lg'>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     item: projects[0],
   },
-} as Meta;
+} satisfies Meta<typeof ProjectCard>;
 
-const Template: StoryFn<ProjectCardProps> = (args) => <ProjectCard {...args} />;
+export default meta;
+type Story = StoryObj<typeof ProjectCard>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {},
+};
