@@ -10,7 +10,7 @@ export interface BasicGridProps<Item> {
   subtitle?: string;
   divider?: boolean;
   items: Item[];
-  children: ReactNode[];
+  render: (item: Item, index: number) => ReactNode;
 }
 
 export const BasicGrid = <Item extends unknown>({
@@ -18,7 +18,7 @@ export const BasicGrid = <Item extends unknown>({
   subtitle,
   divider = true,
   items,
-  children,
+  render,
 }: BasicGridProps<Item>) => {
   const [filter, setFilter] = useState<string>('all');
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null);
@@ -159,24 +159,21 @@ export const BasicGrid = <Item extends unknown>({
         layout
         className='mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
       >
-        <AnimatePresence mode='popLayout'>
+        <AnimatePresence mode='wait'>
           {filteredItems?.length > 0 ? (
-            filteredItems.map((_, idx) => (
-              <motion.div
-                key={idx}
-                layout
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                transition={{
-                  duration: 0.3,
-                  delay: idx * 0.1,
-                  layout: { duration: 0.3 },
-                }}
-              >
-                {children[idx]}
-              </motion.div>
-            ))
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+              {filteredItems.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2, delay: idx * 0.1 }}
+                >
+                  {render(item, idx)}
+                </motion.div>
+              ))}
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
