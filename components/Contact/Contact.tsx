@@ -91,7 +91,7 @@ export const Contact = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'
+            className='text-2xl font-medium text-base-content'
           >
             Get in touch
           </motion.h2>
@@ -100,7 +100,7 @@ export const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className='mt-4 text-base-content/80'
+            className='mt-4 text-base text-base-content/80 leading-relaxed'
           >
             Fill in the details and I&apos;ll get back to you as soon as I can.
           </motion.p>
@@ -125,7 +125,7 @@ export const Contact = () => {
                 href={info.href}
                 target={info.external ? '_blank' : undefined}
                 rel={info.external ? 'noopener noreferrer' : undefined}
-                className='flex items-center gap-4 text-base-content/80 hover:text-primary transition-colors duration-200'
+                className='flex items-center gap-4 text-sm text-base-content/60 hover:text-primary transition-colors duration-200'
                 whileHover={{ x: 4 }}
               >
                 <span className='text-primary'>{info.icon}</span>

@@ -59,7 +59,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
         >
           <label htmlFor={field.id} className='label cursor-pointer'>
             <motion.span
-              className='label-text text-base-content/80'
+              className='text-sm font-medium text-base-content/80'
               whileHover={{ x: 2 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
@@ -68,7 +68,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           </label>
           <motion.input
             type={field.type}
-            className='input input-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200'
+            className='input input-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200 text-sm text-base-content'
             name={field.id}
             id={field.id}
             required={field.required}
@@ -89,7 +89,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
       >
         <label htmlFor='message' className='label cursor-pointer'>
           <motion.span
-            className='label-text text-base-content/80'
+            className='text-sm font-medium text-base-content/80'
             whileHover={{ x: 2 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -98,7 +98,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
         </label>
         <motion.textarea
           rows={4}
-          className='textarea textarea-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200'
+          className='textarea textarea-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200 text-sm text-base-content'
           name='message'
           id='message'
           required
@@ -112,7 +112,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
 
       <motion.button
         type='submit'
-        className='btn btn-primary w-full'
+        className='btn btn-primary w-full text-sm font-medium'
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0 }}
