@@ -1,16 +1,27 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 
 export interface ContactFormProps {
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
-  disabled?: boolean;
 }
 
-export const ContactForm = ({
-  onSubmit,
-  disabled = false,
-}: ContactFormProps) => {
+export const ContactForm = ({ onSubmit }: ContactFormProps) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit?.(e);
+
+    const mailtoUrl = `mailto:nathan.jessen@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    // window.location.href = mailtoUrl;
+    alert(mailtoUrl);
+  };
+
   return (
-    <form className='form space-y-2' onSubmit={onSubmit}>
+    <form className='form space-y-2' onSubmit={handleSubmit}>
       <div className='form-control w-full'>
         <label htmlFor='name' className='label cursor-pointer'>
           <span className='label-text'>Name</span>
@@ -21,7 +32,10 @@ export const ContactForm = ({
           name='name'
           id='name'
           required
-          disabled={disabled}
+          value={formData.name}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, name: e.target.value }))
+          }
         />
       </div>
 
@@ -35,7 +49,10 @@ export const ContactForm = ({
           name='email'
           id='email'
           required
-          disabled={disabled}
+          value={formData.email}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, email: e.target.value }))
+          }
         />
       </div>
 
@@ -49,17 +66,14 @@ export const ContactForm = ({
           name='message'
           id='message'
           required
-          disabled={disabled}
-        ></textarea>
+          value={formData.message}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, message: e.target.value }))
+          }
+        />
       </div>
 
-      <button
-        type='submit'
-        className={`btn btn-block !mt-4 ${
-          disabled ? 'btn-disabled' : 'btn-primary'
-        }`}
-        disabled={disabled}
-      >
+      <button type='submit' className='btn btn-primary w-full'>
         Send Message
       </button>
     </form>

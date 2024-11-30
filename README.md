@@ -17,7 +17,7 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 - ⚡ Fast page loads with Next.js 14 App Router
 - 🧩 Component-driven development with Storybook
 - 🔍 SEO optimized
-- 📧 Contact form integration with SendGrid
+- 📧 Simple contact form
 - 🔄 GitHub integration for displaying repositories
 - 📊 TypeScript for type safety
 - 🚀 Deployed on Vercel with automatic CI/CD
@@ -35,24 +35,27 @@ The following directories are hosted on GitHub Pages in separate repositories:
 ## 🛠️ Tech Stack
 
 ### Core
+
 - [Next.js](https://nextjs.org) ^14.2.18 - React framework for production
 - [React](https://reactjs.org) ^18.3.1 - UI component library
 - [TypeScript](https://www.typescriptlang.org/) - Static type checking
 - [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
 ### Styling
+
 - [TailwindCSS](https://tailwindcss.com) - Utility-first CSS
 - [DaisyUI](https://daisyui.com/) - Tailwind components
 - [PostCSS](https://postcss.org/) - CSS processing
 
 ### Development
+
 - [ESLint](https://eslint.org/) - Linting
 - [Prettier](https://prettier.io/) - Code formatting
 - [Storybook](https://storybook.js.org/) - Component development
 - [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) - Bundle analysis
 
 ### APIs & Services
-- [SendGrid](https://sendgrid.com/) - Email service
+
 - [Octokit](https://github.com/octokit/octokit.js) - GitHub API
 - [Vercel](https://vercel.com) - Hosting & CI/CD
 
@@ -63,28 +66,31 @@ The following directories are hosted on GitHub Pages in separate repositories:
 - Node.js 20.9.0 or later
 - npm 10 or later
 - GitHub account (for API integration)
-- SendGrid account (for contact form)
 
 ### Development
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/nathanjessen/portfolio.git
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env.local
 # Edit .env.local with your API keys
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev        # Standard mode
 npm run dev:turbo  # Turbo mode (faster builds)
@@ -95,17 +101,20 @@ npm run dev:turbo  # Turbo mode (faster builds)
 ### Available Scripts
 
 #### Development
+
 - `npm run dev` - Start development server
 - `npm run dev:turbo` - Start with Turbo mode
 - `npm run storybook` - Start Storybook
 
 #### Building
+
 - `npm run build` - Create production build
 - `npm run start` - Start production server
 - `npm run clean` - Remove build artifacts
 - `npm run build-storybook` - Build Storybook
 
 #### Quality
+
 - `npm run typecheck` - TypeScript check
 - `npm run lint` - ESLint check
 - `npm run lint:fix` - ESLint autofix
@@ -114,6 +123,7 @@ npm run dev:turbo  # Turbo mode (faster builds)
 - `npm run check` - All checks
 
 #### Analysis
+
 - `npm run analyze` - Bundle analysis
 
 ## 📁 Project Structure
@@ -141,7 +151,6 @@ portfolio/
 Required environment variables:
 
 - `GITHUB_AUTH_TOKEN` - GitHub personal access token
-- `SENDGRID_API_KEY` - SendGrid API key
 
 ### Code Style
 

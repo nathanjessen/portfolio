@@ -19,9 +19,3 @@ type Story = StoryObj<typeof ContactForm>;
 export const Default: Story = {
   args: {},
 };
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};

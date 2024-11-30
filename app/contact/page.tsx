@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import ContactForm from '../../components/ContactForm';
-import { Container } from '../../components/Layouts/Container';
+import Contact from '../../components/Contact';
 import PageHeading from '../../components/PageHeading';
+import { Container } from '../../components/Layouts/Container';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -13,16 +13,13 @@ export const metadata: Metadata = {
       'Get in touch with Nathan Jessen. Whether you have a project in mind or just want to connect, I would love to hear from you.',
   },
 };
-
-const ContactPage = () => {
+export default function ContactPage() {
   return (
     <>
       <PageHeading>Contact</PageHeading>
       <Container>
-        <ContactForm />
+        <Contact />
       </Container>
     </>
   );
-};
-
-export default ContactPage;
+}
