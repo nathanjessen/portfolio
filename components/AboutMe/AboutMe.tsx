@@ -19,15 +19,15 @@ export const AboutMe = () => {
   return (
     <section className='py-8'>
       <div className='container-custom'>
-        <motion.h1
-          className='text-2xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-center md:text-left'
+        <motion.h2
+          className='text-2xl md:text-3xl font-semibold mb-12 text-base-content/90 text-center md:text-left leading-relaxed'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           I craft modern, performant web experiences with a focus on design
           systems and component-driven development.
-        </motion.h1>
+        </motion.h2>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16'>
           {/* Left Column - Profile and Contact */}
@@ -62,17 +62,15 @@ export const AboutMe = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className='space-y-6'
+              className='space-y-4'
             >
-              <h2 className='text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
-                Contact
-              </h2>
-              <p className='text-lg text-base-content/80'>
+              <h3 className='text-lg font-medium text-primary/90'>Contact</h3>
+              <p className='text-base text-base-content/80 leading-relaxed'>
                 I&apos;d love to hear from you or answer any questions you may
                 have. Reach out using the{' '}
                 <Link
                   href='/contact'
-                  className='text-primary hover:text-secondary transition-colors duration-200 font-bold'
+                  className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
                 >
                   Contact
                 </Link>{' '}
@@ -86,12 +84,12 @@ export const AboutMe = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className='space-y-6'
+              className='space-y-4'
             >
-              <h2 className='text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
+              <h3 className='text-lg font-medium text-primary/90'>
                 Job Opportunities
-              </h2>
-              <p className='text-lg text-base-content/80'>
+              </h3>
+              <p className='text-base text-base-content/80 leading-relaxed'>
                 I&apos;m actively interviewing for a new role. If I might be a
                 good fit,{' '}
                 {User.resumeUrl && (
@@ -100,73 +98,58 @@ export const AboutMe = () => {
                     <a
                       href={User.resumeUrl}
                       download={User.resumeName}
-                      target='_blank'
-                      rel='noreferrer'
-                      className='text-primary hover:text-secondary transition-colors duration-200 font-bold'
+                      className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
                     >
-                      Resume
+                      resume
                     </a>{' '}
-                    and{' '}
+                    or{' '}
                   </>
                 )}
-                get in contact.
+                <Link
+                  href='/contact'
+                  className='text-primary hover:text-secondary transition-colors duration-200 font-medium'
+                >
+                  get in touch
+                </Link>
+                .
               </p>
             </motion.div>
 
-            {/* Social Links Section */}
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className='space-y-6'
+              className='space-y-4'
             >
-              <h2 className='text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
-                Social Links
-              </h2>
-              <div className='space-y-2'>
-                {socialPlatforms.map((platform, idx) => (
-                  <motion.div
-                    key={platform.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 + idx * 0.1 }}
+              <h3 className='text-lg font-medium text-primary/90'>Connect</h3>
+              <div className='flex flex-wrap gap-3'>
+                {socialPlatforms.map(({ name, url }) => (
+                  <a
+                    key={name}
+                    href={url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary/90 hover:bg-primary/20 transition-colors duration-200'
                   >
-                    <motion.a
-                      href={platform.url}
-                      className='group flex items-center gap-4 py-2 text-base-content/80 hover:text-primary transition-colors duration-200'
-                      whileHover={{ x: 8 }}
-                      transition={{ type: 'spring', stiffness: 400 }}
-                    >
-                      <motion.span
-                        className='text-primary'
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.2 }}
-                      >
-                        →
-                      </motion.span>
-                      <span className='text-lg font-medium'>
-                        {platform.name}
-                      </span>
-                    </motion.a>
-                  </motion.div>
+                    {name}
+                  </a>
                 ))}
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Column - About Content */}
+          {/* Right Column - Main Content */}
           <motion.div
-            className='md:col-span-2 space-y-8'
+            className='md:col-span-2 space-y-12'
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            {/* Bio Section */}
             <motion.div
-              className='space-y-8'
+              className='space-y-6'
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -212,24 +195,17 @@ export const AboutMe = () => {
               </motion.p>
             </motion.div>
 
-            {/* Tech Stack Section */}
+            {/* Technologies */}
             <motion.div
+              className='space-y-6'
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.5 }}
             >
-              <motion.h2
-                className='text-3xl font-bold mb-8'
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.9 }}
-              >
-                <span className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
-                  Tech Stack
-                </span>
-              </motion.h2>
+              <h3 className='text-lg font-medium text-primary/90'>
+                Technologies & Tools
+              </h3>
               <TechList />
             </motion.div>
           </motion.div>
