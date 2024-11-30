@@ -21,6 +21,7 @@ export const BasicGrid = <Item extends unknown>({
   children,
 }: BasicGridProps<Item>) => {
   const [filter, setFilter] = useState<string>('all');
+  const [hoveredFilter, setHoveredFilter] = useState<string | null>(null);
   
   // Get unique technologies from all projects
   const technologies = items.reduce((acc: string[], item) => {
@@ -47,64 +48,111 @@ export const BasicGrid = <Item extends unknown>({
 
   return (
     <Container>
-      <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
-        <div>
-          <motion.h2 
-            className='text-xl md:text-2xl font-medium text-primary'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {title}
-          </motion.h2>
-          {subtitle && (
-            <motion.p 
-              className='text-3xl md:text-4xl font-bold mt-2 gradient-text'
+      <div className='flex flex-col md:flex-row md:items-end justify-between gap-8'>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className='space-y-4'
+        >
+          <motion.div className='space-y-2'>
+            <motion.h2 
+              className='text-xl md:text-2xl font-medium text-primary'
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
             >
-              {subtitle}
-            </motion.p>
+              {title}
+            </motion.h2>
+            {subtitle && (
+              <motion.p 
+                className='text-3xl md:text-4xl font-bold gradient-text'
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                {subtitle}
+              </motion.p>
+            )}
+          </motion.div>
+
+          {divider && (
+            <motion.div 
+              className='h-1 w-20 bg-gradient-to-r from-primary via-secondary to-accent'
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: 80, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            />
           )}
-        </div>
+        </motion.div>
 
         {'tech' in (items[0] || {}) && (
-          <div className='flex flex-wrap gap-2'>
+          <motion.div 
+            className='flex flex-wrap gap-2'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
+              onHoverStart={() => setHoveredFilter('all')}
+              onHoverEnd={() => setHoveredFilter(null)}
+              className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 filter === 'all'
-                  ? 'bg-primary text-primary-content'
-                  : 'bg-base-300 text-base-content hover:bg-primary/10'
+                  ? 'bg-primary text-primary-content shadow-lg shadow-primary/25'
+                  : 'bg-base-200 text-base-content hover:bg-primary/10'
               }`}
               onClick={() => setFilter('all')}
             >
-              All
+              <span className='relative z-10'>All</span>
+              {hoveredFilter === 'all' && (
+                <motion.div
+                  layoutId="filter-hover"
+                  className="absolute inset-0 bg-primary/10 rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
             </motion.button>
             {technologies.map((tech) => (
               <motion.button
                 key={tech}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
+                onHoverStart={() => setHoveredFilter(tech)}
+                onHoverEnd={() => setHoveredFilter(null)}
+                className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   filter === tech
-                    ? 'bg-primary text-primary-content'
-                    : 'bg-base-300 text-base-content hover:bg-primary/10'
+                    ? 'bg-primary text-primary-content shadow-lg shadow-primary/25'
+                    : 'bg-base-200 text-base-content hover:bg-primary/10'
                 }`}
                 onClick={() => setFilter(tech)}
               >
-                {tech}
+                <span className='relative z-10'>{tech}</span>
+                {hoveredFilter === tech && (
+                  <motion.div
+                    layoutId="filter-hover"
+                    className="absolute inset-0 bg-primary/10 rounded-full"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
               </motion.button>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
 
       {divider && (
-        <div className='h-px bg-gradient-to-r from-transparent via-base-content/10 to-transparent my-8'></div>
+        <motion.div 
+          className='h-px bg-gradient-to-r from-transparent via-base-content/10 to-transparent my-12'
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        />
       )}
 
       <motion.div 
@@ -117,22 +165,49 @@ export const BasicGrid = <Item extends unknown>({
               <motion.div
                 key={idx}
                 layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                transition={{ 
+                  duration: 0.3,
+                  delay: idx * 0.1,
+                  layout: { duration: 0.3 }
+                }}
               >
                 {children[idx]}
               </motion.div>
             ))
           ) : (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className='text-lg font-medium text-base-content/60 col-span-full text-center py-12'
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className='col-span-full flex flex-col items-center justify-center py-16 space-y-4'
             >
-              No items were found.
-            </motion.p>
+              <svg
+                className="w-16 h-16 text-base-content/20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+              <p className='text-lg font-medium text-base-content/60 text-center'>
+                No items were found matching this filter.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className='btn btn-sm btn-primary mt-4'
+                onClick={() => setFilter('all')}
+              >
+                Show All Items
+              </motion.button>
+            </motion.div>
           )}
         </AnimatePresence>
       </motion.div>
