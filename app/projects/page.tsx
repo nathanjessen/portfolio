@@ -5,9 +5,16 @@ import PageHeading from '../../components/PageHeading';
 import ProjectCard from '../../components/ProjectCard';
 import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
 import { projects } from '../../constants/projects';
+import { Container } from '../../components/Layouts/Container';
+import { User } from '../../constants/User';
 
 export const metadata: Metadata = {
   title: 'Projects',
+  description: `Explore ${User.name}'s portfolio of web development projects, featuring React, TypeScript, and modern web technologies.`,
+  openGraph: {
+    title: 'Projects | Nathan Jessen',
+    description: `Explore ${User.name}'s portfolio of web development projects, featuring React, TypeScript, and modern web technologies.`,
+  },
 };
 
 const ProjectsPage: NextPage = () => {

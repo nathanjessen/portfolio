@@ -14,9 +14,11 @@ import Testimonials from '../components/Testimonials';
 import { Repository } from '../constants/repo';
 
 export const metadata: Metadata = {
-  title: 'Nathan Jessen - Senior Frontend Developer',
-  description:
-    "I've been developing websites for 10+ years. Get in touch with me to know more.",
+  description: `${User.name} is a Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Based in ${User.location}.`,
+  openGraph: {
+    title: `${User.name} - Senior Frontend Developer`,
+    description: `${User.name} is a Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Based in ${User.location}.`,
+  },
 };
 
 const HomePage = async () => {

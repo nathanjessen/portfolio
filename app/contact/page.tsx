@@ -1,19 +1,23 @@
-import { Metadata, NextPage } from 'next/types';
-import Contact from '../../components/Contact';
+import { Metadata } from 'next';
+import ContactForm from '../../components/ContactForm';
 import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 
 export const metadata: Metadata = {
-  title: 'Contact Me',
+  title: 'Contact',
+  description: 'Get in touch with Nathan Jessen. Whether you have a project in mind or just want to connect, I'd love to hear from you.',
+  openGraph: {
+    title: 'Contact | Nathan Jessen',
+    description: 'Get in touch with Nathan Jessen. Whether you have a project in mind or just want to connect, I'd love to hear from you.',
+  },
 };
 
-const ContactPage: NextPage = () => {
+const ContactPage = () => {
   return (
     <>
-      <PageHeading>Contact Me</PageHeading>
-
+      <PageHeading>Contact</PageHeading>
       <Container>
-        <Contact />
+        <ContactForm />
       </Container>
     </>
   );
