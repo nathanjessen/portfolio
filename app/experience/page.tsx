@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
-import Timeline from '../../components/Timeline';
+import Experience from '../../components/Experience';
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -17,7 +17,7 @@ const ExperiencePage = () => {
     <>
       <PageHeading>Experience</PageHeading>
       <Container>
-        <Timeline />
+        <Experience />
       </Container>
     </>
   );
