@@ -15,11 +15,18 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "clean": "rm -rf .next out",
+    "typecheck": "tsc --noEmit",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "check": "npm run lint && npm run typecheck",
+    "analyze": "ANALYZE=true next build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.4",
@@ -33,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
+    "@next/bundle-analyzer": "^15.0.3",
     "@storybook/addon-actions": "^8.4.6",
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-interactions": "^8.4.6",

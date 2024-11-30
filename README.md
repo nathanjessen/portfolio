@@ -16,40 +16,107 @@ Some directories are created using GitHub pages in other repositories.
 
 ## Technologies
 
-The website is built in my favourite Tech Stack and deployed on [Vercel](https://vercel.com)
+The website is built with modern technologies and deployed on [Vercel](https://vercel.com)
 
-- [Next.js](https://nextjs.org) for building React Components.
+### Core
+- [Next.js 14](https://nextjs.org) for building React Components
+- [React 18](https://reactjs.org) for the UI library
+- [TypeScript](https://www.typescriptlang.org/) for type safety
+- [Node.js](https://nodejs.org/) for the runtime environment
+
+### Styling
 - [TailwindCSS](https://tailwindcss.com) for styling
-- [Vercel](https://vercel.com) for deployments and CI/CD.
-- [Github Pages](http://pages.github.com/) for deployment of docs.
-- [PostCSS](http://postcss.org/)
-- [Yarn](https://yarnpkg.com/)
-- [WebSlides](https://webslides.tv/)
-- [Google Fonts](https://fonts.google.com/)
-- [Node.js](https://nodejs.org/en/)
-- [npm](https://www.npmjs.com/)
+- [DaisyUI](https://daisyui.com/) for Tailwind components
+- [PostCSS](https://postcss.org/) for CSS processing
+
+### Development Tools
+- [ESLint](https://eslint.org/) for code linting
+- [Storybook](https://storybook.js.org/) for component development
+- [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) for bundle analysis
+
+### APIs and Services
+- [SendGrid](https://sendgrid.com/) for email services
+- [Octokit](https://github.com/octokit/octokit.js) for GitHub API integration
+- [Vercel](https://vercel.com) for deployments and CI/CD
+
+## Getting Started
+
+### Prerequisites
+- Node.js 20.9.0 or later
+- npm 10 or later
+
+### Development
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+# Standard development server
+npm run dev
+
+# Or with Turbo mode (faster builds)
+npm run dev:turbo
+```
+
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Available Scripts
+
+#### Development
+- `npm run dev` - Start development server
+- `npm run dev:turbo` - Start development server with Turbo mode
+- `npm run storybook` - Start Storybook development environment
+
+#### Building
+- `npm run build` - Create production build
+- `npm run start` - Start production server
+- `npm run clean` - Remove build artifacts
+- `npm run build-storybook` - Build Storybook static site
+
+#### Quality Checks
+- `npm run typecheck` - Run TypeScript type checking
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Run ESLint with auto-fix
+- `npm run check` - Run both lint and type checks
+
+#### Analysis
+- `npm run analyze` - Analyze bundle size
+
+## Project Structure
+
+```
+portfolio/
+├── app/             # Next.js 14 app directory
+├── components/      # React components
+├── constants/       # Constants and configuration
+├── public/         # Static assets
+└── stories/        # Storybook stories
+```
+
+## Environment Variables
+
+The following environment variables are required:
+
+- `GITHUB_AUTH_TOKEN` - GitHub API token
+- `SENDGRID_API_KEY` - SendGrid API key
 
 ## Issues
 
 If you discover a bug, [report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or even better, edit and send a pull-request with the fix.
 
-## Getting Started
+## Deployment
 
-First, run the development server:
+This site is deployed on Vercel with the following configuration:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Production Branch: `main`
+- Framework Preset: Next.js
+- Build Command: `npm run build`
+- Output Directory: `.next`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
 
 ## Learn More
 
@@ -59,9 +126,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
