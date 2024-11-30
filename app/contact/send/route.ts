@@ -5,40 +5,64 @@ import User from '../../../constants/User';
 mail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
 type ResponseData = {
-  status?: string;
-  message?: string;
+  status: 'success' | 'error';
+  message: string;
+};
+
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
 };
 
 export async function POST(request: Request) {
-  let response: ResponseData = {};
-  const body = await request.json();
-  const message = `
+  try {
+    const body = (await request.json()) as ContactFormData;
+
+    // Input validation
+    if (!body.name || !body.email || !body.message) {
+      return NextResponse.json({
+        status: 'error',
+        message: 'All fields are required',
+      } as ResponseData, { status: 400 });
+    }
+
+    if (!body.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      return NextResponse.json({
+        status: 'error',
+        message: 'Invalid email address',
+      } as ResponseData, { status: 400 });
+    }
+
+    const message = `
     Name: ${body.name}\r\n
     Email: ${body.email}\r\n
     Message: ${body.message}
-  `;
-  const data = {
-    to: User.email,
-    from: 'hello@nathanjessen.com',
-    subject: 'Portfolio Contact Message via Sendgrid',
-    text: message,
-    html: message.replace(/\r\n/g, '<br>'),
-  };
+    `;
 
-  await mail
-    .send(data)
-    .then(() => {
-      response = {
-        status: 'success',
-        message: "Your message was sent. I'll be in contact shortly.",
-      };
-    })
-    .catch((error) => {
-      response = {
-        status: 'error',
-        message: `Message failed to send with error, ${error}`,
-      };
-    });
+    const data: mail.MailDataRequired = {
+      to: User.email,
+      from: {
+        email: 'hello@nathanjessen.com',
+        name: 'Portfolio Contact Form'
+      },
+      subject: 'Portfolio Contact Message via Sendgrid',
+      text: message,
+      html: message.replace(/\r\n/g, '<br>'),
+    };
 
-  return NextResponse.json(response);
+    await mail.send(data);
+
+    return NextResponse.json({
+      status: 'success',
+      message: "Your message was sent. I'll be in contact shortly.",
+    } as ResponseData);
+
+  } catch (error) {
+    console.error('SendGrid Error:', error);
+    return NextResponse.json({
+      status: 'error',
+      message: 'Failed to send message. Please try again later.',
+    } as ResponseData, { status: 500 });
+  }
 }
