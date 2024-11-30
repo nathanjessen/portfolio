@@ -20,35 +20,42 @@ export const ExperienceCard = ({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className='group relative experience-card border p-6 rounded-xl bg-base-200/60 backdrop-blur-sm z-10 
-                 transition-all duration-300 hover:bg-base-200/90 hover:shadow-lg'
+      className='group relative experience-card p-6 rounded-xl bg-base-200 card-hover z-10'
     >
       {year && (
-        <div className='absolute -left-4 top-6 bg-base-100 px-3 py-1 rounded-full border'>
-          <span className='text-sm font-semibold text-base-content'>
-            {year}
-          </span>
+        <div className='absolute -left-4 top-6'>
+          <div className='relative inline-flex items-center rounded-full bg-base-100 px-3 py-1 border'>
+            <span className='text-sm font-semibold text-base-content'>
+              {year}
+            </span>
+          </div>
         </div>
       )}
-      <div className='ml-8'>
-        <h3 className='font-semibold text-xl text-base-content'>{title}</h3>
-        {company && companyLink && (
-          <a
-            href={companyLink}
-            target='_blank'
-            rel='noreferrer'
-            className='inline-block mt-2 text-base-content/75 hover:text-primary transition-colors duration-200'
-          >
-            {company}
-          </a>
-        )}
-        {company && !companyLink && (
-          <span className='inline-block mt-2 text-base-content/75'>
-            {company}
-          </span>
-        )}
+      <div className='ml-8 space-y-4'>
+        <div>
+          <h3 className='text-lg font-medium text-base-content group-hover:text-primary transition-colors duration-300'>
+            {title}
+          </h3>
+          {company && companyLink && (
+            <a
+              href={companyLink}
+              target='_blank'
+              rel='noreferrer'
+              className='inline-block mt-1 text-sm text-base-content/60 hover:text-primary transition-colors duration-200'
+            >
+              {company}
+            </a>
+          )}
+          {company && !companyLink && (
+            <span className='inline-block mt-1 text-sm text-base-content/60'>
+              {company}
+            </span>
+          )}
+        </div>
         {desc && (
-          <p className='mt-4 text-base-content/70 leading-relaxed'>{desc}</p>
+          <p className='text-base text-base-content/80 leading-relaxed'>
+            {desc}
+          </p>
         )}
       </div>
     </motion.div>

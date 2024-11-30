@@ -1,25 +1,22 @@
-import { Metadata } from 'next';
+'use client';
+
+import { motion } from 'framer-motion';
 import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 import Experience from '../../components/Experience';
-
-export const metadata: Metadata = {
-  title: 'Experience',
-  description:
-    'Professional experience and career timeline of Nathan Jessen, showcasing roles in frontend development and web technologies.',
-  openGraph: {
-    title: 'Experience | Nathan Jessen',
-    description:
-      'Professional experience and career timeline of Nathan Jessen, showcasing roles in frontend development and web technologies.',
-  },
-};
 
 const ExperiencePage = () => {
   return (
     <>
       <PageHeading>Experience</PageHeading>
       <Container>
-        <Experience />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Experience />
+        </motion.div>
       </Container>
     </>
   );
