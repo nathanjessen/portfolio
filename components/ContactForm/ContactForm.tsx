@@ -1,8 +1,26 @@
+'use client';
+
 import { FormEvent, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export interface ContactFormProps {
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void;
 }
+
+const formFields = [
+  {
+    id: 'name',
+    label: 'Name',
+    type: 'text',
+    required: true,
+  },
+  {
+    id: 'email',
+    label: 'Email',
+    type: 'email',
+    required: true,
+  },
+];
 
 export const ContactForm = ({ onSubmit }: ContactFormProps) => {
   const [formData, setFormData] = useState({
@@ -15,54 +33,72 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
     e.preventDefault();
     onSubmit?.(e);
 
-    const mailtoUrl = `mailto:nathan.jessen@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    // window.location.href = mailtoUrl;
-    alert(mailtoUrl);
+    const mailtoUrl = `mailto:nathan.jessen@gmail.com?subject=Contact from ${encodeURIComponent(
+      formData.name
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    window.location.href = mailtoUrl;
   };
 
   return (
-    <form className='form space-y-2' onSubmit={handleSubmit}>
-      <div className='form-control w-full'>
-        <label htmlFor='name' className='label cursor-pointer'>
-          <span className='label-text'>Name</span>
-        </label>
-        <input
-          type='text'
-          className='input input-bordered w-full'
-          name='name'
-          id='name'
-          required
-          value={formData.name}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, name: e.target.value }))
-          }
-        />
-      </div>
+    <motion.form
+      className='form space-y-4 bg-base-200/50 backdrop-blur-sm p-6 rounded-lg border border-base-300'
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      {formFields.map((field, idx) => (
+        <motion.div
+          key={field.id}
+          className='form-control w-full'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: idx * 0.1 }}
+        >
+          <label htmlFor={field.id} className='label cursor-pointer'>
+            <motion.span
+              className='label-text text-base-content/80'
+              whileHover={{ x: 2 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              {field.label}
+            </motion.span>
+          </label>
+          <motion.input
+            type={field.type}
+            className='input input-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200'
+            name={field.id}
+            id={field.id}
+            required={field.required}
+            value={formData[field.id as keyof typeof formData]}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, [field.id]: e.target.value }))
+            }
+            whileFocus={{ scale: 1.01 }}
+          />
+        </motion.div>
+      ))}
 
-      <div className='form-control w-full'>
-        <label htmlFor='email' className='label cursor-pointer'>
-          <span className='label-text'>Email</span>
-        </label>
-        <input
-          type='email'
-          className='input input-bordered w-full'
-          name='email'
-          id='email'
-          required
-          value={formData.email}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, email: e.target.value }))
-          }
-        />
-      </div>
-
-      <div className='form-control w-full'>
+      <motion.div
+        className='form-control w-full'
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
         <label htmlFor='message' className='label cursor-pointer'>
-          <span className='label-text'>Message</span>
+          <motion.span
+            className='label-text text-base-content/80'
+            whileHover={{ x: 2 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            Message
+          </motion.span>
         </label>
-        <textarea
-          rows={3}
-          className='textarea textarea-bordered w-full'
+        <motion.textarea
+          rows={4}
+          className='textarea textarea-bordered w-full bg-base-100/50 focus:bg-base-100 transition-colors duration-200'
           name='message'
           id='message'
           required
@@ -70,12 +106,21 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           onChange={(e) =>
             setFormData((prev) => ({ ...prev, message: e.target.value }))
           }
+          whileFocus={{ scale: 1.01 }}
         />
-      </div>
+      </motion.div>
 
-      <button type='submit' className='btn btn-primary w-full'>
+      <motion.button
+        type='submit'
+        className='btn btn-primary w-full'
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         Send Message
-      </button>
-    </form>
+      </motion.button>
+    </motion.form>
   );
 };
