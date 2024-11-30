@@ -22,7 +22,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
+    "@sendgrid/mail": "^8.1.4",
     "encoding": "^0.1.13",
     "next": "^14.2.18",
     "next-themes": "^0.3.0",
