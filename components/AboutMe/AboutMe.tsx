@@ -182,10 +182,9 @@ export const AboutMe = () => {
                 With over a decade of frontend development experience, I
                 specialize in building scalable design systems and component
                 libraries that empower teams to create consistent, accessible
-                web applications. My expertise in React, TypeScript, and
-                modern frontend tools enables me to deliver high-quality
-                solutions that prioritize both user experience and developer
-                efficiency.
+                web applications. My expertise in React, TypeScript, and modern
+                frontend tools enables me to deliver high-quality solutions that
+                prioritize both user experience and developer efficiency.
               </motion.p>
               <motion.p
                 className='text-xl leading-relaxed text-base-content/80'
@@ -209,9 +208,9 @@ export const AboutMe = () => {
                 transition={{ delay: 0.7 }}
               >
                 Currently, I&apos;m seeking a role where I can drive frontend
-                excellence, mentor other developers, and continue to evolve
-                the craft of web development. I&apos;m particularly interested
-                in opportunities that emphasize modern frontend architecture,
+                excellence, mentor other developers, and continue to evolve the
+                craft of web development. I&apos;m particularly interested in
+                opportunities that emphasize modern frontend architecture,
                 design systems, and web accessibility standards.
               </motion.p>
             </motion.div>
