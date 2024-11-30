@@ -1,153 +1,182 @@
-# Portfolio
+# Nathan Jessen's Portfolio
 
-My personal website built with Next.js.
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC)](https://tailwindcss.com)
+[![DaisyUI](https://img.shields.io/badge/DaisyUI-4-5A0EF8)](https://daisyui.com/)
+[![Storybook](https://img.shields.io/badge/Storybook-8-FF4785)](https://storybook.js.org/)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+My professional portfolio website showcasing my work, experience, and skills. Built with modern web technologies and best practices.
 
-## Directories
+🔗 [View Live Site](https://www.nathanjessen.com/)
 
-Some directories are created using GitHub pages in other repositories.
+## ✨ Features
 
-- [/tokenlist/](https://github.com/nathanjessen/tokenlist)
-- [/slides/](https://github.com/nathanjessen/slides)
-- [/ioextendedlv/](https://github.com/nathanjessen/ioextendedlv)
-- [/knowledge/](https://github.com/nathanjessen/knowledge/)
-- [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/)
+- 🎨 Modern, responsive design using TailwindCSS and DaisyUI
+- 📱 Mobile-first approach with a clean, minimalist UI
+- ⚡ Fast page loads with Next.js 14 App Router
+- 🧩 Component-driven development with Storybook
+- 🔍 SEO optimized
+- 📧 Contact form integration with SendGrid
+- 🔄 GitHub integration for displaying repositories
+- 📊 TypeScript for type safety
+- 🚀 Deployed on Vercel with automatic CI/CD
 
-## Technologies
+## 🌐 Related Projects
 
-The website is built with modern technologies and deployed on [Vercel](https://vercel.com)
+The following directories are hosted on GitHub Pages in separate repositories:
+
+- [/tokenlist/](https://github.com/nathanjessen/tokenlist) - Token list for blockchain projects
+- [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
+- [/ioextendedlv/](https://github.com/nathanjessen/ioextendedlv) - Google I/O Extended Las Vegas
+- [/knowledge/](https://github.com/nathanjessen/knowledge/) - Personal knowledge base
+- [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/) - Ethereum allowance checker
+
+## 🛠️ Tech Stack
 
 ### Core
-
-- [Next.js 14](https://nextjs.org) for building React Components
-- [React 18](https://reactjs.org) for the UI library
-- [TypeScript](https://www.typescriptlang.org/) for type safety
-- [Node.js](https://nodejs.org/) for the runtime environment
+- [Next.js](https://nextjs.org) ^14.2.18 - React framework for production
+- [React](https://reactjs.org) ^18.3.1 - UI component library
+- [TypeScript](https://www.typescriptlang.org/) - Static type checking
+- [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
 ### Styling
+- [TailwindCSS](https://tailwindcss.com) - Utility-first CSS
+- [DaisyUI](https://daisyui.com/) - Tailwind components
+- [PostCSS](https://postcss.org/) - CSS processing
 
-- [TailwindCSS](https://tailwindcss.com) for styling
-- [DaisyUI](https://daisyui.com/) for Tailwind components
-- [PostCSS](https://postcss.org/) for CSS processing
+### Development
+- [ESLint](https://eslint.org/) - Linting
+- [Prettier](https://prettier.io/) - Code formatting
+- [Storybook](https://storybook.js.org/) - Component development
+- [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) - Bundle analysis
 
-### Development Tools
+### APIs & Services
+- [SendGrid](https://sendgrid.com/) - Email service
+- [Octokit](https://github.com/octokit/octokit.js) - GitHub API
+- [Vercel](https://vercel.com) - Hosting & CI/CD
 
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io/) for code formatting
-- [Storybook](https://storybook.js.org/) for component development
-- [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) for bundle analysis
-
-### APIs and Services
-
-- [SendGrid](https://sendgrid.com/) for email services
-- [Octokit](https://github.com/octokit/octokit.js) for GitHub API integration
-- [Vercel](https://vercel.com) for deployments and CI/CD
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js 20.9.0 or later
 - npm 10 or later
+- GitHub account (for API integration)
+- SendGrid account (for contact form)
 
 ### Development
 
-1. Install dependencies:
+1. Clone the repository:
+```bash
+git clone https://github.com/nathanjessen/portfolio.git
+cd portfolio
+```
 
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
-
+3. Set up environment variables:
 ```bash
-# Standard development server
-npm run dev
-
-# Or with Turbo mode (faster builds)
-npm run dev:turbo
+cp .env.example .env.local
+# Edit .env.local with your API keys
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Start the development server:
+```bash
+npm run dev        # Standard mode
+npm run dev:turbo  # Turbo mode (faster builds)
+```
+
+5. Open [http://localhost:3000](http://localhost:3000)
 
 ### Available Scripts
 
 #### Development
-
 - `npm run dev` - Start development server
-- `npm run dev:turbo` - Start development server with Turbo mode
-- `npm run storybook` - Start Storybook development environment
+- `npm run dev:turbo` - Start with Turbo mode
+- `npm run storybook` - Start Storybook
 
 #### Building
-
 - `npm run build` - Create production build
 - `npm run start` - Start production server
 - `npm run clean` - Remove build artifacts
-- `npm run build-storybook` - Build Storybook static site
+- `npm run build-storybook` - Build Storybook
 
-#### Quality Checks
-
-- `npm run typecheck` - Run TypeScript type checking
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Run ESLint with auto-fix
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run check` - Run all checks (lint, type, format)
+#### Quality
+- `npm run typecheck` - TypeScript check
+- `npm run lint` - ESLint check
+- `npm run lint:fix` - ESLint autofix
+- `npm run format` - Prettier format
+- `npm run format:check` - Prettier check
+- `npm run check` - All checks
 
 #### Analysis
+- `npm run analyze` - Bundle analysis
 
-- `npm run analyze` - Analyze bundle size
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 portfolio/
-├── app/             # Next.js 14 app directory
-├── components/      # React components
-├── constants/       # Constants and configuration
-├── public/         # Static assets
-└── stories/        # Storybook stories
+├── app/                 # Next.js app directory
+│   ├── api/            # API routes
+│   ├── (routes)/       # Page routes
+│   └── layout.tsx      # Root layout
+├── components/         # React components
+│   ├── ui/            # UI components
+│   └── features/      # Feature components
+├── constants/         # Constants and config
+├── lib/              # Utility functions
+├── public/           # Static assets
+├── stories/          # Storybook stories
+└── types/           # TypeScript types
 ```
 
-## Code Style
+## 🔧 Configuration
 
-This project uses ESLint and Prettier for code formatting and linting:
+### Environment Variables
 
-- ESLint enforces code quality rules
-- Prettier ensures consistent code formatting
-- Configuration files:
-  - `.eslintrc.json` - ESLint configuration
-  - `.prettierrc` - Prettier configuration
-  - `.prettierignore` - Files to exclude from formatting
+Required environment variables:
 
-## Environment Variables
-
-The following environment variables are required:
-
-- `GITHUB_AUTH_TOKEN` - GitHub API token
+- `GITHUB_AUTH_TOKEN` - GitHub personal access token
 - `SENDGRID_API_KEY` - SendGrid API key
 
-## Issues
+### Code Style
 
-If you discover a bug, [report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or even better, edit and send a pull-request with the fix.
+ESLint and Prettier configuration:
 
-## Deployment
+- `.eslintrc.json` - ESLint rules
+- `.prettierrc` - Prettier config
+- `.prettierignore` - Formatting exclusions
 
-This site is deployed on Vercel with the following configuration:
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 🐛 Issues
+
+Found a bug? [Report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or submit a PR with the fix.
+
+## 📦 Deployment
+
+Deployed on Vercel with:
 
 - Production Branch: `main`
 - Framework Preset: Next.js
 - Build Command: `npm run build`
 - Output Directory: `.next`
 
-For more details, check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
+[Deployment Documentation](https://nextjs.org/docs/deployment)
 
-## Learn More
+## 📚 Resources
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://reactjs.org/docs)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
