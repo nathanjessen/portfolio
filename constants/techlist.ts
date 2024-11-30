@@ -21,7 +21,7 @@ export const techlist: TechItem[] = [
   },
   {
     name: 'Next.js',
-    img: '/images/tech/nextjs.png',
+    img: '/images/tech/nextjs.svg',
     category: 'frontend',
     proficiency: 'expert',
   },
@@ -103,7 +103,7 @@ export const techlist: TechItem[] = [
   },
   {
     name: 'Chrome DevTools',
-    img: '/images/tech/chrome-devtools.png',
+    img: '/images/tech/chrome-devtools.svg',
     category: 'tools',
     proficiency: 'expert',
   },
@@ -155,7 +155,7 @@ export const techlist: TechItem[] = [
   },
   {
     name: 'Web Vitals',
-    img: '/images/tech/web-vitals.png',
+    img: '/images/tech/web-vitals.svg',
     category: 'performance',
     proficiency: 'expert',
   },
