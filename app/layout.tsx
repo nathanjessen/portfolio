@@ -50,7 +50,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Nathan Jessen - Senior Software Engineer',
-    description: 'Senior Software Engineer building AI-powered products. Based in Austin, TX.',
+    description:
+      'Senior Software Engineer building AI-powered products. Based in Austin, TX.',
     creator: '@nathanjessen',
     images: ['/assets/images/avatar-person.png'],
   },
