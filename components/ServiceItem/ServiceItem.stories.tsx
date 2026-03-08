@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { services } from '../../constants/services';
 import { ServiceItem } from './ServiceItem';
 

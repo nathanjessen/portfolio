@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import ProjectCard from '../ProjectCard';
 import * as ProjectCardStories from '../ProjectCard/ProjectCard.stories';
 import { ProjectCardBasic } from '../ProjectCard/ProjectCardBasic';
