@@ -19,7 +19,7 @@ export const experience: Experience[] = [
     company: 'A Place for Mom',
     year: '2022',
     companyLink: 'https://www.aplaceformom.com/',
-    desc: 'SEO optimization, accessibility, performance improvements, and new feature development for the A Place for Mom website and services.',
+    desc: 'Contributed to frontend development of aplaceformom.com, a high-traffic Next.js platform, supporting consistent organic search growth. Helped ship two AI-powered platforms — a B2C care-finder and a B2B agency outreach tool — from prototype to production. Integrated AI tools including Claude and Codex into development workflows. Stack: Next.js, React, TypeScript, Storybook, Tailwind, AWS, Twilio, PostHog.',
   },
   {
     title: 'Frontend Developer',

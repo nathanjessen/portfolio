@@ -17,11 +17,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://nathanjessen.com'),
   title: {
-    default: 'Nathan Jessen - Senior Frontend Developer',
+    default: 'Nathan Jessen - Senior Software Engineer',
     template: '%s | Nathan Jessen',
   },
   description:
-    'This is my portfolio as a Senior Frontend Developer based in Austin.',
+    'Senior Software Engineer building AI-powered products with Next.js, React, and TypeScript. Based in Austin, TX.',
   robots: 'follow, index',
   icons: [
     {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    title: 'Nathan Jessen - Senior Frontend Developer',
+    title: 'Nathan Jessen - Senior Software Engineer',
     description:
-      'This is my portfolio as a Senior Frontend Developer based in Austin.',
+      'Senior Software Engineer building AI-powered products with Next.js, React, and TypeScript. Based in Austin, TX.',
     locale: 'en-US',
     url: '/',
     siteName: 'Nathan Jessen',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Nathan Jessen - Senior Frontend Developer',
-    description: 'Senior Frontend Developer based in Austin',
+    title: 'Nathan Jessen - Senior Software Engineer',
+    description: 'Senior Software Engineer building AI-powered products. Based in Austin, TX.',
     creator: '@nathanjessen',
     images: ['/assets/images/avatar-person.png'],
   },

@@ -17,6 +17,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'AI-Powered Care Platforms',
+    desc: 'Contributed to two AI-powered platforms at A Place for Mom: a B2C care-finder helping families locate senior care facilities, and a B2B outreach tool connecting home care agencies with care-seekers via AI-driven speech/text pipelines and Twilio voice conferencing. Both shipped from prototype to production in under three months.',
+    url: 'https://findcare.aplaceformom.com/',
+    tech: ['Next.js', 'React', 'TypeScript', 'Storybook', 'Tailwind', 'Twilio', 'PostHog', 'Jest'],
+    company: 'A Place for Mom',
+    date: '2025/01/01',
+    archived: false,
+    featured: true,
+    published: true,
+  },
+  {
+    title: 'A Place for Mom',
+    desc: 'Contributed to frontend development of aplaceformom.com, a high-traffic Next.js platform helping families search for senior care and retirement facilities. Work focused on SEO optimization, performance, reliability, and migrating from legacy systems to a unified modern stack.',
+    url: 'https://www.aplaceformom.com/',
+    tech: ['Next.js', 'React', 'TypeScript', 'Storybook', 'Tailwind', 'AWS', 'Cloudinary'],
+    company: 'A Place for Mom',
+    date: '2022/08/01',
+    archived: false,
+    featured: true,
+    published: true,
+  },
+  {
     title: 'Storybook Component Library',
     img: '/assets/images/storybook-hodo.png',
     desc: 'React components for an NFT marketplace were built in isolation using Storybook.',

@@ -24,9 +24,9 @@ export const HomeHero = () => {
           className='text-base-content/80 space-y-2 text-xl'
           aria-label='Areas of expertise'
         >
+          <li>AI-Powered Product Engineering</li>
           <li>React + TypeScript Applications</li>
           <li>Storybook Component Libraries</li>
-          <li>WCAG Accessibility Compliance</li>
         </ul>
         <div className='flex items-start gap-8 mt-8'>
           <div className='flex'>
@@ -35,7 +35,7 @@ export const HomeHero = () => {
               Experience
             </h3>
             <p className='whitespace-nowrap text-4xl font-extrabold order-first pr-3 text-base-content'>
-              10+
+              13+
             </p>
           </div>
         </div>

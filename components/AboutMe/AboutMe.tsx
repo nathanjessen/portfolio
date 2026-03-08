@@ -7,8 +7,8 @@ export const AboutMe = () => {
   return (
     <section>
       <p className='text-2xl md:text-4xl font-semibold px-8'>
-        I&apos;m a frontend developer who loves to build and document UI
-        components using tools like React and Storybook.
+        I&apos;m a senior software engineer building AI-powered products with
+        React, TypeScript, and Next.js — and using agentic tools to ship faster.
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
@@ -26,13 +26,12 @@ export const AboutMe = () => {
           </div>
 
           <div className='mt-8'>
-            <h2 className='text-xl font-semibold'>Job Opportunities</h2>
+            <h2 className='text-xl font-semibold'>Resume</h2>
             <p className='text-lg mt-4'>
-              I&apos;m actively interviewing for a new role. If I might be a
-              good fit,{' '}
+              Interested in working together?{' '}
               {User.resumeUrl && (
                 <>
-                  check out my{' '}
+                  Check out my{' '}
                   <a
                     href={User.resumeUrl}
                     download={User.resumeName}
@@ -45,7 +44,10 @@ export const AboutMe = () => {
                   and{' '}
                 </>
               )}
-              get in contact.
+              <Link href='/contact' className='link link-primary font-bold'>
+                get in touch
+              </Link>
+              .
             </p>
           </div>
 
@@ -133,23 +135,24 @@ export const AboutMe = () => {
         <div className='col-span-1 md:col-span-2'>
           <div className='space-y-4'>
             <p className='text-xl'>
-              I&apos;ve been developing frontend applications professionally for
-              over 10 years. My workflow has evolved over the years to include
-              more unit testing and automation to find issues earlier and give
-              myself more time to develop new features.
+              I&apos;ve been building frontend applications professionally for
+              over 13 years. Over the past year I&apos;ve shifted toward
+              AI-augmented engineering — using Claude and Codex to accelerate
+              development workflows, prototype products rapidly, and ship
+              reliable software faster than traditional approaches allow.
             </p>
             <p className='text-xl'>
-              The user is at the heart of every decision I make. Websites and
-              applications should be accessible to everyone and the interface
-              and user journey should constantly evolve to give the best user
-              experience.
+              At A Place for Mom I&apos;ve contributed to a high-traffic Next.js
+              platform and helped ship two AI-powered products: a B2C
+              care-finder and a B2B platform connecting home care agencies with
+              care-seekers via voice AI and Twilio. Both went from prototype to
+              production in under three months.
             </p>
             <p className='text-xl'>
-              I&apos;m looking for a position that allows me to continue with my
-              work and evolve as a developer, contributor, and leader. An ideal
-              position would involve mentoring Junior developers, coding
-              applications with React and Storybook, and allow me to work toward
-              certifications in things like WCAG 2.1 AA compliance.
+              I&apos;m focused on growing toward Staff and Principal engineering
+              with an emphasis on agentic systems — building tools that use LLMs
+              not just as assistants but as active participants in product
+              workflows.
             </p>
           </div>
 
