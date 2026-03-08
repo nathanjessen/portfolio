@@ -142,17 +142,6 @@ export const projects: Project[] = [
     archived: true,
   },
   {
-    title: 'Google I/O Extended Las Vegas',
-    img: '/assets/images/google-io-extended.png',
-    desc: 'Landing page for the Google I/O Extended event in Las Vegas.',
-    source: 'https://github.com/nathanjessen/ioextendedlv',
-    url: 'https://nathanjessen.github.io/ioextendedlv/',
-    tech: ['Jekyll', 'JavaScript'],
-    company: 'Freelance',
-    date: '2017/04/10',
-    archived: true,
-  },
-  {
     title: 'Sprint',
     desc: 'Complete website redesign including marketplace, shopping cart, and customer support.',
     tech: ['AEM', 'AngularJS', 'Sass', 'Gulp', 'Sketch'],
