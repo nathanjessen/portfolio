@@ -21,14 +21,14 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
   };
 
   return (
-    <form className='form space-y-2' onSubmit={handleSubmit}>
-      <div className='form-control w-full'>
-        <label htmlFor='name' className='label cursor-pointer'>
-          <span className='label-text'>Name</span>
+    <form className='space-y-2' onSubmit={handleSubmit}>
+      <div className='flex flex-col gap-1 w-full'>
+        <label htmlFor='name' className='flex cursor-pointer'>
+          <span className='text-sm font-medium'>Name</span>
         </label>
         <input
           type='text'
-          className='input input-bordered w-full'
+          className='w-full px-3 py-2 rounded border border-white/20 bg-transparent focus:outline-none focus:ring-2 focus:ring-emerald-600'
           name='name'
           id='name'
           required
@@ -39,13 +39,13 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
         />
       </div>
 
-      <div className='form-control w-full'>
-        <label htmlFor='email' className='label cursor-pointer'>
-          <span className='label-text'>Email</span>
+      <div className='flex flex-col gap-1 w-full'>
+        <label htmlFor='email' className='flex cursor-pointer'>
+          <span className='text-sm font-medium'>Email</span>
         </label>
         <input
           type='email'
-          className='input input-bordered w-full'
+          className='w-full px-3 py-2 rounded border border-white/20 bg-transparent focus:outline-none focus:ring-2 focus:ring-emerald-600'
           name='email'
           id='email'
           required
@@ -56,13 +56,13 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
         />
       </div>
 
-      <div className='form-control w-full'>
-        <label htmlFor='message' className='label cursor-pointer'>
-          <span className='label-text'>Message</span>
+      <div className='flex flex-col gap-1 w-full'>
+        <label htmlFor='message' className='flex cursor-pointer'>
+          <span className='text-sm font-medium'>Message</span>
         </label>
         <textarea
           rows={3}
-          className='textarea textarea-bordered w-full'
+          className='w-full px-3 py-2 rounded border border-white/20 bg-transparent focus:outline-none focus:ring-2 focus:ring-emerald-600 resize-none'
           name='message'
           id='message'
           required
@@ -73,7 +73,10 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
         />
       </div>
 
-      <button type='submit' className='btn btn-primary w-full'>
+      <button
+        type='submit'
+        className='inline-flex items-center justify-center bg-emerald-600 text-emerald-50 px-4 py-3 min-h-12 rounded font-semibold uppercase tracking-wider hover:bg-emerald-700 transition-colors w-full'
+      >
         Send Message
       </button>
     </form>

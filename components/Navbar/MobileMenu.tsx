@@ -12,11 +12,11 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
 
   return (
     <nav>
-      <ul className='menu w-full pb-4'>
+      <ul className='flex flex-col gap-1 list-none w-full pb-4'>
         <li>
           <Link
             href='/about'
-            className={pathname === '/about' ? 'active' : ''}
+            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/about' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
             onClick={onClose}
           >
             About
@@ -25,7 +25,7 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
         <li>
           <Link
             href='/projects'
-            className={pathname === '/projects' ? 'active' : ''}
+            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/projects' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
             onClick={onClose}
           >
             Projects
@@ -34,7 +34,7 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
         <li>
           <Link
             href='/experience'
-            className={pathname === '/experience' ? 'active' : ''}
+            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/experience' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
             onClick={onClose}
           >
             Experience
@@ -43,7 +43,7 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
         <li>
           <Link
             href='/contact'
-            className={pathname === '/contact' ? 'active' : ''}
+            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/contact' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
             onClick={onClose}
           >
             Contact

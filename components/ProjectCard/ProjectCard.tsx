@@ -8,7 +8,7 @@ export interface ProjectCardProps {
 const css = { width: '100%', height: 'auto' };
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
-    <div className='card bg-base-200 shadow-xl divide-y divide-base-100 w-full'>
+    <div className='rounded-lg overflow-hidden bg-base-200 shadow-xl divide-y divide-base-100 w-full flex flex-col'>
       {item.img && (
         <figure className='bg-base-300 rounded-t-md'>
           <div className='block h-60 w-full overflow-hidden'>
@@ -25,14 +25,16 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
         </figure>
       )}
 
-      <div className='card-body'>
-        <h5 className='card-title text-base-content'>{item.title}</h5>
-        <p className='text-base-content/80'>{item.desc}</p>
+      <div className='flex flex-col flex-1 gap-2 p-6'>
+        <h5 className='text-lg font-semibold text-base-content mb-1'>
+          {item.title}
+        </h5>
+        <p className='text-base-content/70'>{item.desc}</p>
 
-        <div className='flex gap-2 mt-2 flex-wrap'>
+        <div className='flex gap-2 mt-auto pt-2 flex-wrap'>
           {item.tech.map((tech, idx) => (
             <span
-              className='badge badge-primary text-base-100'
+              className='inline-flex items-center px-2 py-0.5 rounded text-xs bg-emerald-600 text-emerald-50'
               key={idx}
               title={`Built with ${tech}`}
             >
@@ -48,7 +50,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.source}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-tr-none rounded-bl-none rounded-tl-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              className='flex w-full items-center justify-center gap-2 text-xs py-4 h-14 rounded-tr-none rounded-bl-none rounded-tl-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
               aria-label={`View source code for ${item.title}`}
             >
               <svg
@@ -75,7 +77,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.docs}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              className='flex w-full items-center justify-center gap-2 text-xs py-4 h-14 rounded-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
               aria-label={`View documentation for ${item.title}`}
             >
               <svg
@@ -103,7 +105,7 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
               href={item.url}
               target='_blank'
               rel='noreferrer'
-              className='btn btn-ghost text-xs py-4 h-14 btn-block rounded-bl-none rounded-br-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
+              className='flex w-full items-center justify-center gap-2 text-xs py-4 h-14 rounded-bl-none rounded-br-none hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors'
               aria-label={`Visit website for ${item.title}`}
             >
               <svg

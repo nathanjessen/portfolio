@@ -16,7 +16,7 @@ export const CallToAction = () => {
                 href={socialLinks.twitter}
                 target='_blank'
                 rel='noreferrer'
-                className='btn btn-info text-info-content hover:bg-info-focus focus:ring-2 focus:ring-info-content/20'
+                className='inline-flex items-center justify-center bg-sky-500 text-sky-100 px-4 py-2 rounded hover:bg-sky-600 transition-colors focus:ring-2 focus:ring-sky-200/20'
                 aria-label='Connect on Twitter'
               >
                 Twitter
@@ -27,7 +27,7 @@ export const CallToAction = () => {
                 href={socialLinks.linkedin}
                 target='_blank'
                 rel='noreferrer'
-                className='btn btn-secondary hover:bg-secondary-focus focus:ring-2 focus:ring-secondary-content/20'
+                className='inline-flex items-center justify-center bg-[#1888dd] text-blue-100 px-4 py-2 rounded hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-200/20'
                 aria-label='Connect on LinkedIn'
               >
                 LinkedIn

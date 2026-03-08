@@ -24,7 +24,7 @@ export const Navbar = () => {
     <>
       <SkipLink />
       <header className='bg-base-100 fixed top-0 w-full z-50' role='banner'>
-        <div className='navbar justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
+        <div className='flex items-center justify-between px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto'>
           <Brand name={User.name} position={User.position} />
 
           <nav
@@ -46,8 +46,8 @@ export const Navbar = () => {
           <div className='flex sm:hidden'>
             <MenuToggle
               onToggle={toggleMenu}
+              isOpen={expanded}
               aria-controls='mobile-menu'
-              aria-expanded={expanded}
             />
           </div>
         </div>

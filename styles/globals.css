@@ -1,23 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-  .ldquo,
-  .rdquo {
-    @apply relative;
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --transition-duration-0: 0ms;
+  --transition-duration-2000: 2000ms;
+  --transition-duration-4000: 4000ms;
+
+  --color-primary: #059669;
+  --color-primary-content: #ecfdf5;
+  --color-secondary: #1888dd;
+  --color-secondary-content: #dbeafe;
+  --color-accent: #a21caf;
+  --color-accent-content: #fae8ff;
+  --color-base-100: #111827;
+  --color-base-200: #1f2937;
+  --color-base-300: #111827;
+  --color-base-content: #e4e4e7;
+  --color-success: #00dc96;
+  --color-success-content: #003d29;
+  --color-error: #fc5547;
+  --color-error-content: #3b0000;
+  --color-info: #00b0e6;
+  --color-info-content: #001e26;
+  --color-warning: #ffbd00;
+  --color-warning-content: #2e2000;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
+}
 
-  .ldquo:before,
-  .rdquo:after {
+/* Light theme */
+:root {
+  --color-primary: #059669;
+  --color-primary-content: #ecfdf5;
+  --color-secondary: #1888dd;
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f4f6;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #111827;
+}
+
+/* Dark theme - matches original DaisyUI custom theme */
+.dark {
+  --color-primary: #059669;
+  --color-primary-content: #ecfdf5;
+  --color-secondary: #1888dd;
+  --color-base-100: #111827;
+  --color-base-200: #1f2937;
+  --color-base-300: #111827;
+  --color-base-content: #e4e4e7;
+}
+
+@utility ldquo {
+  @apply relative;
+
+  &:before {
     @apply text-primary text-3xl;
   }
 
-  .ldquo:before {
+  &:before {
     content: open-quote;
   }
+}
 
-  .rdquo:after {
+@utility rdquo {
+  @apply relative;
+
+  &:after {
+    @apply text-primary text-3xl;
+  }
+
+  &:after {
     content: close-quote;
   }
 }

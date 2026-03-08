@@ -43,7 +43,7 @@ export const HomeHero = () => {
           <a
             href={User.resumeUrl}
             download={User.resumeName}
-            className='btn btn-outline btn-primary btn-wide gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100'
+            className='inline-flex items-center justify-center gap-1 border border-emerald-600 text-emerald-600 text-sm px-8 py-3 min-h-12 rounded font-semibold hover:bg-emerald-600 hover:text-white transition-colors w-64 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100'
             aria-label='Download my resume'
           >
             <svg

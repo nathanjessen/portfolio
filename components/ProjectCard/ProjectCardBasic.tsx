@@ -6,8 +6,8 @@ export interface ProjectCardBasicProps {
 
 export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
   return (
-    <div className='card card-compact bg-base-200 shadow-xl w-full'>
-      <div className='card-body'>
+    <div className='rounded-lg overflow-hidden bg-base-200 shadow-xl w-full flex flex-col'>
+      <div className='flex flex-col flex-1 gap-2 p-4'>
         <div>
           <h3 className='text-base-content text-lg'>
             {item.url ? (
@@ -15,7 +15,7 @@ export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
                 href={item.url}
                 target='_blank'
                 rel='noreferrer'
-                className='link link-hover flex items-center justify-between'
+                className='hover:underline flex items-center justify-between'
               >
                 {item.title}
                 <svg
@@ -38,7 +38,10 @@ export const ProjectCardBasic = ({ item }: ProjectCardBasicProps) => {
         <p className='mt-2 text-base-content/80'>{item.desc}</p>
         <div className='flex gap-2 mt-2 flex-wrap'>
           {item.tech.map((tech, idx) => (
-            <span className='badge badge-primary' key={idx}>
+            <span
+              className='inline-flex items-center px-2 py-0.5 rounded text-xs bg-emerald-600 text-emerald-50'
+              key={idx}
+            >
               {tech}
             </span>
           ))}

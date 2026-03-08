@@ -18,7 +18,10 @@ export const AboutMe = () => {
             <p className='text-lg mt-4'>
               I&apos;d love to hear from you or answer any questions you may
               have. Reach out using the{' '}
-              <Link href='/contact' className='link link-primary font-bold'>
+              <Link
+                href='/contact'
+                className='underline text-emerald-600 hover:text-emerald-500 font-bold'
+              >
                 Contact
               </Link>{' '}
               page.
@@ -37,14 +40,17 @@ export const AboutMe = () => {
                     download={User.resumeName}
                     target='_blank'
                     rel='noreferrer'
-                    className='link link-primary font-bold'
+                    className='underline text-emerald-600 hover:text-emerald-500 font-bold'
                   >
                     Resume
                   </a>{' '}
                   and{' '}
                 </>
               )}
-              <Link href='/contact' className='link link-primary font-bold'>
+              <Link
+                href='/contact'
+                className='underline text-emerald-600 hover:text-emerald-500 font-bold'
+              >
                 get in touch
               </Link>
               .

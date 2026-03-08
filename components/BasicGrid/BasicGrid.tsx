@@ -24,7 +24,9 @@ export const BasicGrid = <Item extends unknown>({
           {subtitle}
         </p>
       )}
-      {divider && <div className='divider'></div>}
+      {divider && (
+        <div className='flex items-center gap-4 before:flex-1 before:border-t before:border-white/20 after:flex-1 after:border-t after:border-white/20'></div>
+      )}
       <div className='mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
         {items?.length > 0 ? (
           items.map(render)
