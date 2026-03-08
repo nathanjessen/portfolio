@@ -107,17 +107,6 @@ export const projects: Project[] = [
     archived: true,
   },
   {
-    title: 'Uniswap Tokenlist',
-    img: '/assets/images/tokenlist.png',
-    desc: "Create an ERC20 token list and validate the JSON schema to display tokens in well-known UI's like Uniswap.",
-    source: 'https://github.com/nathanjessen/tokenlist-template',
-    url: 'https://github.com/nathanjessen/tokenlist-template',
-    tech: ['JSON', 'Ajv'],
-    company: 'Freelance',
-    date: '2020/09/26',
-    archived: true,
-  },
-  {
     title: 'Checking Account Recommender',
     desc: 'Find the best checking account for you using this questionnaire app.',
     url: 'https://www.firsthorizon.com/Products-and-Services/Banking/Checking-Accounts/Checking-Account-Recommender',
