@@ -23,9 +23,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 
 ## 🌐 Related Projects
 
-The following directories are hosted on GitHub Pages in separate repositories:
-
-- [/tokenlist/](https://github.com/nathanjessen/tokenlist) - Token list for blockchain projects
 - [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
 - [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/) - Ethereum allowance checker
 
@@ -126,18 +123,18 @@ npm run dev:turbo  # Turbo mode (faster builds)
 
 ```
 portfolio/
-├── app/                 # Next.js app directory
-│   ├── api/            # API routes
-│   ├── (routes)/       # Page routes
+├── app/                 # Next.js App Router pages and layouts
+│   ├── about/          # About page
+│   ├── contact/        # Contact page
+│   ├── experience/     # Experience page
+│   ├── projects/       # Projects page
 │   └── layout.tsx      # Root layout
-├── components/         # React components
-│   ├── ui/            # UI components
-│   └── features/      # Feature components
-├── constants/         # Constants and config
-├── lib/              # Utility functions
-├── public/           # Static assets
-├── stories/          # Storybook stories
-└── types/           # TypeScript types
+├── components/         # React components (one directory per component)
+├── constants/          # Data and configuration (projects, experience, etc.)
+├── lib/                # Utility functions
+├── public/             # Static assets
+├── stories/            # Full-page Storybook stories
+└── styles/             # Global CSS
 ```
 
 ## 🔧 Configuration
@@ -156,17 +153,9 @@ ESLint and Prettier configuration:
 - `.prettierrc` - Prettier config
 - `.prettierignore` - Formatting exclusions
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 🐛 Issues
 
-Found a bug? [Report it here](https://github.com/nathanjessen/nathanjessen.github.com/issues) or submit a PR with the fix.
+Found a bug? [Report it here](https://github.com/nathanjessen/portfolio/issues) or submit a PR with the fix.
 
 ## 📦 Deployment
 
@@ -182,6 +171,6 @@ Deployed on Vercel with:
 ## 📚 Resources
 
 - [Next.js Documentation](https://nextjs.org/docs)
-- [React Documentation](https://reactjs.org/docs)
+- [React Documentation](https://react.dev)
 - [TailwindCSS Documentation](https://tailwindcss.com/docs)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs)
