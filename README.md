@@ -1,10 +1,9 @@
 # Nathan Jessen's Portfolio
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC)](https://tailwindcss.com)
-[![DaisyUI](https://img.shields.io/badge/DaisyUI-4-5A0EF8)](https://daisyui.com/)
-[![Storybook](https://img.shields.io/badge/Storybook-8-FF4785)](https://storybook.js.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC)](https://tailwindcss.com)
+[![Storybook](https://img.shields.io/badge/Storybook-10-FF4785)](https://storybook.js.org/)
 
 My professional portfolio website showcasing my work, experience, and skills. Built with modern web technologies and best practices.
 
@@ -12,9 +11,9 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 
 ## ✨ Features
 
-- 🎨 Modern, responsive design using TailwindCSS and DaisyUI
+- 🎨 Modern, responsive design using TailwindCSS
 - 📱 Mobile-first approach with a clean, minimalist UI
-- ⚡ Fast page loads with Next.js 14 App Router
+- ⚡ Fast page loads with Next.js 16 App Router
 - 🧩 Component-driven development with Storybook
 - 🔍 SEO optimized
 - 📧 Simple contact form
@@ -28,23 +27,20 @@ The following directories are hosted on GitHub Pages in separate repositories:
 
 - [/tokenlist/](https://github.com/nathanjessen/tokenlist) - Token list for blockchain projects
 - [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
-- [/ioextendedlv/](https://github.com/nathanjessen/ioextendedlv) - Google I/O Extended Las Vegas
-- [/knowledge/](https://github.com/nathanjessen/knowledge/) - Personal knowledge base
 - [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/) - Ethereum allowance checker
 
 ## 🛠️ Tech Stack
 
 ### Core
 
-- [Next.js](https://nextjs.org) ^14.2.18 - React framework for production
-- [React](https://reactjs.org) ^18.3.1 - UI component library
+- [Next.js](https://nextjs.org) ^16 - React framework for production
+- [React](https://reactjs.org) ^19 - UI component library
 - [TypeScript](https://www.typescriptlang.org/) - Static type checking
 - [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
 ### Styling
 
 - [TailwindCSS](https://tailwindcss.com) - Utility-first CSS
-- [DaisyUI](https://daisyui.com/) - Tailwind components
 - [PostCSS](https://postcss.org/) - CSS processing
 
 ### Development
@@ -156,7 +152,7 @@ Required environment variables:
 
 ESLint and Prettier configuration:
 
-- `.eslintrc.json` - ESLint rules
+- `eslint.config.mjs` - ESLint rules
 - `.prettierrc` - Prettier config
 - `.prettierignore` - Formatting exclusions
 
