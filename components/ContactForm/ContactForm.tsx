@@ -16,8 +16,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
     onSubmit?.(e);
 
     const mailtoUrl = `mailto:nathan.jessen@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    // window.location.href = mailtoUrl;
-    alert(mailtoUrl);
+    window.location.href = mailtoUrl;
   };
 
   return (

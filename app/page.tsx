@@ -14,10 +14,10 @@ import Testimonials from '../components/Testimonials';
 import { Repository } from '../constants/repo';
 
 export const metadata: Metadata = {
-  description: `${User.name} is a Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Based in ${User.location}.`,
+  description: `${User.name} is a Senior Software Engineer specializing in React, TypeScript, and AI-powered product development. Based in ${User.location}.`,
   openGraph: {
-    title: `${User.name} - Senior Frontend Developer`,
-    description: `${User.name} is a Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Based in ${User.location}.`,
+    title: `${User.name} - Senior Software Engineer`,
+    description: `${User.name} is a Senior Software Engineer specializing in React, TypeScript, and AI-powered product development. Based in ${User.location}.`,
   },
 };
 
