@@ -24,7 +24,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 ## 🌐 Related Projects
 
 - [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
-- [/eth-allowance/](https://github.com/nathanjessen/eth-allowance/) - Ethereum allowance checker
 
 ## 🛠️ Tech Stack
 
