@@ -73,7 +73,6 @@ export const projects: Project[] = [
     img: '/assets/images/opensea.png',
     desc: 'ReactJS + Web3 integration for viewing and buying NFTs from OpenSea directly in OctoFi app.',
     source: 'https://github.com/OctoFi/octofi-app-aquafarm',
-    url: 'https://app.octo.fi/',
     tech: ['React', 'Redux', 'Web3'],
     company: 'Freelance',
     client: 'OctoFi',
@@ -255,7 +254,6 @@ export const projects: Project[] = [
   {
     title: 'GCR/TDS Tires & Service',
     desc: 'Developed AEM components for a custom map with search for locating nearby stores.',
-    url: 'http://www.gcrtires.com',
     tech: ['AEM', 'Handlebars', 'LESS', 'JavaScript'],
     company: 'VML',
     client: 'Bridgestone & Firestone',

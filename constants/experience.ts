@@ -32,14 +32,14 @@ export const experience: Experience[] = [
     title: 'Technology Specialist',
     company: 'VMLY&R',
     year: '2018',
-    companyLink: 'https://www.vmlyr.com/',
+    companyLink: 'https://www.vml.com/',
     desc: 'Built and documented internal tools, mentored junior team members, and optimized build systems.',
   },
   {
     title: 'Technology Associate',
     company: 'VMLY&R',
     year: '2015',
-    companyLink: 'https://www.vmlyr.com/',
+    companyLink: 'https://www.vml.com/',
     desc: 'Themed components for AEM and WordPress while working closely with designers to improve UI and UX for the end user.',
   },
   {
