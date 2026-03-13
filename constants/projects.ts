@@ -433,5 +433,6 @@ export const projects: Project[] = [
     client: 'Knacktive',
     date: '2011/02/01',
     archived: true,
+    published: false,
   },
 ];
