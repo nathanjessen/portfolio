@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 import BasicGrid from '../../components/BasicGrid';
 import PageHeading from '../../components/PageHeading';
 import ProjectCard from '../../components/ProjectCard';
-import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
 import { projects } from '../../constants/projects';
 import User from '../../constants/User';
 
@@ -24,14 +23,6 @@ const ProjectsPage = () => {
       ),
     []
   );
-  const archivedItems = useMemo(
-    () =>
-      projects.filter(
-        (project) => project.archived && project.published !== false
-      ),
-    []
-  );
-
   return (
     <>
       <PageHeading>Projects</PageHeading>
@@ -42,14 +33,6 @@ const ProjectsPage = () => {
         divider={false}
         items={featuredItems}
         render={(item, idx) => <ProjectCard item={item} key={idx} />}
-      />
-
-      <BasicGrid
-        title='Archive'
-        subtitle='Past Projects'
-        divider={false}
-        items={archivedItems}
-        render={(item, idx) => <ProjectCardBasic item={item} key={idx} />}
       />
     </>
   );
