@@ -2,12 +2,10 @@ import { Metadata } from 'next/types';
 import User from '../constants/User';
 import { projects } from '../constants/projects';
 import BasicGrid from '../components/BasicGrid';
-import { testimonials } from '../constants/testimonials';
 import { getLatestRepos } from '../lib/getLatestRepos';
 import HomeHero from '../components/HomeHero';
 import ProjectCard from '../components/ProjectCard';
 import RepoCard from '../components/RepoCard';
-import Testimonials from '../components/Testimonials';
 import { Repository } from '../constants/repo';
 
 export const metadata: Metadata = {
@@ -47,8 +45,6 @@ const HomePage = async () => {
           render={(item, idx) => <RepoCard item={item} key={idx} />}
         />
       </div>
-
-      <Testimonials testimonials={testimonials} />
     </>
   );
 };
