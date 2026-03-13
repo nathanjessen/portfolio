@@ -4,7 +4,7 @@ import { FormEvent } from 'react';
 import ContactForm from '../ContactForm';
 
 export const Contact = () => {
-  const onContactFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onContactFormSubmit = (_e: FormEvent<HTMLFormElement>) => {
     // Optional: Add any client-side form validation or tracking here
     console.log('Form submitted');
   };

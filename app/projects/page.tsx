@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { useMemo } from 'react';
 import BasicGrid from '../../components/BasicGrid';
-import { Container } from '../../components/Layouts/Container';
 import PageHeading from '../../components/PageHeading';
 import ProjectCard from '../../components/ProjectCard';
 import { ProjectCardBasic } from '../../components/ProjectCard/ProjectCardBasic';
