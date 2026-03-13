@@ -155,10 +155,11 @@ export const AboutMe = () => {
               production in under three months.
             </p>
             <p className='text-xl'>
-              I&apos;m focused on growing toward Staff and Principal engineering
-              with an emphasis on agentic systems — building tools that use LLMs
-              not just as assistants but as active participants in product
-              workflows.
+              I&apos;m drawn to the developer tooling layer — tools like
+              Storybook and Chromatic that change how engineers build and ship
+              software. I want to work at that intersection: bringing AI into
+              the development workflow itself rather than just into the products
+              developers ship.
             </p>
           </div>
 

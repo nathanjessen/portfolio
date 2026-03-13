@@ -24,9 +24,9 @@ export const HomeHero = () => {
           className='text-base-content/80 space-y-2 text-xl'
           aria-label='Areas of expertise'
         >
-          <li>AI-Powered Product Engineering</li>
+          <li>AI-Native Developer Tooling</li>
           <li>React + TypeScript Applications</li>
-          <li>Storybook Component Libraries</li>
+          <li>Storybook Component Systems</li>
         </ul>
         <div className='flex items-start gap-8 mt-8'>
           <div className='flex'>
