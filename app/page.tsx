@@ -2,11 +2,8 @@ import { Metadata } from 'next/types';
 import User from '../constants/User';
 import { projects } from '../constants/projects';
 import BasicGrid from '../components/BasicGrid';
-import { getLatestRepos } from '../lib/getLatestRepos';
 import HomeHero from '../components/HomeHero';
 import ProjectCard from '../components/ProjectCard';
-import RepoCard from '../components/RepoCard';
-import { Repository } from '../constants/repo';
 
 export const metadata: Metadata = {
   description: `${User.name} is a Senior Software Engineer building AI-native developer tools with React, TypeScript, and Next.js. Based in ${User.location}.`,
@@ -16,12 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-const HomePage = async () => {
+const HomePage = () => {
   const featuredItems = projects.filter((project) => project.featured);
-
-  const repositories: Repository[] = User.githubUsername
-    ? await getLatestRepos(User.githubUsername)
-    : [];
 
   return (
     <>
@@ -34,15 +27,6 @@ const HomePage = async () => {
           divider={false}
           items={featuredItems.slice(0, 3)}
           render={(item, idx) => <ProjectCard item={item} key={idx} />}
-        />
-      </div>
-
-      <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
-        <BasicGrid
-          title='GitHub'
-          subtitle='Latest Code'
-          items={repositories}
-          render={(item, idx) => <RepoCard item={item} key={idx} />}
         />
       </div>
     </>
