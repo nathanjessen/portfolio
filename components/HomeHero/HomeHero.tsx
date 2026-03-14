@@ -4,7 +4,7 @@ import { CodeSnippet } from './CodeSnippet';
 
 export const HomeHero = () => {
   return (
-    <div className='py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col md:flex-row items-center justify-between gap-12 -mt-16'>
+    <div className='py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[80vh] flex flex-col md:flex-row items-center justify-between gap-12 -mt-16'>
       <div className='flex flex-col justify-center z-10'>
         <h1 className='text-xl md:text-2xl font-medium text-primary'>
           Nathan Jessen
@@ -18,7 +18,6 @@ export const HomeHero = () => {
           className='text-base-content/80 space-y-2 text-xl'
           aria-label='Areas of expertise'
         >
-          <li>AI-Native Developer Tooling</li>
           <li>React + TypeScript Applications</li>
           <li>Storybook Component Systems</li>
         </ul>

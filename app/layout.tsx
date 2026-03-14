@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Nathan Jessen',
   },
   description:
-    'Senior Software Engineer building AI-powered products with Next.js, React, and TypeScript. Based in Austin, TX.',
+    'Senior Software Engineer building AI-native developer tools with React, TypeScript, and Next.js.',
   robots: 'follow, index',
   icons: [
     {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Nathan Jessen - Senior Software Engineer',
     description:
-      'Senior Software Engineer building AI-powered products with Next.js, React, and TypeScript. Based in Austin, TX.',
+      'Senior Software Engineer building AI-native developer tools with React, TypeScript, and Next.js.',
     locale: 'en-US',
     url: '/',
     siteName: 'Nathan Jessen',
@@ -46,14 +46,6 @@ export const metadata: Metadata = {
         alt: 'Nathan Jessen',
       },
     ],
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Nathan Jessen - Senior Software Engineer',
-    description:
-      'Senior Software Engineer building AI-powered products. Based in Austin, TX.',
-    creator: '@nathanjessen',
-    images: ['/assets/images/avatar-person.png'],
   },
   alternates: {
     canonical: '/',

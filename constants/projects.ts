@@ -65,8 +65,8 @@ export const projects: Project[] = [
     client: 'OctoFi',
     date: '2020/10/12',
     dateRange: ['2020/02/01', '2021/12/15'],
-    archived: false,
-    featured: true,
+    archived: true,
+    featured: false,
   },
   {
     title: 'Jekyll Theme',
