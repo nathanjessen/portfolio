@@ -89,22 +89,6 @@ export const AboutMe = () => {
             </div>
           </div>
 
-          {User.resumeUrl && (
-            <div className='mt-8'>
-              <h2 className='text-xl font-semibold'>Resume</h2>
-              <div className='mt-4'>
-                <a
-                  href={User.resumeUrl}
-                  download={User.resumeName}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='underline text-emerald-600 hover:text-emerald-500 font-bold text-lg'
-                >
-                  Download Resume
-                </a>
-              </div>
-            </div>
-          )}
         </div>
 
         <div className='col-span-1 md:col-span-2 order-1 md:order-2'>
