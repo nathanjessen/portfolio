@@ -16,13 +16,8 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 - ⚡ Fast page loads with Next.js 16 App Router
 - 🧩 Component-driven development with Storybook
 - 🔍 SEO optimized
-- 📧 Simple contact form
 - 📊 TypeScript for type safety
 - 🚀 Deployed on Vercel with automatic CI/CD
-
-## 🌐 Related Projects
-
-- [/slides/](https://github.com/nathanjessen/slides) - Presentation slides
 
 ## 🛠️ Tech Stack
 
@@ -31,6 +26,7 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 - [Next.js](https://nextjs.org) ^16 - React framework for production
 - [React](https://reactjs.org) ^19 - UI component library
 - [TypeScript](https://www.typescriptlang.org/) - Static type checking
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
 - [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
 ### Styling
@@ -113,13 +109,11 @@ npm run dev:turbo  # Turbo mode (faster builds)
 ```
 portfolio/
 ├── app/                 # Next.js App Router pages and layouts
+│   ├── [...slug]/      # Dynamic routes (contact, projects, etc.)
 │   ├── about/          # About page
-│   ├── contact/        # Contact page
-│   ├── projects/       # Projects page
 │   └── layout.tsx      # Root layout
 ├── components/         # React components (one directory per component)
 ├── constants/          # Data and configuration (projects, experience, etc.)
-├── lib/                # Utility functions
 ├── public/             # Static assets
 ├── stories/            # Full-page Storybook stories
 └── styles/             # Global CSS
