@@ -1,8 +1,8 @@
 {
   "name": "nathanjessen",
   "version": "2.1.0",
-  "description": "Personal website of web developer, Nathan Jessen",
-  "homepage": "http://nathanjessen.github.io",
+  "description": "Portfolio of Nathan Jessen, Senior Software Engineer specializing in AI-native developer tools.",
+  "homepage": "https://nathanjessen.com",
   "private": true,
   "repository": {
     "type": "git",

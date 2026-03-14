@@ -17,7 +17,5 @@ export default meta;
 type Story = StoryObj<typeof HomePage>;
 
 export const Default: Story = {
-  args: {
-    repositories: [],
-  },
+  args: {},
 };
