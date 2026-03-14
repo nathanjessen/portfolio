@@ -10,7 +10,7 @@ export const AboutMe = () => {
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
-        <div>
+        <div className='order-2 md:order-1'>
           <div>
             <h2 className='text-xl font-semibold'>Get in touch</h2>
             <div className='mt-4 space-y-4'>
@@ -107,7 +107,7 @@ export const AboutMe = () => {
           )}
         </div>
 
-        <div className='col-span-1 md:col-span-2'>
+        <div className='col-span-1 md:col-span-2 order-1 md:order-2'>
           <div className='space-y-4'>
             <p className='text-xl'>
               I&apos;ve been building frontend applications professionally for

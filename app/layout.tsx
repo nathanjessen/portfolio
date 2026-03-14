@@ -1,11 +1,8 @@
 import Script from 'next/script';
 import { Metadata, Viewport } from 'next';
 import { PropsWithChildren } from 'react';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import ScrollReset from '../components/ScrollReset';
+import { SkipLink } from '../components/common/SkipLink';
 import '../styles/globals.css';
-import { Providers } from './providers';
 
 export const viewport: Viewport = {
   themeColor: '#357edd',
@@ -18,11 +15,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://nathanjessen.com'),
   title: {
-    default: 'Nathan Jessen - Senior Software Engineer',
+    default: 'Nathan Jessen - AI-Native Engineer',
     template: '%s | Nathan Jessen',
   },
   description:
-    'Senior Software Engineer building AI-native developer tools with React, TypeScript, and Next.js.',
+    'AI-native engineer shipping production software with Next.js and agentic workflows.',
   robots: 'follow, index',
   icons: [
     {
@@ -33,9 +30,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    title: 'Nathan Jessen - Senior Software Engineer',
+    title: 'Nathan Jessen - AI-Native Engineer',
     description:
-      'Senior Software Engineer building AI-native developer tools with React, TypeScript, and Next.js.',
+      'AI-native engineer shipping production software with Next.js and agentic workflows.',
     locale: 'en-US',
     url: '/',
     siteName: 'Nathan Jessen',
@@ -58,25 +55,22 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <html lang='en-US' suppressHydrationWarning>
+    <html lang='en-US' className='dark'>
       <head>
         <link type='text/plain' rel='author' href='humans.txt' />
         <link rel='preconnect' href='//www.google-analytics.com' />
       </head>
       <body className='min-h-screen flex flex-col bg-base-100 text-base-content bg-grid-primary/[0.02] bg-[size:20px_20px]'>
-        <Providers>
-          <ScrollReset />
-          <Navbar />
+          <SkipLink />
           <main
             id='main-content'
-            className='flex-1 pt-24'
+            className='flex-1'
             role='main'
             tabIndex={-1}
           >
             {children}
+            <div className='pb-20' />
           </main>
-          <Footer />
-        </Providers>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           strategy='afterInteractive'
