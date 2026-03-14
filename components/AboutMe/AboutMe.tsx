@@ -6,7 +6,8 @@ export const AboutMe = () => {
     <section>
       <p className='text-2xl md:text-4xl font-semibold px-8'>
         I&apos;m a senior software engineer building AI-native developer tools
-        with React, TypeScript, and Next.js — and using agentic workflows to ship faster.
+        with React, TypeScript, and Next.js — and using agentic workflows to
+        ship faster.
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>

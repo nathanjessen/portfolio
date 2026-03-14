@@ -22,7 +22,6 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
             About
           </Link>
         </li>
-
       </ul>
     </nav>
   );

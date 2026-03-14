@@ -3,6 +3,7 @@ import { Metadata, Viewport } from 'next';
 import { PropsWithChildren } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import ScrollReset from '../components/ScrollReset';
 import '../styles/globals.css';
 import { Providers } from './providers';
 
@@ -62,8 +63,9 @@ export default function Layout({ children }: PropsWithChildren) {
         <link type='text/plain' rel='author' href='humans.txt' />
         <link rel='preconnect' href='//www.google-analytics.com' />
       </head>
-      <body className='h-screen flex flex-col bg-base-100 text-base-content'>
+      <body className='min-h-screen flex flex-col bg-base-100 text-base-content bg-grid-primary/[0.02] bg-[size:20px_20px]'>
         <Providers>
+          <ScrollReset />
           <Navbar />
           <main
             id='main-content'

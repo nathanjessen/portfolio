@@ -1,12 +1,12 @@
 export const CodeSnippet = () => {
   // GitHub Dark palette
-  const kw = 'text-blue-400';        // keywords: import, const, async, new, await, return
-  const str = 'text-orange-300';     // strings
-  const fn = 'text-purple-400';      // function names, method calls
-  const param = 'text-blue-300';     // parameters, types, property keys
-  const num = 'text-sky-300';        // numbers
-  const punct = 'text-white/50';     // punctuation, brackets
-  const ident = 'text-white/80';     // identifiers, plain text
+  const kw = 'text-blue-400'; // keywords: import, const, async, new, await, return
+  const str = 'text-orange-300'; // strings
+  const fn = 'text-purple-400'; // function names, method calls
+  const param = 'text-blue-300'; // parameters, types, property keys
+  const num = 'text-sky-300'; // numbers
+  const punct = 'text-white/50'; // punctuation, brackets
+  const ident = 'text-white/80'; // identifiers, plain text
 
   return (
     <div className='rounded-lg overflow-hidden border border-white/10 text-sm font-mono w-full max-w-lg'>
@@ -92,7 +92,9 @@ export const CodeSnippet = () => {
         </div>
 
         <div className='pl-18'>
-          <span className={str}>{'  '}for: ${'{'}</span>
+          <span className={str}>
+            {'  '}for: ${'{'}
+          </span>
           <span className={param}>componentSrc</span>
           <span className={str}>{'}'}`</span>
           <span className={punct}> {'}],'}</span>
