@@ -6,11 +6,11 @@ import PageHeading from '../../components/PageHeading';
 export const metadata: Metadata = {
   title: 'About Me',
   description:
-    'Learn more about Nathan Jessen, a Senior Software Engineer specializing in AI-native developer tools, React, TypeScript, and component systems.',
+    'Learn more about Nathan Jessen — Senior Software Engineer specializing in AI-native developer tools, React, TypeScript, and component systems. Get in touch via email or LinkedIn.',
   openGraph: {
-    title: 'About Me | Nathan Jessen',
+    title: 'About | Nathan Jessen',
     description:
-      'Learn more about Nathan Jessen, a Senior Software Engineer specializing in AI-native developer tools, React, TypeScript, and component systems.',
+      'Learn more about Nathan Jessen — Senior Software Engineer specializing in AI-native developer tools, React, TypeScript, and component systems. Get in touch via email or LinkedIn.',
   },
 };
 
