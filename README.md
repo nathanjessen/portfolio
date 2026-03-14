@@ -5,19 +5,19 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC)](https://tailwindcss.com)
 [![Storybook](https://img.shields.io/badge/Storybook-10-FF4785)](https://storybook.js.org/)
 
-My professional portfolio website showcasing my work, experience, and skills. Built with modern web technologies and best practices.
+Personal portfolio of Nathan Jessen — AI-native engineer shipping production software with Next.js and agentic workflows.
 
 🔗 [View Live Site](https://www.nathanjessen.com/)
 
 ## ✨ Features
 
-- 🎨 Modern, responsive design using TailwindCSS
-- 📱 Mobile-first approach with a clean, minimalist UI
-- ⚡ Fast page loads with Next.js 16 App Router
-- 🧩 Component-driven development with Storybook
-- 🔍 SEO optimized
-- 📊 TypeScript for type safety
-- 🚀 Deployed on Vercel with automatic CI/CD
+- Modern, responsive single-page design using TailwindCSS
+- Mobile-first approach with a clean, minimalist UI
+- Fast page loads with Next.js 16 App Router
+- Component-driven development with Storybook
+- SEO optimized
+- TypeScript for type safety
+- Deployed on Vercel with automatic CI/CD
 
 ## 🛠️ Tech Stack
 
@@ -26,8 +26,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 - [Next.js](https://nextjs.org) ^16 - React framework for production
 - [React](https://reactjs.org) ^19 - UI component library
 - [TypeScript](https://www.typescriptlang.org/) - Static type checking
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Node.js](https://nodejs.org/) 20.9.0+ - JavaScript runtime
 
 ### Styling
 
@@ -109,11 +107,9 @@ npm run dev:turbo  # Turbo mode (faster builds)
 ```
 portfolio/
 ├── app/                 # Next.js App Router pages and layouts
-│   ├── [...slug]/      # Dynamic routes (contact, projects, etc.)
-│   ├── about/          # About page
 │   └── layout.tsx      # Root layout
 ├── components/         # React components (one directory per component)
-├── constants/          # Data and configuration (projects, experience, etc.)
+├── constants/          # Data and configuration (projects, experience, techlist, etc.)
 ├── public/             # Static assets
 ├── stories/            # Full-page Storybook stories
 └── styles/             # Global CSS
