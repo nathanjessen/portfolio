@@ -1,12 +1,11 @@
-import User from '../../constants/User';
 import TechList from '../TechList';
 
 export const AboutMe = () => {
   return (
     <section>
       <p className='text-2xl md:text-4xl font-semibold px-8'>
-        I&apos;m an <span className='text-emerald-400'>AI-native engineer</span> shipping production software with
-        Next.js and agentic workflows.
+        I&apos;m an <span className='text-emerald-400'>AI-native engineer</span>{' '}
+        shipping production software with Next.js and agentic workflows.
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
@@ -88,7 +87,6 @@ export const AboutMe = () => {
               </div>
             </div>
           </div>
-
         </div>
 
         <div className='col-span-1 md:col-span-2 order-1 md:order-2'>
@@ -104,8 +102,8 @@ export const AboutMe = () => {
               At A Place for Mom I&apos;ve contributed to a high-traffic Next.js
               platform and helped ship two AI-powered products: a B2C
               care-finder and a B2B platform connecting home care agencies with
-              care-seekers. Both went from prototype to
-              production in under three months.
+              care-seekers. Both went from prototype to production in under
+              three months.
             </p>
             <p className='text-xl'>
               I&apos;m drawn to the developer tooling layer — tools like

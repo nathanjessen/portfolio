@@ -53,16 +53,11 @@ export default function Layout({ children }: PropsWithChildren) {
         <link rel='preconnect' href='//www.google-analytics.com' />
       </head>
       <body className='min-h-screen flex flex-col bg-base-100 text-base-content bg-grid-primary/[0.02] bg-[size:20px_20px]'>
-          <SkipLink />
-          <main
-            id='main-content'
-            className='flex-1'
-            role='main'
-            tabIndex={-1}
-          >
-            {children}
-            <div className='pb-20' />
-          </main>
+        <SkipLink />
+        <main id='main-content' className='flex-1' role='main' tabIndex={-1}>
+          {children}
+          <div className='pb-20' />
+        </main>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           strategy='afterInteractive'

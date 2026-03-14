@@ -16,7 +16,9 @@ export const BasicGrid = <Item extends unknown>({
 }: BasicGridProps<Item>) => {
   return (
     <Container>
-      <h2 className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold'>{title}</h2>
+      <h2 className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold'>
+        {title}
+      </h2>
       {divider && (
         <div className='flex items-center gap-4 before:flex-1 before:border-t before:border-white/20 after:flex-1 after:border-t after:border-white/20'></div>
       )}
