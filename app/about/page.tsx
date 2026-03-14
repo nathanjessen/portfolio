@@ -16,12 +16,11 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <>
-      <PageHeading>About Me</PageHeading>
-      <Container>
+    <Container>
+      <div className='pt-12'>
         <AboutMe />
-      </Container>
-    </>
+      </div>
+    </Container>
   );
 };
 

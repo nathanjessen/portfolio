@@ -50,12 +50,6 @@ export const Default: Story = {
   args: {},
 };
 
-export const Subtitle: Story = {
-  args: {
-    subtitle: 'Subtitle',
-  },
-};
-
 export const NoDivider: Story = {
   args: {
     divider: false,
@@ -66,7 +60,7 @@ type ProjectStory = StoryObj<typeof BasicGrid<Project>>;
 
 export const RenderProjectCard: ProjectStory = {
   args: {
-    subtitle: 'Project Card',
+    title: 'Project Card',
     items: [
       { ...ProjectCardStories.default.args?.item } as Project,
       { ...ProjectCardStories.default.args?.item } as Project,

@@ -26,10 +26,10 @@ export const ProjectCard = ({ item }: ProjectCardProps) => {
       )}
 
       <div className='flex flex-col flex-1 gap-2 p-6'>
-        <h5 className='text-lg font-semibold text-base-content mb-1'>
+        <h5 className='text-xl font-semibold text-emerald-400 mb-1'>
           {item.title}
         </h5>
-        <p className='text-base-content/70'>{item.desc}</p>
+        <p className='text-base-content'>{item.desc}</p>
 
         <div className='flex gap-2 mt-auto pt-2 flex-wrap'>
           {item.tech.map((tech, idx) => (

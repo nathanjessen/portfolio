@@ -5,9 +5,8 @@ export const AboutMe = () => {
   return (
     <section>
       <p className='text-2xl md:text-4xl font-semibold px-8'>
-        I&apos;m a senior software engineer building AI-native developer tools
-        with React, TypeScript, and Next.js — and using agentic workflows to
-        ship faster.
+        I&apos;m an <span className='text-emerald-400'>AI-native engineer</span> shipping production software with
+        Next.js and agentic workflows.
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
@@ -112,24 +111,23 @@ export const AboutMe = () => {
           <div className='space-y-4'>
             <p className='text-xl'>
               I&apos;ve been building frontend applications professionally for
-              over 13 years. Over the past year I&apos;ve shifted toward
-              AI-augmented engineering — using Claude and Codex to accelerate
-              development workflows, prototype products rapidly, and ship
-              reliable software faster than traditional approaches allow.
+              over 13 years. Over the past year I&apos;ve shifted to AI-native
+              engineering — using agentic workflows with Claude and Codex to
+              prototype rapidly and ship reliable software faster than
+              traditional approaches allow.
             </p>
             <p className='text-xl'>
               At A Place for Mom I&apos;ve contributed to a high-traffic Next.js
               platform and helped ship two AI-powered products: a B2C
               care-finder and a B2B platform connecting home care agencies with
-              care-seekers via voice AI and Twilio. Both went from prototype to
+              care-seekers. Both went from prototype to
               production in under three months.
             </p>
             <p className='text-xl'>
               I&apos;m drawn to the developer tooling layer — tools like
               Storybook and Chromatic that change how engineers build and ship
-              software. I want to work at that intersection: bringing AI into
-              the development workflow itself rather than just into the products
-              developers ship.
+              software. My goal is to bring AI into the development workflow
+              itself, not just into the products developers ship.
             </p>
           </div>
 

@@ -29,7 +29,7 @@ export const Brand = ({ name, position, avatarUrl }: BrandProps) => {
       <div>
         <p className='font-semibold text-xl text-base-content'>{name}</p>
         {position && (
-          <p className='text-base font-light text-base-content/80'>
+          <p className='text-base font-light text-emerald-400'>
             {position}
           </p>
         )}

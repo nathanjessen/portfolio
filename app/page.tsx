@@ -22,8 +22,7 @@ const HomePage = () => {
 
       <div className='pt-4 pb-8 lg:pt-12 lg:pb-16'>
         <BasicGrid
-          title='Portfolio'
-          subtitle='Featured Projects'
+          title='Featured Projects'
           divider={false}
           items={featuredItems.slice(0, 3)}
           render={(item, idx) => <ProjectCard item={item} key={idx} />}

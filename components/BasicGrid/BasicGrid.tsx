@@ -3,7 +3,6 @@ import { Container } from '../Layouts/Container';
 
 export interface BasicGridProps<Item> {
   title: string;
-  subtitle?: string;
   divider?: boolean;
   items: Item[];
   render: (item: Item, idx: number) => ReactNode;
@@ -11,19 +10,13 @@ export interface BasicGridProps<Item> {
 
 export const BasicGrid = <Item extends unknown>({
   title,
-  subtitle,
   divider = true,
   items,
   render,
 }: BasicGridProps<Item>) => {
   return (
     <Container>
-      <h2 className='text-xl md:text-2xl font-medium text-primary'>{title}</h2>
-      {subtitle && (
-        <p className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold mt-2'>
-          {subtitle}
-        </p>
-      )}
+      <h2 className='text-3xl leading-tight tracking-wider uppercase text-white font-extrabold'>{title}</h2>
       {divider && (
         <div className='flex items-center gap-4 before:flex-1 before:border-t before:border-white/20 after:flex-1 after:border-t after:border-white/20'></div>
       )}
