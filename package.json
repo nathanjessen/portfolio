@@ -1,8 +1,8 @@
 {
   "name": "nathanjessen",
   "version": "2.1.0",
-  "description": "Personal website of web developer, Nathan Jessen",
-  "homepage": "http://nathanjessen.github.io",
+  "description": "Portfolio of Nathan Jessen, Senior Software Engineer specializing in AI-native developer tools.",
+  "homepage": "https://nathanjessen.com",
   "private": true,
   "repository": {
     "type": "git",
@@ -20,8 +20,8 @@
     "start": "next start",
     "clean": "rm -rf .next out",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint app components constants lib stories",
-    "lint:fix": "eslint app components constants lib stories --fix",
+    "lint": "eslint app components constants stories",
+    "lint:fix": "eslint app components constants stories --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run typecheck && npm run format:check",
@@ -31,11 +31,9 @@
     "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
-    "encoding": "^0.1.13",
     "framer-motion": "^12.35.1",
     "next": "^16.1.6",
     "next-themes": "^0.4.6",
-    "octokit": "^5.0.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "sharp": "^0.34.5"
@@ -44,11 +42,10 @@
     "@babel/core": "^7.29.0",
     "@eslint/eslintrc": "^3.3.5",
     "@next/bundle-analyzer": "^16.1.6",
-    "@storybook/addon-docs": "^10.2.16",
-    "@storybook/addon-links": "10.2.16",
-    "@storybook/nextjs": "10.2.16",
+    "@storybook/addon-docs": "^10.2.19",
+    "@storybook/addon-links": "^10.2.19",
+    "@storybook/nextjs": "^10.2.19",
     "@tailwindcss/postcss": "^4.2.1",
-    "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^25.3.5",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -57,10 +54,10 @@
     "eslint-config-next": "^16.1.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-storybook": "10.2.16",
+    "eslint-plugin-storybook": "^10.2.19",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
-    "storybook": "10.2.16",
+    "storybook": "^10.2.19",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   }

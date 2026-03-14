@@ -17,7 +17,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 - 🧩 Component-driven development with Storybook
 - 🔍 SEO optimized
 - 📧 Simple contact form
-- 🔄 GitHub integration for displaying repositories
 - 📊 TypeScript for type safety
 - 🚀 Deployed on Vercel with automatic CI/CD
 
@@ -48,7 +47,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 
 ### APIs & Services
 
-- [Octokit](https://github.com/octokit/octokit.js) - GitHub API
 - [Vercel](https://vercel.com) - Hosting & CI/CD
 
 ## 🚀 Getting Started
@@ -57,7 +55,6 @@ My professional portfolio website showcasing my work, experience, and skills. Bu
 
 - Node.js 20.9.0 or later
 - npm 10 or later
-- GitHub account (for API integration)
 
 ### Development
 
@@ -74,21 +71,14 @@ cd portfolio
 npm install
 ```
 
-3. Set up environment variables:
-
-```bash
-cp .env.example .env.local
-# Edit .env.local with your API keys
-```
-
-4. Start the development server:
+3. Start the development server:
 
 ```bash
 npm run dev        # Standard mode
 npm run dev:turbo  # Turbo mode (faster builds)
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000)
+4. Open [http://localhost:3000](http://localhost:3000)
 
 ### Available Scripts
 
@@ -125,7 +115,6 @@ portfolio/
 ├── app/                 # Next.js App Router pages and layouts
 │   ├── about/          # About page
 │   ├── contact/        # Contact page
-│   ├── experience/     # Experience page
 │   ├── projects/       # Projects page
 │   └── layout.tsx      # Root layout
 ├── components/         # React components (one directory per component)
@@ -137,12 +126,6 @@ portfolio/
 ```
 
 ## 🔧 Configuration
-
-### Environment Variables
-
-Required environment variables:
-
-- `GITHUB_AUTH_TOKEN` - GitHub personal access token
 
 ### Code Style
 

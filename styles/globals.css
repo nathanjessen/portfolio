@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@plugin '@tailwindcss/typography';
-
 @theme {
   --transition-duration-0: 0ms;
   --transition-duration-2000: 2000ms;

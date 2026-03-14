@@ -22,33 +22,7 @@ export const MobileMenu = ({ onClose }: MobileMenuProps) => {
             About
           </Link>
         </li>
-        <li>
-          <Link
-            href='/projects'
-            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/projects' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
-            onClick={onClose}
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/experience'
-            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/experience' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
-            onClick={onClose}
-          >
-            Experience
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/contact'
-            className={`flex w-full items-center justify-center gap-2 px-4 py-2 rounded transition-colors ${pathname === '/contact' ? 'bg-primary/10 text-primary' : 'hover:bg-white/10'}`}
-            onClick={onClose}
-          >
-            Contact
-          </Link>
-        </li>
+
       </ul>
     </nav>
   );

@@ -9,7 +9,7 @@ export const Footer = () => {
 
         <div className='mt-8 md:mt-0 md:order-1'>
           <p className='text-center text-base leading-6'>
-            &copy; 2023 {User.name}
+            &copy; {new Date().getFullYear()} {User.name}
           </p>
         </div>
       </div>

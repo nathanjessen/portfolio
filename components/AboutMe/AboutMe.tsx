@@ -1,141 +1,110 @@
-import Link from 'next/link';
 import User from '../../constants/User';
-import { socialLinks } from '../../constants/socialLinks';
 import TechList from '../TechList';
 
 export const AboutMe = () => {
   return (
     <section>
       <p className='text-2xl md:text-4xl font-semibold px-8'>
-        I&apos;m a senior software engineer building AI-powered products with
-        React, TypeScript, and Next.js — and using agentic tools to ship faster.
+        I&apos;m a senior software engineer building AI-native developer tools
+        with React, TypeScript, and Next.js — and using agentic workflows to ship faster.
       </p>
 
       <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-20'>
         <div>
           <div>
-            <h2 className='text-xl font-semibold'>Contact</h2>
-            <p className='text-lg mt-4'>
-              I&apos;d love to hear from you or answer any questions you may
-              have. Reach out using the{' '}
-              <Link
-                href='/contact'
-                className='underline text-emerald-600 hover:text-emerald-500 font-bold'
-              >
-                Contact
-              </Link>{' '}
-              page.
-            </p>
-          </div>
+            <h2 className='text-xl font-semibold'>Get in touch</h2>
+            <div className='mt-4 space-y-4'>
+              <div className='flex flex-row items-center space-x-3'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'></path>
+                  <polyline points='22,6 12,13 2,6'></polyline>
+                </svg>
+                <a
+                  href='mailto:nathan.jessen@gmail.com'
+                  className='text-lg hover:text-emerald-500 transition-colors'
+                >
+                  nathan.jessen@gmail.com
+                </a>
+              </div>
 
-          <div className='mt-8'>
-            <h2 className='text-xl font-semibold'>Resume</h2>
-            <p className='text-lg mt-4'>
-              Interested in working together?{' '}
-              {User.resumeUrl && (
-                <>
-                  Check out my{' '}
-                  <a
-                    href={User.resumeUrl}
-                    download={User.resumeName}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='underline text-emerald-600 hover:text-emerald-500 font-bold'
-                  >
-                    Resume
-                  </a>{' '}
-                  and{' '}
-                </>
-              )}
-              <Link
-                href='/contact'
-                className='underline text-emerald-600 hover:text-emerald-500 font-bold'
-              >
-                get in touch
-              </Link>
-              .
-            </p>
-          </div>
+              <div className='flex flex-row items-center space-x-3'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z'></path>
+                  <rect x='2' y='9' width='4' height='12'></rect>
+                  <circle cx='4' cy='4' r='2'></circle>
+                </svg>
+                <a
+                  href='https://www.linkedin.com/in/njessen'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-lg hover:text-emerald-500 transition-colors'
+                >
+                  linkedin.com/in/njessen
+                </a>
+              </div>
 
-          <div className='mt-8'>
-            <h2 className='text-xl font-semibold'>Social Links</h2>
-            <div className='mt-4 ml-4'>
-              {socialLinks.facebook && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.facebook}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      Facebook
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.twitter && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.twitter}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      Twitter
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.github && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.github}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      GitHub
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.linkedin && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.linkedin}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300'></span>
-                      LinkedIn
-                    </p>
-                  </a>
-                </div>
-              )}
-
-              {socialLinks.instagram && (
-                <div className='flex flex-row justify-start items-center'>
-                  <a
-                    href={socialLinks.instagram}
-                    className='flex flex-row items-center space-x-4 group py-2'
-                  >
-                    <span>&rarr;</span>
-                    <p className='text-lg relative overflow-hidden'>
-                      <span className='absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-28 group-hover:translate-x-0 transition duration-300'></span>
-                      Instagram
-                    </p>
-                  </a>
-                </div>
-              )}
+              <div className='flex flex-row items-center space-x-3'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22'></path>
+                </svg>
+                <a
+                  href='https://github.com/nathanjessen'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-lg hover:text-emerald-500 transition-colors'
+                >
+                  github.com/nathanjessen
+                </a>
+              </div>
             </div>
           </div>
+
+          {User.resumeUrl && (
+            <div className='mt-8'>
+              <h2 className='text-xl font-semibold'>Resume</h2>
+              <div className='mt-4'>
+                <a
+                  href={User.resumeUrl}
+                  download={User.resumeName}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='underline text-emerald-600 hover:text-emerald-500 font-bold text-lg'
+                >
+                  Download Resume
+                </a>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className='col-span-1 md:col-span-2'>
@@ -155,10 +124,11 @@ export const AboutMe = () => {
               production in under three months.
             </p>
             <p className='text-xl'>
-              I&apos;m focused on growing toward Staff and Principal engineering
-              with an emphasis on agentic systems — building tools that use LLMs
-              not just as assistants but as active participants in product
-              workflows.
+              I&apos;m drawn to the developer tooling layer — tools like
+              Storybook and Chromatic that change how engineers build and ship
+              software. I want to work at that intersection: bringing AI into
+              the development workflow itself rather than just into the products
+              developers ship.
             </p>
           </div>
 

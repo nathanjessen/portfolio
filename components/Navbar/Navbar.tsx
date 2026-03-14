@@ -3,7 +3,6 @@
 import { useCallback, useState } from 'react';
 import User from '../../constants/User';
 import Brand from '../Brand';
-import SocialNav from '../SocialNav';
 import { MainMenu } from './MainMenu';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
@@ -34,14 +33,6 @@ export const Navbar = () => {
           >
             <MainMenu />
           </nav>
-
-          <div
-            className='hidden md:flex'
-            role='navigation'
-            aria-label='Social links'
-          >
-            <SocialNav />
-          </div>
 
           <div className='flex sm:hidden'>
             <MenuToggle

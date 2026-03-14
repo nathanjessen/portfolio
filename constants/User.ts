@@ -20,8 +20,8 @@ const User: UserProps = {
   email: 'nathan.jessen@gmail.com',
   phone: '+1 7023017036',
   location: 'Austin, TX',
-  resumeUrl: '/assets/Nathan-Jessen-Resume-Frontend-Developer.pdf',
-  resumeName: 'Nathan-Jessen-Resume-Frontend-Developer.pdf',
+  resumeUrl: '/assets/Nathan-Jessen-Resume.pdf',
+  resumeName: 'Nathan-Jessen-Resume.pdf',
 };
 
 export default User;
