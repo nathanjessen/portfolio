@@ -3,15 +3,11 @@ export interface Project {
   desc: string;
   source?: string;
   url?: string;
-  docs?: string;
   tech: string[];
   company?: string;
   client?: string;
   date: string;
-  dateRange?: string[];
-  archived?: boolean;
   featured?: boolean;
-  published?: boolean;
 }
 
 export const projects: Project[] = [
@@ -31,9 +27,7 @@ export const projects: Project[] = [
     ],
     company: 'A Place for Mom',
     date: '2025/01/01',
-    archived: false,
     featured: true,
-    published: true,
   },
   {
     title: 'A Place for Mom',
@@ -50,9 +44,7 @@ export const projects: Project[] = [
     ],
     company: 'A Place for Mom',
     date: '2022/08/01',
-    archived: false,
     featured: true,
-    published: true,
   },
   {
     title: 'OpenSea Integration',
@@ -62,8 +54,6 @@ export const projects: Project[] = [
     company: 'Freelance',
     client: 'OctoFi',
     date: '2020/10/12',
-    dateRange: ['2020/02/01', '2021/12/15'],
-    archived: true,
     featured: false,
   },
   {
@@ -74,7 +64,6 @@ export const projects: Project[] = [
     tech: ['Jekyll', 'TailwindCSS'],
     company: 'Freelance',
     date: '2022/07/18',
-    archived: true,
   },
   {
     title: 'Checking Account Recommender',
@@ -84,8 +73,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'First Horizon Bank',
     date: '2019/07/01',
-    dateRange: ['2019/07/01', '2019/09/01'],
-    archived: true,
   },
   {
     title: 'Estimāte',
@@ -94,8 +81,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'VMLY&R',
     date: '2018/10/01',
-    dateRange: ['Feb 2018', 'July 2019'],
-    archived: true,
   },
   {
     title: 'Resource Allocation and Forecasting Tool',
@@ -104,8 +89,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'VMLY&R',
     date: '2018/10/01',
-    dateRange: ['Feb 2018', 'July 2019'],
-    archived: true,
   },
   {
     title: 'Bridgestone Dealer Portal',
@@ -114,8 +97,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Bridgestone',
     date: '2017/03/01',
-    dateRange: ['March 2017', 'February 2018'],
-    archived: true,
   },
   {
     title: 'Sprint',
@@ -124,8 +105,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Sprint',
     date: '2015/01/07',
-    dateRange: ['Jan 2015', 'March 2017'],
-    archived: true,
   },
   {
     title: 'JG Wentworth',
@@ -134,8 +113,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'JG Wentworth',
     date: '2014/11/01',
-    dateRange: ['Nov 2014', 'Jan 2015'],
-    archived: true,
   },
   {
     title: 'Mastercard',
@@ -144,8 +121,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Mastercard',
     date: '2014/09/01',
-    dateRange: ['Sept 2014', 'Oct 2014'],
-    archived: true,
   },
   {
     title: 'PepsiCo Careers',
@@ -155,8 +130,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'PepsiCo',
     date: '2014/08/01',
-    dateRange: ['Aug 2014', 'Sept 2014'],
-    archived: true,
   },
   {
     title: 'Efficacy',
@@ -165,7 +138,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Gatorade',
     date: '2014/07/30',
-    archived: true,
   },
   {
     title: 'League of Captains',
@@ -174,8 +146,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Gatorade',
     date: '2014/07/21',
-    dateRange: ['June 2014', 'July 2014'],
-    archived: true,
   },
   {
     title: 'Nonstop Love',
@@ -184,7 +154,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Southwest Airlines',
     date: '2014/06/14',
-    archived: true,
   },
   {
     title: 'UltraDuramune',
@@ -193,7 +162,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2014/05/02',
-    archived: true,
   },
   {
     title: 'Edward Jones Careers',
@@ -203,8 +171,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Edward Jones',
     date: '2014/05/01',
-    dateRange: ['March 2014', 'May 2014'],
-    archived: true,
   },
   {
     title: 'Taxonomy',
@@ -213,7 +179,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'American Century Investments',
     date: '2014/02/01',
-    archived: true,
   },
   {
     title: 'Dollars and Sense',
@@ -222,8 +187,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2014/02/12',
-    dateRange: ['Dec 2013', 'Feb 2014'],
-    archived: true,
   },
   {
     title: 'COO / Dealer Portal',
@@ -232,8 +195,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Bridgestone & Firestone',
     date: '2014/01/01',
-    dateRange: ['Jan 2014', 'Feb 2014'],
-    archived: true,
   },
   {
     title: 'GCR/TDS Tires & Service',
@@ -242,8 +203,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Bridgestone & Firestone',
     date: '2013/12/01',
-    dateRange: ['Dec 2013', 'Jan 2014'],
-    archived: true,
   },
   {
     title: 'Have We Seen Your Cat Lately?',
@@ -252,7 +211,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2013/11/10',
-    archived: true,
   },
   {
     title: 'Target Date',
@@ -261,8 +219,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'American Century Investments',
     date: '2013/05/01',
-    dateRange: ['May 2013', 'Sep 2013'],
-    archived: true,
   },
   {
     title: 'ProZinc',
@@ -271,8 +227,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2013/04/11',
-    dateRange: ['Apr 2013', 'May 2013'],
-    archived: true,
   },
   {
     title: 'Promotional Landing Page',
@@ -281,7 +235,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Schrader',
     date: '2013/04/01',
-    archived: true,
   },
   {
     title: 'Duramune Lepto',
@@ -290,7 +243,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2013/03/20',
-    archived: true,
   },
   {
     title: 'Rosedale Development Association',
@@ -300,7 +252,6 @@ export const projects: Project[] = [
     company: 'Volunteer',
     client: 'Rosedale Development Association',
     date: '2013/03/14',
-    archived: true,
   },
   {
     title: 'CardioDVM',
@@ -309,7 +260,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2013/03/01',
-    archived: true,
   },
   {
     title: 'Email Templates',
@@ -318,8 +268,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'H&R Block',
     date: '2013/01/01',
-    dateRange: ['Jan 2013', 'Mar 2013'],
-    archived: true,
   },
   {
     title: 'eVent Fabrics',
@@ -329,8 +277,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'GE',
     date: '2013/01/15',
-    dateRange: ['Dec 2012', 'Jan 2013'],
-    archived: true,
   },
   {
     title: 'ClearCurrent Pro',
@@ -340,7 +286,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'GE',
     date: '2012/11/15',
-    archived: true,
   },
   {
     title: 'Pexion - Epilepsy in Dogs',
@@ -350,8 +295,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2012/10/01',
-    dateRange: ['Oct 2012', 'Nov 2012'],
-    archived: true,
   },
   {
     title: 'Purefil<sup>TM</sup> Technology',
@@ -361,8 +304,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2012/09/21',
-    dateRange: ['Sept 2012', 'Oct 2012'],
-    archived: true,
   },
   {
     title: 'Email Templates',
@@ -371,8 +312,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'GE',
     date: '2012/09/01',
-    dateRange: ['Sept 2012'],
-    archived: true,
   },
   {
     title: 'LymeInfo',
@@ -382,8 +321,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Boehringer Ingelheim',
     date: '2012/09/01',
-    dateRange: ['Sept 2012'],
-    archived: true,
   },
   {
     title: 'Pioneer Military Loans',
@@ -393,8 +330,6 @@ export const projects: Project[] = [
     company: 'VML',
     client: 'Pioneer Military Credit',
     date: '2012/09/01',
-    dateRange: ['Sept 2012'],
-    archived: true,
   },
   {
     title: 'Heartland Trailways',
@@ -404,7 +339,6 @@ export const projects: Project[] = [
     company: 'Freelance',
     client: 'Heartland Trailways',
     date: '2011/10/07',
-    archived: true,
   },
   {
     title: 'Knacktive',
@@ -415,7 +349,5 @@ export const projects: Project[] = [
     company: 'Northwest Missouri State University',
     client: 'Knacktive',
     date: '2011/02/01',
-    archived: true,
-    published: false,
   },
 ];
