@@ -2,17 +2,15 @@
 
   Developer: Nathan Jessen
   GitHub: nathanjessen
+  Location: Austin, TX
 
 # TECHNOLOGY COLOPHON
 
-  Github Pages
-  Jekyll
-  Gulp
-  PostCSS
-  Yarn
-  EditorConfig
-  Tailwindcss
-  Google Fonts
+  Next.js
+  React
+  TypeScript
+  Tailwind CSS
+  Anthropic Claude
 
 # SITE
 

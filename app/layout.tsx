@@ -36,14 +36,6 @@ export const metadata: Metadata = {
     locale: 'en-US',
     url: '/',
     siteName: 'Nathan Jessen',
-    images: [
-      {
-        url: '/assets/images/avatar-person.png',
-        width: 128,
-        height: 128,
-        alt: 'Nathan Jessen',
-      },
-    ],
   },
   alternates: {
     canonical: '/',

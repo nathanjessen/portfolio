@@ -1,30 +1,12 @@
-import Image from 'next/image';
 import { Project } from '../../constants/projects';
 
 export interface ProjectCardProps {
   item: Project;
 }
 
-const css = { width: '100%', height: 'auto' };
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
     <div className='rounded-lg overflow-hidden bg-base-200 shadow-xl divide-y divide-base-100 w-full flex flex-col'>
-      {item.img && (
-        <figure className='bg-base-300 rounded-t-md'>
-          <div className='block h-60 w-full overflow-hidden'>
-            <Image
-              src={item.img}
-              alt={`Screenshot of ${item.title} project`}
-              sizes='100vw'
-              height={240}
-              width={400}
-              style={css}
-              className='object-cover transition-transform hover:scale-105'
-            />
-          </div>
-        </figure>
-      )}
-
       <div className='flex flex-col flex-1 gap-2 p-6'>
         <h5 className='text-xl font-semibold text-emerald-400 mb-1'>
           {item.title}

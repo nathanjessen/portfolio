@@ -6,30 +6,30 @@ export interface TechItem {
 export const techlist: TechItem[] = [
   {
     name: 'Anthropic',
-    img: '/assets/icons/anthropic.svg',
+    img: '/assets/anthropic.svg',
   },
   {
     name: 'Next.js',
-    img: 'https://raw.githubusercontent.com/github/explore/main/topics/nextjs/nextjs.png',
+    img: '/assets/nextjs.png',
   },
   {
     name: 'TypeScript',
-    img: 'https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png',
+    img: '/assets/typescript.png',
   },
   {
     name: 'Storybook',
-    img: 'https://raw.githubusercontent.com/github/explore/main/topics/storybook/storybook.png',
+    img: '/assets/storybook.png',
   },
   {
     name: 'Tailwind',
-    img: 'https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png',
+    img: '/assets/tailwind.png',
   },
   {
     name: 'Playwright',
-    img: '/assets/icons/playwright.svg',
+    img: '/assets/playwright.svg',
   },
   {
     name: 'Vitest',
-    img: '/assets/icons/vitest.svg',
+    img: '/assets/vitest.svg',
   },
 ];

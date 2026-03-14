@@ -1,7 +1,6 @@
 export interface Project {
   title: string;
   desc: string;
-  img?: string;
   source?: string;
   url?: string;
   docs?: string;
@@ -57,7 +56,6 @@ export const projects: Project[] = [
   },
   {
     title: 'OpenSea Integration',
-    img: '/assets/images/opensea.png',
     desc: 'ReactJS + Web3 integration for viewing and buying NFTs from OpenSea directly in OctoFi app.',
     source: 'https://github.com/OctoFi/octofi-app-aquafarm',
     tech: ['React', 'Redux', 'Web3'],
@@ -70,7 +68,6 @@ export const projects: Project[] = [
   },
   {
     title: 'Jekyll Theme',
-    img: '/assets/images/blogtheme.png',
     desc: 'Clean minimalist theme for Jekyll using TailwindCSS.',
     source: 'https://github.com/nathanjessen/blogtheme',
     url: 'https://nathanjessen.github.io/blogtheme/',
@@ -411,7 +408,6 @@ export const projects: Project[] = [
   },
   {
     title: 'Knacktive',
-    img: '/assets/images/knacktive.png',
     desc: 'Developed the inaugural website for our university-led marketing agency and ported into the university CMS.',
     source: 'https://github.com/nathanjessen/knacktive',
     url: 'https://nathanjessen.github.io/knacktive/',
